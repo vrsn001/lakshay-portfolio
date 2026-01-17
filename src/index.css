@@ -979,6 +979,55 @@ body {
   opacity: 1;
 }
 
+/* Company wrapper for brand tooltip */
+.company-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* Brand tooltip */
+.brand-tooltip {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 8px;
+  background: var(--stamp-cream);
+  border: 2px dashed var(--stamp-black);
+  padding: 12px;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  width: 320px;
+  max-width: 90vw;
+}
+
+.company-wrapper:hover .brand-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.brand-tooltip-header {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.brand-logos {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .job-type {
   background: var(--stamp-black);
   color: var(--stamp-cream);

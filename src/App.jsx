@@ -7,6 +7,7 @@ import './index.css'
 import profilePhoto from './assets/lakshay_photo.png'
 import profilePhotoStamp from './assets/lakshay_photo_stamp.png'
 import profilePhotoCandid from './assets/lakshay_photo_candid.png'
+import wlddBrands from './assets/wldd_brands.png'
 
 function App() {
   const [countersStarted, setCountersStarted] = useState(false)
@@ -187,6 +188,8 @@ function App() {
                 title="Creator Outreach Coordinator"
                 company="WLDD Private Limited"
                 companyUrl="https://www.wldd.in/"
+                showBrands={true}
+                brandsImage={wlddBrands}
                 type="Full-time"
                 location="📍 Bengaluru, India"
                 bullets={[
@@ -373,7 +376,7 @@ function StatItem({ target, suffix, label, started }) {
 }
 
 // Timeline Item Component
-function TimelineItem({ number, date, title, company, companyUrl, type, location, bullets, isCurrentJob }) {
+function TimelineItem({ number, date, title, company, companyUrl, type, location, bullets, isCurrentJob, showBrands, brandsImage }) {
   return (
     <div className="timeline-item">
       <div className="timeline-marker">{number}</div>
@@ -385,9 +388,17 @@ function TimelineItem({ number, date, title, company, companyUrl, type, location
         <h3 className="timeline-title">{title}</h3>
         <div className="timeline-company">
           {companyUrl ? (
-            <a href={companyUrl} target="_blank" rel="noopener noreferrer" className="company-name company-link">
-              {company}
-            </a>
+            <span className="company-wrapper">
+              <a href={companyUrl} target="_blank" rel="noopener noreferrer" className="company-name company-link">
+                {company}
+              </a>
+              {showBrands && brandsImage && (
+                <div className="brand-tooltip">
+                  <div className="brand-tooltip-header">Brands I've worked with:</div>
+                  <img src={brandsImage} alt="Brands worked with" className="brand-logos" />
+                </div>
+              )}
+            </span>
           ) : (
             <span className="company-name">{company}</span>
           )}
