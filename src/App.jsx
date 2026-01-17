@@ -111,8 +111,8 @@ function App() {
                 </div>
                 <div className="about-text">
                   <p>
-                    I'm a <strong>Campaign Manager</strong> and <strong>Creator Relations Expert</strong> who
-                    specializes in turning products and launches into viral moments.
+                    I'm a <strong>Campaign Manager</strong> and <strong>Influencer Relations Manager</strong> who
+                    specializes in crafting buzz-worthy campaigns that capture attention, drive engagement, and convert.
                   </p>
                   <p>
                     My expertise spans across <span className="highlight">X (Twitter)</span>,
