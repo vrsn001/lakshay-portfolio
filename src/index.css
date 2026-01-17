@@ -955,6 +955,30 @@ body {
   color: var(--text-secondary);
 }
 
+.company-link {
+  text-decoration: none;
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+  position: relative;
+  display: inline-block;
+}
+
+.company-link:hover {
+  color: var(--stamp-red);
+  text-decoration: underline;
+}
+
+.company-link::after {
+  content: ' ↗';
+  font-size: 10px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.company-link:hover::after {
+  opacity: 1;
+}
+
 .job-type {
   background: var(--stamp-black);
   color: var(--stamp-cream);

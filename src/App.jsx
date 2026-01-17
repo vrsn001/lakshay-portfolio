@@ -171,6 +171,7 @@ function App() {
                 date="Jul 2024 - Present"
                 title="Campaign Manager"
                 company="Creativefuel"
+                companyUrl="https://creativefuel.io/"
                 type="Full-time"
                 location="📍 Indore, India"
                 isCurrentJob={true}
@@ -185,6 +186,7 @@ function App() {
                 date="Oct 2023 - Oct 2024"
                 title="Creator Outreach Coordinator"
                 company="WLDD Private Limited"
+                companyUrl="https://www.wldd.in/"
                 type="Full-time"
                 location="📍 Bengaluru, India"
                 bullets={[
@@ -198,6 +200,7 @@ function App() {
                 date="Nov 2022 - Mar 2023"
                 title="Digital Marketing Associate"
                 company="Thrillophilia.com"
+                companyUrl="https://www.thrillophilia.com/"
                 type="Full-time"
                 location="📍 Jaipur, India"
                 bullets={[
@@ -370,7 +373,7 @@ function StatItem({ target, suffix, label, started }) {
 }
 
 // Timeline Item Component
-function TimelineItem({ number, date, title, company, type, location, bullets, isCurrentJob }) {
+function TimelineItem({ number, date, title, company, companyUrl, type, location, bullets, isCurrentJob }) {
   return (
     <div className="timeline-item">
       <div className="timeline-marker">{number}</div>
@@ -381,7 +384,13 @@ function TimelineItem({ number, date, title, company, type, location, bullets, i
         </div>
         <h3 className="timeline-title">{title}</h3>
         <div className="timeline-company">
-          <span className="company-name">{company}</span>
+          {companyUrl ? (
+            <a href={companyUrl} target="_blank" rel="noopener noreferrer" className="company-name company-link">
+              {company}
+            </a>
+          ) : (
+            <span className="company-name">{company}</span>
+          )}
           <span className="job-type">{type}</span>
         </div>
         <div className="timeline-location">{location}</div>
