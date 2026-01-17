@@ -989,9 +989,14 @@ body {
 /* Brand tooltip */
 .brand-tooltip {
   position: absolute;
-  top: 100%;
-  left: 0;
-  margin-top: 8px;
+  top: 50%;
+  /* Center vertically relative to company name */
+  left: auto;
+  right: 100%;
+  /* Push to the left */
+  margin-right: 20px;
+  /* Gap */
+  margin-top: 0;
   background: var(--stamp-cream);
   border: 2px dashed var(--stamp-black);
   padding: 12px;
@@ -1000,20 +1005,21 @@ body {
   z-index: 1000;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-10px);
-  transition: all 0.3s ease;
+  transform: translateY(-50%) translateX(10px);
+  /* Start slightly right for slide-left effect */
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   pointer-events: none;
   width: 400px;
   max-width: 90vw;
   max-height: 180px;
-  /* Reduced height to force scroll */
   overflow: hidden;
 }
 
 .company-wrapper:hover .brand-tooltip {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0);
+  transform: translateY(-50%) translateX(0);
+  /* Slide into place */
 }
 
 .brand-tooltip-header {
