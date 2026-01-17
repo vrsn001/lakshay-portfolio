@@ -1004,6 +1004,8 @@ body {
   pointer-events: none;
   width: 320px;
   max-width: 90vw;
+  max-height: 280px;
+  overflow: hidden;
 }
 
 .company-wrapper:hover .brand-tooltip {
@@ -1026,6 +1028,22 @@ body {
   width: 100%;
   height: auto;
   display: block;
+  animation: none;
+}
+
+/* Animated scrolling on hover */
+.company-wrapper:hover .brand-logos {
+  animation: brandScroll 12s linear infinite;
+}
+
+@keyframes brandScroll {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-50%);
+  }
 }
 
 .job-type {
