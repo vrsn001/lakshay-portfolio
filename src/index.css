@@ -1044,8 +1044,8 @@ body {
   }
 
   100% {
-    transform: translateY(-40%);
-    /* Scroll just enough to show bottom */
+    transform: translateY(-66%);
+    /* Scroll further to show bottom rows definitively */
   }
 }
 
