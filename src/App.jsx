@@ -302,7 +302,7 @@ function App() {
             <div className="contact-content">
               <StampCard stampNumber="008" showBarcode className="contact-stamp">
                 <div className="contact-note">
-                  "Ready to make your brand go viral? Let's talk!"
+                  "Let's create your next viral campaign. Drop me a line!"
                 </div>
                 <div className="contact-links">
                   <a href="mailto:laksh.rohilla@outlook.com" className="contact-link">
