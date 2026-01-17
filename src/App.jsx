@@ -177,8 +177,8 @@ function App() {
                 isCurrentJob={true}
                 bullets={[
                   "Create buzz for diverse launches: movies, OTT shows, tech products, and brand campaigns",
-                  "Build efficient approval workflows that accelerate campaign execution by 40%",
-                  "Amplify reach through influencer collaborations and viral content strategies"
+                  "Manage end-to-end campaign execution from pre-release hype to viral post-launch moments",
+                  "Coordinate influencer PR and content amplification across multiple platforms"
                 ]}
               />
               <TimelineItem
