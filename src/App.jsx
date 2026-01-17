@@ -193,10 +193,10 @@ function App() {
                 type="Full-time"
                 location="📍 Bengaluru, India"
                 bullets={[
-                  "Developed creative strategies & content concepts aligned with brand goals, leveraging viral trends to drive engagement.",
-                  "Spearheaded viral campaigns for Shark Tank & Hotstar, achieving 100M+ reach & 2M+ engagements.",
-                  "Coordinated end-to-end production with external vendors, overseeing design and distribution of promotional materials.",
-                  "Managed campaign budgets to maximize ROI, ensuring cost-effectiveness across all marketing initiatives."
+                  "Launched viral campaigns achieving 100M+ reach & 2M+ engagements, spotting trends before they peaked.",
+                  "Developed creative concepts & strategies aligned with brand goals, contributing innovative ideas during collaborative discussions.",
+                  "Coordinated with external vendors to design, produce content (copies, creatives) & distribute promotional materials.",
+                  "Managed budgeting for all marketing campaigns, ensuring cost-effectiveness of each initiative."
                 ]}
               />
               <TimelineItem
