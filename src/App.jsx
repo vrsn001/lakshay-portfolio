@@ -96,12 +96,14 @@ function App() {
 
         {/* Stats Section */}
         <section className="stats" ref={statsRef}>
+          <div className="stats-border-top"></div>
           <div className="stats-container">
             <StatItem target={100} suffix="M+" label="Reach" started={countersStarted} />
             <StatItem target={2} suffix="M+" label="Engagements" started={countersStarted} />
             <StatItem target={500} suffix="+" label="Creators Managed" started={countersStarted} />
             <StatItem target={2} suffix="+" label="Years Experience" started={countersStarted} />
           </div>
+          <div className="stats-border-bottom"></div>
         </section>
 
         {/* About Section */}
@@ -343,6 +345,7 @@ function App() {
 // Counter Component
 function StatItem({ target, suffix, label, started }) {
   const [count, setCount] = useState(0)
+  const [completed, setCompleted] = useState(false)
 
   useEffect(() => {
     if (!started) return
@@ -359,13 +362,15 @@ function StatItem({ target, suffix, label, started }) {
 
       if (progress < 1) {
         requestAnimationFrame(animate)
+      } else {
+        setCompleted(true)
       }
     }
     requestAnimationFrame(animate)
   }, [started, target])
 
   return (
-    <div className="stat-item">
+    <div className={`stat-item ${completed ? 'completed' : ''}`}>
       <span className="stat-number">{count}</span>
       <span className="stat-suffix">{suffix}</span>
       <div className="stat-label">{label}</div>
