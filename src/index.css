@@ -1,0 +1,1062 @@
+/* ===================================
+   CSS Variables - STAMP/POSTAL TYPOGRAPHY THEME
+   =================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:wght@400&family=Playfair+Display:wght@400;700;900&family=Space+Mono:wght@400;700&family=Bebas+Neue&display=swap');
+
+:root {
+  /* Stamp/Postal Color Palette */
+  --stamp-cream: #f5f0e1;
+  --stamp-paper: #ebe6d7;
+  --stamp-black: #1a1a1a;
+  --stamp-red: #c73e3a;
+  --stamp-gold: #c49a3c;
+  --stamp-brown: #8b7355;
+  --stamp-olive: #5c6b4d;
+  --stamp-teal: #4a7c7c;
+
+  /* Text colors */
+  --text-primary: #1a1a1a;
+  --text-secondary: #4a4a4a;
+  --text-muted: #7a7a7a;
+
+  /* Backgrounds */
+  --bg-primary: #f5f0e1;
+  --bg-secondary: #ebe6d7;
+  --bg-dark: #1a1a1a;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.3s ease;
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #252525;
+  --text-primary: #f5f0e1;
+  --text-secondary: #c9c4b5;
+  --text-muted: #8a8578;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Space Mono', monospace;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  /* Paper texture effect */
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  background-blend-mode: soft-light;
+}
+
+/* ===================================
+   Layout
+   =================================== */
+
+.app {
+  position: relative;
+  min-height: 100vh;
+  background: var(--bg-primary);
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 100px 0;
+  position: relative;
+}
+
+/* ===================================
+   Navigation - Postal Style
+   =================================== */
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--stamp-cream);
+  border-bottom: 4px solid var(--stamp-black);
+  padding: 0;
+}
+
+.nav::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: repeating-linear-gradient(90deg,
+      transparent,
+      transparent 8px,
+      var(--stamp-black) 8px,
+      var(--stamp-black) 12px);
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--stamp-black);
+  text-decoration: none;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-logo-hindi {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 28px;
+  color: var(--stamp-red);
+}
+
+.nav-menu {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-link {
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 8px 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--stamp-red);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--stamp-red);
+  transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.theme-toggle {
+  background: var(--stamp-black);
+  color: var(--stamp-cream);
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 10px 14px;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background: var(--stamp-red);
+}
+
+/* ===================================
+   Hero Section - Stamp Aesthetic
+   =================================== */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 100px;
+  background: var(--bg-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background: var(--stamp-red);
+  opacity: 0.1;
+  border-radius: 50%;
+  filter: blur(100px);
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero-stamp-wrapper {
+  position: relative;
+}
+
+/* Main stamp card */
+.stamp-card {
+  position: relative;
+  background: var(--stamp-cream);
+  border: 4px solid var(--stamp-black);
+  padding: 24px;
+}
+
+.stamp-card--dark {
+  background: var(--stamp-black);
+  color: var(--stamp-cream);
+}
+
+/* Perforated edges */
+.stamp-perforation {
+  position: absolute;
+  background: var(--bg-primary);
+}
+
+.stamp-perforation--top,
+.stamp-perforation--bottom {
+  left: 0;
+  right: 0;
+  height: 12px;
+  background: repeating-linear-gradient(90deg,
+      var(--bg-primary) 0px,
+      var(--bg-primary) 8px,
+      transparent 8px,
+      transparent 16px);
+}
+
+.stamp-perforation--top {
+  top: -8px;
+}
+
+.stamp-perforation--bottom {
+  bottom: -8px;
+}
+
+.stamp-perforation--left,
+.stamp-perforation--right {
+  top: 0;
+  bottom: 0;
+  width: 12px;
+  background: repeating-linear-gradient(180deg,
+      var(--bg-primary) 0px,
+      var(--bg-primary) 8px,
+      transparent 8px,
+      transparent 16px);
+}
+
+.stamp-perforation--left {
+  left: -8px;
+}
+
+.stamp-perforation--right {
+  right: -8px;
+}
+
+/* Stamp number */
+.stamp-number {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+}
+
+/* Barcode */
+.stamp-barcode {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.barcode-lines {
+  display: flex;
+  gap: 1px;
+  height: 24px;
+}
+
+.barcode-text {
+  font-family: 'Space Mono', monospace;
+  font-size: 8px;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+}
+
+/* Hero photo stamp */
+.hero-photo-stamp {
+  padding: 16px;
+  text-align: center;
+}
+
+.hero-photo {
+  width: 220px;
+  height: 260px;
+  border: 4px solid var(--stamp-black);
+  overflow: hidden;
+  margin: 0 auto 16px;
+  position: relative;
+}
+
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(30%) contrast(1.1);
+}
+
+.hero-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 60%, rgba(0, 0, 0, 0.2) 100%);
+}
+
+.hero-stamp-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--text-muted);
+}
+
+/* Hero text */
+.hero-text {
+  padding-right: 40px;
+}
+
+.hero-greeting {
+  font-family: 'Space Mono', monospace;
+  font-size: 14px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 16px;
+}
+
+.hero-name-wrapper {
+  margin-bottom: 16px;
+}
+
+.hero-name-hindi {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 72px;
+  font-weight: 400;
+  color: var(--stamp-black);
+  line-height: 1;
+  display: block;
+}
+
+.hero-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 64px;
+  font-weight: 400;
+  color: var(--stamp-black);
+  line-height: 1;
+  letter-spacing: 4px;
+  display: block;
+  margin-top: -8px;
+}
+
+.hero-tagline {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-style: italic;
+  color: var(--stamp-red);
+  margin-bottom: 24px;
+}
+
+.hero-description {
+  font-family: 'Space Mono', monospace;
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+  max-width: 480px;
+}
+
+.highlight {
+  background: var(--stamp-black);
+  color: var(--stamp-cream);
+  padding: 2px 6px;
+  font-weight: 700;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 16px;
+}
+
+/* Buttons - Stamp style */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 32px;
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  border: 3px solid var(--stamp-black);
+  text-decoration: none;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.btn-primary {
+  background: var(--stamp-black);
+  color: var(--stamp-cream);
+}
+
+.btn-primary:hover {
+  background: var(--stamp-red);
+  border-color: var(--stamp-red);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--stamp-black);
+}
+
+.btn-secondary:hover {
+  background: var(--stamp-black);
+  color: var(--stamp-cream);
+}
+
+/* ===================================
+   Stats Section - Receipt Style
+   =================================== */
+
+.stats {
+  background: var(--stamp-black);
+  padding: 60px 0;
+  position: relative;
+}
+
+.stats::before,
+.stats::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: repeating-linear-gradient(90deg,
+      transparent,
+      transparent 8px,
+      var(--stamp-cream) 8px,
+      var(--stamp-cream) 12px);
+}
+
+.stats::before {
+  top: 0;
+}
+
+.stats::after {
+  bottom: 0;
+}
+
+.stats-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 24px;
+  border: 2px dashed rgba(245, 240, 225, 0.3);
+  position: relative;
+}
+
+.stat-number {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 64px;
+  color: var(--stamp-cream);
+  line-height: 1;
+}
+
+.stat-suffix {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 32px;
+  color: var(--stamp-red);
+}
+
+.stat-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: rgba(245, 240, 225, 0.6);
+  margin-top: 8px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+/* ===================================
+   Section Titles - Stamp Style
+   =================================== */
+
+.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 60px;
+  gap: 24px;
+}
+
+.section-title::before,
+.section-title::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  background: var(--stamp-black);
+  max-width: 100px;
+}
+
+.title-text {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 48px;
+  font-weight: 400;
+  color: var(--text-primary);
+  letter-spacing: 6px;
+  text-align: center;
+}
+
+.title-hindi {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 36px;
+  color: var(--stamp-red);
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* ===================================
+   About Section
+   =================================== */
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 48px;
+}
+
+.about-stamp {
+  padding: 32px;
+}
+
+.about-note {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-style: italic;
+  color: var(--text-primary);
+  padding: 20px 24px;
+  border-left: 4px solid var(--stamp-red);
+  margin-bottom: 24px;
+  background: rgba(199, 62, 58, 0.05);
+}
+
+.about-text p {
+  font-family: 'Space Mono', monospace;
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.expertise-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.expertise-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--stamp-cream);
+  border: 2px solid var(--stamp-black);
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.2s;
+}
+
+.expertise-item:hover {
+  background: var(--stamp-black);
+  color: var(--stamp-cream);
+  transform: translateX(8px);
+}
+
+.expertise-icon {
+  width: 24px;
+  height: 24px;
+  background: var(--stamp-red);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+/* ===================================
+   Timeline - Stamp Cards
+   =================================== */
+
+.timeline {
+  position: relative;
+  padding-left: 60px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: repeating-linear-gradient(180deg,
+      var(--stamp-black) 0px,
+      var(--stamp-black) 8px,
+      transparent 8px,
+      transparent 16px);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 48px;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -52px;
+  top: 24px;
+  width: 28px;
+  height: 28px;
+  background: var(--stamp-cream);
+  border: 4px solid var(--stamp-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  z-index: 1;
+}
+
+.timeline-item:hover .timeline-marker {
+  background: var(--stamp-red);
+  color: var(--stamp-cream);
+  border-color: var(--stamp-red);
+}
+
+.timeline-stamp {
+  padding: 28px 32px;
+  transition: transform 0.3s ease;
+}
+
+.timeline-item:hover .timeline-stamp {
+  transform: translateX(8px);
+}
+
+.timeline-date {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: var(--stamp-red);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.timeline-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  color: var(--text-primary);
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.timeline-company {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.company-name {
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.job-type {
+  background: var(--stamp-black);
+  color: var(--stamp-cream);
+  padding: 4px 10px;
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.timeline-location {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.timeline-bullets {
+  list-style: none;
+  padding-left: 0;
+}
+
+.timeline-bullets li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.timeline-bullets li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--stamp-red);
+  font-weight: 700;
+}
+
+/* ===================================
+   Skills - Grid of stamps
+   =================================== */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+.skills-category {
+  padding: 32px;
+}
+
+.skills-category h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  letter-spacing: 4px;
+  margin-bottom: 24px;
+  text-align: center;
+  color: var(--text-primary);
+}
+
+.skill-items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.skill-item {
+  background: var(--stamp-cream);
+  border: 2px solid var(--stamp-black);
+  padding: 16px 12px;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.skill-item:hover {
+  background: var(--stamp-black);
+  color: var(--stamp-cream);
+  transform: translateY(-4px);
+}
+
+.skill-icon {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.skill-name {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ===================================
+   Education
+   =================================== */
+
+.education-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.education-stamp {
+  padding: 32px;
+}
+
+.education-content {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.edu-icon {
+  font-size: 40px;
+}
+
+.edu-year {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: var(--stamp-red);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+}
+
+.edu-degree {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px;
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+  color: var(--text-primary);
+}
+
+.edu-school {
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.edu-location {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.cert-stamp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--stamp-black) !important;
+  color: var(--stamp-cream);
+}
+
+.cert-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px;
+  letter-spacing: 3px;
+}
+
+/* ===================================
+   Contact
+   =================================== */
+
+.contact-section {
+  background: var(--stamp-black);
+  padding: 80px 0;
+}
+
+.contact-section .section-title::before,
+.contact-section .section-title::after {
+  background: var(--stamp-cream);
+}
+
+.contact-section .title-text {
+  color: var(--stamp-cream);
+}
+
+.contact-content {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-stamp {
+  padding: 48px;
+  background: var(--stamp-cream) !important;
+  color: var(--stamp-black);
+}
+
+.contact-note {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-style: italic;
+  margin-bottom: 32px;
+  color: var(--text-primary);
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 24px;
+  border: 2px solid var(--stamp-black);
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.contact-link:hover {
+  background: var(--stamp-black);
+  color: var(--stamp-cream);
+}
+
+/* ===================================
+   Footer
+   =================================== */
+
+.footer {
+  padding: 32px 0;
+  text-align: center;
+  background: var(--stamp-cream);
+  border-top: 4px solid var(--stamp-black);
+}
+
+.footer::before {
+  content: '';
+  display: block;
+  height: 8px;
+  background: repeating-linear-gradient(90deg,
+      transparent,
+      transparent 8px,
+      var(--stamp-black) 8px,
+      var(--stamp-black) 12px);
+  margin-bottom: 24px;
+}
+
+.footer-text {
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* ===================================
+   Responsive Design
+   =================================== */
+
+@media (max-width: 900px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-text {
+    padding-right: 0;
+  }
+
+  .hero-cta {
+    justify-content: center;
+  }
+
+  .about-content,
+  .skills-grid,
+  .education-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nav-menu {
+    display: none;
+  }
+
+  .hero-name-hindi {
+    font-size: 48px;
+  }
+
+  .hero-name {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 600px) {
+  .stats-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .skill-items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .timeline {
+    padding-left: 40px;
+  }
+
+  .timeline-marker {
+    left: -32px;
+    width: 20px;
+    height: 20px;
+    font-size: 8px;
+  }
+}
