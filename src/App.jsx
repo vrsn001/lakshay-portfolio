@@ -176,9 +176,9 @@ function App() {
                 location="📍 Indore, India"
                 isCurrentJob={true}
                 bullets={[
-                  "Lead end-to-end product launches from brief to viral moment",
-                  "Cut content approval time by 40% with streamlined workflows",
-                  "Track reach, engagement, and retention metrics"
+                  "Create buzz for diverse launches: movies, OTT shows, tech products, and brand campaigns",
+                  "Build efficient approval workflows that accelerate campaign execution by 40%",
+                  "Amplify reach through influencer collaborations and viral content strategies"
                 ]}
               />
               <TimelineItem
