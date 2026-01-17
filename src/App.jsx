@@ -3,8 +3,9 @@ import { StampCard, PostalBadge } from '@/components/ui/StampCard'
 import { Analytics } from '@vercel/analytics/react'
 import './index.css'
 
-// Import photo
+// Import photos
 import profilePhoto from './assets/lakshay_photo.png'
+import profilePhotoStamp from './assets/lakshay_photo_stamp.png'
 
 function App() {
   const [countersStarted, setCountersStarted] = useState(false)
@@ -54,12 +55,9 @@ function App() {
             <div className="hero-content">
               {/* Photo Stamp */}
               <div className="hero-stamp-wrapper">
-                <StampCard stampNumber="001" showBarcode className="hero-photo-stamp">
-                  <div className="hero-photo">
-                    <img src={profilePhoto} alt="Lakshay Rohilla" />
-                  </div>
-                  <div className="hero-stamp-label">Campaign Manager</div>
-                </StampCard>
+                <div className="hero-photo-styled">
+                  <img src={profilePhotoStamp} alt="Lakshay Rohilla - Campaign Manager" />
+                </div>
               </div>
 
               {/* Hero Text */}

@@ -363,6 +363,24 @@ body {
   color: var(--text-muted);
 }
 
+/* Hero photo - styled version with built-in stamp design */
+.hero-photo-styled {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.hero-photo-styled img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.hero-photo-styled:hover img {
+  transform: scale(1.02);
+}
+
 /* Hero text */
 .hero-text {
   padding-right: 40px;
