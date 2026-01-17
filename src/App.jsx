@@ -193,9 +193,10 @@ function App() {
                 type="Full-time"
                 location="📍 Bengaluru, India"
                 bullets={[
-                  "Launched viral campaigns: 100M+ reach, 2M+ engagements",
-                  "Built creator network of 500+ influencers",
-                  "Spotted trends before they peaked"
+                  "Developed creative strategies & content concepts aligned with brand goals, leveraging viral trends to drive engagement.",
+                  "Spearheaded viral campaigns for Shark Tank & Hotstar, achieving 100M+ reach & 2M+ engagements.",
+                  "Coordinated end-to-end production with external vendors, overseeing design and distribution of promotional materials.",
+                  "Managed campaign budgets to maximize ROI, ensuring cost-effectiveness across all marketing initiatives."
                 ]}
               />
               <TimelineItem
