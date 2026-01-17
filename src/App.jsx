@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { StampCard, PostalBadge } from '@/components/ui/StampCard'
+import { Analytics } from '@vercel/analytics/react'
 import './index.css'
 
 // Import photo
@@ -338,6 +339,7 @@ function App() {
           <p className="footer-text">Made with ✦ by Lakshay Rohilla © 2026</p>
         </footer>
       </div>
+      <Analytics />
     </div>
   )
 }
