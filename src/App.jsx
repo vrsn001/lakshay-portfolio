@@ -7,14 +7,8 @@ import './index.css'
 import profilePhoto from './assets/lakshay_photo.png'
 
 function App() {
-  const [theme, setTheme] = useState('light')
   const [countersStarted, setCountersStarted] = useState(false)
   const statsRef = useRef(null)
-
-  // Theme toggle
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme)
-  }, [theme])
 
   // Counter animation observer
   useEffect(() => {
@@ -32,9 +26,7 @@ function App() {
     return () => observer.disconnect()
   }, [countersStarted])
 
-  const toggleTheme = () => {
-    setTheme(prev => prev === 'light' ? 'dark' : 'light')
-  }
+
 
   return (
     <div className="app">
@@ -53,9 +45,6 @@ function App() {
               <a href="#education" className="nav-link">Education</a>
               <a href="#contact" className="nav-link">Contact</a>
             </div>
-            <button className="theme-toggle" onClick={toggleTheme}>
-              {theme === 'dark' ? '☀' : '☾'}
-            </button>
           </div>
         </nav>
 
@@ -185,6 +174,7 @@ function App() {
                 company="Creativefuel"
                 type="Full-time"
                 location="📍 Indore, India"
+                isCurrentJob={true}
                 bullets={[
                   "Lead end-to-end product launches from brief to viral moment",
                   "Cut content approval time by 40% with streamlined workflows",
@@ -336,7 +326,7 @@ function App() {
 
         {/* Footer */}
         <footer className="footer">
-          <p className="footer-text">Made with ✦ by Lakshay Rohilla © 2026</p>
+          <p className="footer-text">Stamped & Sealed by Lakshay Rohilla © 2026</p>
         </footer>
       </div>
       <Analytics />
@@ -381,12 +371,15 @@ function StatItem({ target, suffix, label, started }) {
 }
 
 // Timeline Item Component
-function TimelineItem({ number, date, title, company, type, location, bullets }) {
+function TimelineItem({ number, date, title, company, type, location, bullets, isCurrentJob }) {
   return (
     <div className="timeline-item">
       <div className="timeline-marker">{number}</div>
       <StampCard className="timeline-stamp">
-        <div className="timeline-date">{date}</div>
+        <div className="timeline-date">
+          {isCurrentJob && <span className="status-indicator"></span>}
+          {date}
+        </div>
         <h3 className="timeline-title">{title}</h3>
         <div className="timeline-company">
           <span className="company-name">{company}</span>
