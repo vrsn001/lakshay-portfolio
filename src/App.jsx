@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 import { StampCard, PostalBadge } from '@/components/ui/StampCard'
 import { Analytics } from '@vercel/analytics/react'
 import './index.css'
@@ -38,6 +39,7 @@ function App() {
 
   return (
     <div className="app">
+      <Analytics />
       <div className="content">
         {/* Navigation */}
         <nav className="nav">
