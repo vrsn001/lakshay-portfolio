@@ -985,7 +985,71 @@ body {
   display: inline-block;
 }
 
-/* Brand tooltip */
+/* Vintage Icon Sprites */
+.vintage-icon {
+  width: 48px;
+  height: 48px;
+  background-image: url('./assets/vintage_sprites.png');
+  background-size: 300% 400%;
+  /* 3 columns, 4 rows */
+  display: inline-block;
+  margin-bottom: 4px;
+  filter: sepia(0.2) contrast(1.1);
+  /* Enhance vintage look */
+}
+
+/* Row 1: Skills 1-3 */
+.icon-metrics {
+  background-position: 0% 0%;
+}
+
+.icon-strategy {
+  background-position: 50% 0%;
+}
+
+.icon-relations {
+  background-position: 100% 0%;
+}
+
+/* Row 2: Skills 4-6 */
+.icon-growth {
+  background-position: 0% 33.33%;
+}
+
+.icon-content {
+  background-position: 50% 33.33%;
+}
+
+.icon-trends {
+  background-position: 100% 33.33%;
+}
+
+/* Row 3: Platforms 1-3 */
+.icon-twitter {
+  background-position: 0% 66.66%;
+}
+
+.icon-linkedin {
+  background-position: 50% 66.66%;
+}
+
+.icon-instagram {
+  background-position: 100% 66.66%;
+}
+
+/* Row 4: Platforms 4-6 */
+.icon-youtube {
+  background-position: 0% 100%;
+}
+
+.icon-threads {
+  background-position: 50% 100%;
+}
+
+.icon-analytics {
+  background-position: 100% 100%;
+}
+
 /* Brand tooltip */
 .brand-tooltip {
   position: absolute;
