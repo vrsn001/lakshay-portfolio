@@ -6,6 +6,7 @@ import './index.css'
 // Import photos
 import profilePhoto from './assets/lakshay_photo.png'
 import profilePhotoStamp from './assets/lakshay_photo_stamp.png'
+import profilePhotoCandid from './assets/lakshay_photo_candid.png'
 
 function App() {
   const [countersStarted, setCountersStarted] = useState(false)
@@ -56,7 +57,7 @@ function App() {
               {/* Photo Stamp */}
               <div className="hero-stamp-wrapper">
                 <div className="hero-photo-styled">
-                  <img src={profilePhotoStamp} alt="Lakshay Rohilla - Campaign Manager" />
+                  <img src={profilePhotoCandid} alt="Lakshay Rohilla - Campaign Manager" />
                 </div>
               </div>
 
