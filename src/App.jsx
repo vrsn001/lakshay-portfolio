@@ -112,7 +112,7 @@ function App() {
                 <div className="about-text">
                   <p>
                     I'm a <strong>Campaign Manager</strong> and <strong>Influencer Relations Manager</strong> who
-                    specializes in crafting buzz-worthy campaigns that capture attention, drive engagement, and convert.
+                    specializes in crafting buzz-worthy campaigns that capture attention, spark engagement, and deliver measurable results.
                   </p>
                   <p>
                     My expertise spans across <span className="highlight">X (Twitter)</span>,
