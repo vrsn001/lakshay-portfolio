@@ -189,7 +189,7 @@ function App() {
               <TimelineItem
                 number="02"
                 date="Oct 2023 - Oct 2024"
-                title="Media Planner Coordinator"
+                title="Media Planning Coordinator"
                 company="WLDD Private Limited"
                 companyUrl="https://www.wldd.in/"
                 type="Full-time"
