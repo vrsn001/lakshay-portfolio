@@ -33,7 +33,7 @@ const brandItems = [
     { name: "Clensta", type: "text" },
     { name: "Collective Artist", type: "text" },
     { name: "Danube Properties", type: "text" },
-    { name: "DDPD 2", type: "text" },
+    { name: "Luv Films (DDPD 2)", type: "text" },
     { name: "Dot & Key", type: "text" },
     { name: "Flenc Cosmetics", type: "text" },
     { name: "India's Biggest Foodie", type: "text" },

@@ -26,15 +26,23 @@ const LogoLoop = ({
         const isLeft = direction === 'left';
         let currentSpeed = speed;
 
+        // For right-scrolling carousel, start at negative position
+        const resetPoint = () => scrollContent.scrollWidth / 3;
+        if (!isLeft) {
+            scrollPosition = -resetPoint();
+        }
+
         const animate = () => {
             scrollPosition += (isLeft ? -1 : 1) * (currentSpeed / 60);
-            // Reset at 1/3 of total width for seamless loop
-            const resetPoint = scrollContent.scrollWidth / 3;
+            const currentResetPoint = resetPoint();
 
-            if (isLeft && scrollPosition <= -resetPoint) {
+            // Left-moving: scroll from 0 to negative, reset when hitting -resetPoint
+            if (isLeft && scrollPosition <= -currentResetPoint) {
                 scrollPosition = 0;
-            } else if (!isLeft && scrollPosition >= resetPoint) {
-                scrollPosition = 0;
+            }
+            // Right-moving: scroll from negative to 0, reset when hitting 0
+            else if (!isLeft && scrollPosition >= 0) {
+                scrollPosition = -currentResetPoint;
             }
 
             scrollContent.style.transform = `translateX(${scrollPosition}px)`;
