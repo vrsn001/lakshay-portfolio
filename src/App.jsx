@@ -240,23 +240,23 @@ function App() {
               <StampCard stampNumber="004" className="skills-category">
                 <h3>CORE SKILLS</h3>
                 <div className="skill-items">
-                  <SkillItem icon={<span className="vintage-icon icon-metrics"></span>} name="Performance Metrics" />
-                  <SkillItem icon={<span className="vintage-icon icon-strategy"></span>} name="Campaign Strategy" />
-                  <SkillItem icon={<span className="vintage-icon icon-relations"></span>} name="Creator Relations" />
-                  <SkillItem icon={<span className="vintage-icon icon-growth"></span>} name="Growth Hacking" />
-                  <SkillItem icon={<span className="vintage-icon icon-content"></span>} name="Content Strategy" />
-                  <SkillItem icon={<span className="vintage-icon icon-trends"></span>} name="Trend Analysis" />
+                  <SkillItem icon="📊" name="Performance Metrics" />
+                  <SkillItem icon="🎯" name="Campaign Strategy" />
+                  <SkillItem icon="🤝" name="Creator Relations" />
+                  <SkillItem icon="📈" name="Growth Hacking" />
+                  <SkillItem icon="✍️" name="Content Strategy" />
+                  <SkillItem icon="🔍" name="Trend Analysis" />
                 </div>
               </StampCard>
               <StampCard stampNumber="005" className="skills-category">
                 <h3>PLATFORMS</h3>
                 <div className="skill-items">
-                  <SkillItem icon={<span className="vintage-icon icon-twitter"></span>} name="X / Twitter" />
-                  <SkillItem icon={<span className="vintage-icon icon-linkedin"></span>} name="LinkedIn" />
-                  <SkillItem icon={<span className="vintage-icon icon-instagram"></span>} name="Instagram" />
-                  <SkillItem icon={<span className="vintage-icon icon-youtube"></span>} name="YouTube" />
-                  <SkillItem icon={<span className="vintage-icon icon-threads"></span>} name="Threads" />
-                  <SkillItem icon={<span className="vintage-icon icon-analytics"></span>} name="Analytics" />
+                  <SkillItem icon="𝕏" name="X / Twitter" />
+                  <SkillItem icon="in" name="LinkedIn" />
+                  <SkillItem icon="📸" name="Instagram" />
+                  <SkillItem icon="▶️" name="YouTube" />
+                  <SkillItem icon="🧵" name="Threads" />
+                  <SkillItem icon="📊" name="Analytics" />
                 </div>
               </StampCard>
             </div>
