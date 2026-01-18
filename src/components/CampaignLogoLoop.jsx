@@ -44,7 +44,7 @@ const brandItems = [
     { name: "Mad Umbrella", type: "text" },
     { name: "Markets 4 You", type: "text" },
     { name: "Metaman", type: "text" },
-    { name: "Minutes", type: "text" },
+    { name: "Flipkart Minutes", type: "text" },
     { name: "Oppo", type: "text" },
     { name: "Palmonas", type: "text" },
     { name: "Priyagold", type: "text" },
