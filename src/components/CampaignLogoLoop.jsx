@@ -1,36 +1,54 @@
 import LogoLoop from "./LogoLoop";
 
-const campaigns = [
-    "Bigg Boss",
-    "Rizwan Round 4",
-    "Priyagold",
+// Combined brands from WLDD and Creative Fuel (alphabetically sorted, duplicates removed)
+const brands = [
     "Abhilash Thapiyal",
-    "DDPD 2",
-    "Mad Umbrella",
-    "Tira",
     "Avatar Re-release",
-    "Vijay Subramanium",
-    "Rizwan PR",
-    "Welcome to Derry",
-    "Dot & Key",
-    "Bindiya",
-    "Loventure",
-    "Flenc Cosmetics",
-    "Sunburn DJ Snake",
-    "India's Biggest Foodie",
-    "Markets 4 You",
-    "Jurassic World Rebirth",
-    "Jurassic Hindi",
-    "Naukri.com",
-    "Zee5",
     "Baskin Robbins",
-    "Single Papa",
+    "Bigg Boss",
+    "Bingo!",
+    "Bindiya",
+    "Clensta",
+    "DDPD 2",
+    "Disney+ Hotstar",
+    "Dot & Key",
+    "Flipkart",
+    "Flenc Cosmetics",
+    "India's Biggest Foodie",
+    "JioHotstar – The 50",
+    "Jurassic Hindi",
+    "Jurassic World Rebirth",
     "LinkedIn VS",
+    "Loventure",
+    "Mad Umbrella",
+    "Markets 4 You",
+    "Metaman",
+    "MI",
+    "Minutes",
+    "Myntra",
+    "Naukri.com",
     "Oppo Barcode",
-    "JioHotstar – The 50"
+    "Palmonas",
+    "Priyagold",
+    "Rizwan PR",
+    "Rizwan Round 4",
+    "Shark Tank India",
+    "Simpl",
+    "Single Papa",
+    "Sony Liv",
+    "Sunburn DJ Snake",
+    "Sunfeast YiPPee!",
+    "TATA",
+    "Tira",
+    "Unacademy",
+    "Vijay Subramanium",
+    "Welcome to Derry",
+    "Zepto",
+    "Zee5"
 ];
 
-const campaignLogos = campaigns.map((name) => ({
+
+const brandLogos = brands.map((name) => ({
     title: name,
     node: <div className="campaign-pill">{name}</div>
 }));
@@ -38,9 +56,11 @@ const campaignLogos = campaigns.map((name) => ({
 export default function CampaignLogoLoop() {
     return (
         <section className="logo-loop-wrapper">
+            <h3 className="logo-loop-title">Brands I've Worked With</h3>
+
             {/* Row 1 */}
             <LogoLoop
-                logos={campaignLogos}
+                logos={brandLogos}
                 speed={80}
                 direction="left"
                 gap={32}
@@ -48,12 +68,12 @@ export default function CampaignLogoLoop() {
                 scaleOnHover
                 fadeOut
                 fadeOutColor="#f5f0e1"
-                ariaLabel="Campaigns worked on"
+                ariaLabel="Brands worked with"
             />
 
             {/* Row 2 (reverse for premium feel) */}
             <LogoLoop
-                logos={campaignLogos}
+                logos={brandLogos}
                 speed={60}
                 direction="right"
                 gap={32}
@@ -61,7 +81,7 @@ export default function CampaignLogoLoop() {
                 scaleOnHover
                 fadeOut
                 fadeOutColor="#f5f0e1"
-                ariaLabel="Campaigns worked on"
+                ariaLabel="Brands worked with"
             />
         </section>
     );
