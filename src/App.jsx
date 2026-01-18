@@ -189,8 +189,6 @@ function App() {
                 title="Creator Outreach Coordinator"
                 company="WLDD Private Limited"
                 companyUrl="https://www.wldd.in/"
-                showBrands={true}
-                brandsImage={wlddBrands}
                 type="Full-time"
                 location="📍 Bengaluru, India"
                 bullets={[
