@@ -3,7 +3,6 @@ import LogoLoop from "./LogoLoop";
 // Combined brands from WLDD and Creative Fuel (alphabetically sorted, duplicates removed)
 const brands = [
     "Abhilash Thapiyal",
-    "Avaatare",
     "Avatar Re-release",
     "Baskin Robbins",
     "Bigg Boss",
