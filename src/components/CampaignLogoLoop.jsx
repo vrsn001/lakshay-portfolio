@@ -67,8 +67,6 @@ export default function CampaignLogoLoop() {
                 gap={32}
                 hoverSpeed={20}
                 scaleOnHover
-                fadeOut
-                fadeOutColor="#f5f0e1"
                 ariaLabel="Brands worked with"
             />
 
@@ -80,8 +78,6 @@ export default function CampaignLogoLoop() {
                 gap={32}
                 hoverSpeed={15}
                 scaleOnHover
-                fadeOut
-                fadeOutColor="#f5f0e1"
                 ariaLabel="Brands worked with"
             />
         </section>
