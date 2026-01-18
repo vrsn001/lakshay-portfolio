@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { StampCard, PostalBadge } from '@/components/ui/StampCard'
 import { Analytics } from '@vercel/analytics/react'
+import CampaignLogoLoop from './components/CampaignLogoLoop'
 import './index.css'
 
 // Import photos
@@ -226,6 +227,9 @@ function App() {
             </div>
           </div>
         </section>
+
+        {/* Creative Fuel - Brands Worked With */}
+        <CampaignLogoLoop />
 
         {/* Skills Section */}
         <section className="section" id="skills">
