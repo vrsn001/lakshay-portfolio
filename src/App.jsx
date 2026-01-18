@@ -2,6 +2,8 @@ import { useState, useEffect, useRef } from 'react'
 import { StampCard, PostalBadge } from '@/components/ui/StampCard'
 import { Analytics } from '@vercel/analytics/react'
 import CampaignLogoLoop from './components/CampaignLogoLoop'
+import LoadingScreen from './components/LoadingScreen'
+import WorldClock from './components/WorldClock'
 import './index.css'
 
 // Import photos
@@ -335,6 +337,7 @@ function App() {
 
         {/* Footer */}
         <footer className="footer">
+          <WorldClock />
           <p className="footer-text">Stamped & Sealed by Lakshay Rohilla © 2026</p>
         </footer>
       </div>

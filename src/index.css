@@ -1619,6 +1619,7 @@ body {
     font-size: 8px;
   }
 }
+
 /* Inline links styling for embedded links in content */
 .inline-link {
   color: var(--stamp-red);
@@ -1635,4 +1636,67 @@ body {
   padding: 2px 6px;
   text-decoration: none;
   border-radius: 2px;
+}
+
+/* World Clock - Vintage Style */
+.world-clock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding: 20px 0;
+  margin-bottom: 12px;
+}
+
+.clock-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.clock-city {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--stamp-black);
+  opacity: 0.5;
+  text-transform: uppercase;
+}
+
+.clock-time {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 32px;
+  letter-spacing: 2px;
+  color: var(--stamp-black);
+  line-height: 1;
+}
+
+.clock-primary .clock-city {
+  color: var(--stamp-red);
+  opacity: 0.8;
+}
+
+.clock-primary .clock-time {
+  color: var(--stamp-red);
+}
+
+.clock-divider {
+  color: var(--stamp-gold);
+  font-size: 16px;
+}
+
+@media (max-width: 480px) {
+  .world-clock {
+    gap: 20px;
+  }
+
+  .clock-time {
+    font-size: 24px;
+  }
+
+  .clock-city {
+    font-size: 8px;
+    letter-spacing: 2px;
+  }
 }
