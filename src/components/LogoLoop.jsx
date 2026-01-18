@@ -28,9 +28,12 @@ const LogoLoop = ({
 
         const animate = () => {
             scrollPosition += (isLeft ? -1 : 1) * (currentSpeed / 60);
-            const maxScroll = scrollContent.scrollWidth / 2;
+            // Reset at 1/3 of total width for seamless loop
+            const resetPoint = scrollContent.scrollWidth / 3;
 
-            if (Math.abs(scrollPosition) >= maxScroll) {
+            if (isLeft && scrollPosition <= -resetPoint) {
+                scrollPosition = 0;
+            } else if (!isLeft && scrollPosition >= resetPoint) {
                 scrollPosition = 0;
             }
 
@@ -59,8 +62,8 @@ const LogoLoop = ({
         };
     }, [speed, direction, hoverSpeed]);
 
-    // Duplicate logos for seamless loop
-    const duplicatedLogos = [...logos, ...logos];
+    // Triple logos for truly seamless infinite loop
+    const duplicatedLogos = [...logos, ...logos, ...logos];
 
     return (
         <div
