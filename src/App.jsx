@@ -181,7 +181,7 @@ function App() {
                   "Create buzz for diverse launches: movies, OTT shows, tech products, and brand campaigns",
                   "Manage end-to-end campaign execution from pre-release hype to viral post-launch moments",
                   "Coordinate influencer PR and content amplification across multiple platforms",
-                  "Built TextCraft (textstudio.netlify.app) - a free online text manipulation tool in my free time, featuring case conversion, word counting, and text transformation utilities"
+                  <>Built <a href="https://textstudio.netlify.app/" target="_blank" rel="noopener noreferrer" className="inline-link">TextCraft</a> - a free online text manipulation tool in my free time, featuring case conversion, word counting, and text transformation utilities</>
                 ]}
               />
               <TimelineItem
