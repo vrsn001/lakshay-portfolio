@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import NumberFlow, { continuous } from '@number-flow/react'
+import GradientText from './components/GradientText'
 import { StampCard } from '@/components/ui/StampCard'
 import { Analytics } from '@vercel/analytics/react'
 import { FaXTwitter, FaDiscord, FaGithub, FaThreads, FaLinkedinIn, FaInstagram, FaYoutube } from 'react-icons/fa6'
@@ -428,29 +428,39 @@ function App() {
   )
 }
 
-// Number Flow Stat Component with continuous rolling animation
+// Stat Component with animated gradient shimmer
 function StatItem({ target, suffix, label, started }) {
-  const [displayValue, setDisplayValue] = useState(0)
+  const [count, setCount] = useState(0)
 
   useEffect(() => {
-    if (started) {
-      // Small delay so the animation is visible when section comes into view
-      const timer = setTimeout(() => {
-        setDisplayValue(target)
-      }, 100)
-      return () => clearTimeout(timer)
+    if (!started) return
+
+    const duration = 2000
+    const startTime = performance.now()
+
+    const animate = (currentTime) => {
+      const elapsed = currentTime - startTime
+      const progress = Math.min(elapsed / duration, 1)
+      const easeOut = 1 - Math.pow(1 - progress, 4)
+      setCount(Math.floor(easeOut * target))
+
+      if (progress < 1) {
+        requestAnimationFrame(animate)
+      }
     }
+    requestAnimationFrame(animate)
   }, [started, target])
 
   return (
     <div className="stat-item">
       <div className="stat-number-wrapper">
-        <NumberFlow
-          value={displayValue}
-          plugins={[continuous]}
-          willChange
+        <GradientText
+          colors={['#F5F0E1', '#C49A3C', '#F5F0E1']} // cream → gold → cream
+          animationSpeed={3}
           className="stat-number"
-        />
+        >
+          {count}
+        </GradientText>
         <span className="stat-suffix">{suffix}</span>
       </div>
       <div className="stat-label">{label}</div>

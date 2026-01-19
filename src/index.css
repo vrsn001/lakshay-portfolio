@@ -753,14 +753,14 @@ body {
   animation: fadeInUp 0.8s ease forwards, pulse 0.6s ease 0.8s;
 }
 
-/* NumberFlow wrapper for horizontal alignment */
+/* Stat number wrapper for horizontal alignment */
 .stat-number-wrapper {
   display: flex;
   align-items: baseline;
   justify-content: center;
   gap: 2px;
   font-size: 64px;
-  /* GPU acceleration hint for smooth animation */
+  /* GPU acceleration for smooth animation */
   will-change: transform;
   transform: translateZ(0);
 }
@@ -769,33 +769,13 @@ body {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 64px;
   line-height: 1;
-  position: relative;
 }
 
-/* NumberFlow custom element styling - animated color shimmer */
-.stat-number,
-.stat-number number-flow,
-.stat-number number-flow * {
+/* GradientText specific styling for stat numbers */
+.stat-number .text-content {
   font-size: 64px !important;
   font-family: 'Bebas Neue', sans-serif !important;
-  --number-flow-char-height: 1em;
-  /* Animated color shimmer - changes text color directly */
-  animation: textShimmer 3s ease-in-out infinite !important;
-}
-
-/* Text color shimmer animation - cream to gold and back */
-@keyframes textShimmer {
-
-  0%,
-  100% {
-    color: var(--stamp-cream) !important;
-    text-shadow: 0 0 10px rgba(196, 154, 60, 0.3);
-  }
-
-  50% {
-    color: var(--stamp-gold) !important;
-    text-shadow: 0 0 20px rgba(196, 154, 60, 0.6);
-  }
+  line-height: 1;
 }
 
 .stat-suffix {
