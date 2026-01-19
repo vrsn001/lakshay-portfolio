@@ -1,7 +1,21 @@
 import { useState, useEffect, useRef } from 'react'
 import { StampCard, PostalBadge } from '@/components/ui/StampCard'
 import { Analytics } from '@vercel/analytics/react'
-import { FaXTwitter, FaDiscord, FaGithub } from 'react-icons/fa6'
+import { FaXTwitter, FaDiscord, FaGithub, FaThreads, FaLinkedinIn, FaInstagram, FaYoutube } from 'react-icons/fa6'
+import {
+  TrendingUp,
+  Handshake,
+  Target,
+  Rocket,
+  MapPin,
+  BarChart3,
+  PenLine,
+  Search,
+  GraduationCap,
+  Trophy,
+  Mail,
+  Link
+} from 'lucide-react'
 import CampaignLogoLoop from './components/CampaignLogoLoop'
 import LoadingScreen from './components/LoadingScreen'
 import WorldClock from './components/WorldClock'
@@ -132,27 +146,27 @@ function App() {
                 </h3>
                 <div className="expertise-grid">
                   <div className="expertise-item">
-                    <span className="expertise-icon">📈</span>
+                    <span className="expertise-icon"><TrendingUp size={20} /></span>
                     Viral Campaigns
                   </div>
                   <div className="expertise-item">
-                    <span className="expertise-icon">🤝</span>
+                    <span className="expertise-icon"><Handshake size={20} /></span>
                     Creator Outreach
                   </div>
                   <div className="expertise-item">
-                    <span className="expertise-icon">𝕏</span>
+                    <span className="expertise-icon"><FaXTwitter size={18} /></span>
                     X (Twitter)
                   </div>
                   <div className="expertise-item">
-                    <span className="expertise-icon">in</span>
+                    <span className="expertise-icon"><FaLinkedinIn size={18} /></span>
                     LinkedIn
                   </div>
                   <div className="expertise-item">
-                    <span className="expertise-icon">🎯</span>
+                    <span className="expertise-icon"><Target size={20} /></span>
                     Influencer Marketing
                   </div>
                   <div className="expertise-item">
-                    <span className="expertise-icon">🚀</span>
+                    <span className="expertise-icon"><Rocket size={20} /></span>
                     Launch Strategy
                   </div>
                 </div>
@@ -178,7 +192,7 @@ function App() {
                 company="Creativefuel"
                 companyUrl="https://creativefuel.io/"
                 type="Full-time"
-                location="📍 Indore, India"
+                location={<><MapPin size={14} /> Indore, India</>}
                 isCurrentJob={true}
                 bullets={[
                   "Create buzz for diverse launches: movies, OTT shows, tech products, and brand campaigns",
@@ -194,7 +208,7 @@ function App() {
                 company="WLDD Private Limited"
                 companyUrl="https://www.wldd.in/"
                 type="Full-time"
-                location="📍 Bengaluru, India"
+                location={<><MapPin size={14} /> Bengaluru, India</>}
                 bullets={[
                   "Launched viral campaigns achieving 100M+ reach & 2M+ engagements, spotting trends before they peaked.",
                   "Developed creative concepts & strategies aligned with brand goals, contributing innovative ideas during collaborative discussions.",
@@ -209,7 +223,7 @@ function App() {
                 company="Thrillophilia.com"
                 companyUrl="https://www.thrillophilia.com/"
                 type="Full-time"
-                location="📍 Jaipur, India"
+                location={<><MapPin size={14} /> Jaipur, India</>}
                 bullets={[
                   "Drove organic traffic through SEO strategies",
                   "Conducted keyword research and link-building"
@@ -221,7 +235,7 @@ function App() {
                 title="Beta Tester"
                 company="Avalon Labs"
                 type="Contract"
-                location="📍 Bengaluru, India"
+                location={<><MapPin size={14} /> Bengaluru, India</>}
                 bullets={[
                   "Identified 200+ product issues pre-launch"
                 ]}
@@ -246,23 +260,23 @@ function App() {
               <StampCard stampNumber="004" className="skills-category">
                 <h3>CORE SKILLS</h3>
                 <div className="skill-items">
-                  <SkillItem icon="📊" name="Performance Metrics" />
-                  <SkillItem icon="🎯" name="Campaign Strategy" />
-                  <SkillItem icon="🤝" name="Creator Relations" />
-                  <SkillItem icon="📈" name="Growth Hacking" />
-                  <SkillItem icon="✍️" name="Content Strategy" />
-                  <SkillItem icon="🔍" name="Trend Analysis" />
+                  <SkillItem icon={<BarChart3 size={20} />} name="Performance Metrics" />
+                  <SkillItem icon={<Target size={20} />} name="Campaign Strategy" />
+                  <SkillItem icon={<Handshake size={20} />} name="Creator Relations" />
+                  <SkillItem icon={<TrendingUp size={20} />} name="Growth Hacking" />
+                  <SkillItem icon={<PenLine size={20} />} name="Content Strategy" />
+                  <SkillItem icon={<Search size={20} />} name="Trend Analysis" />
                 </div>
               </StampCard>
               <StampCard stampNumber="005" className="skills-category">
                 <h3>PLATFORMS</h3>
                 <div className="skill-items">
-                  <SkillItem icon="𝕏" name="X / Twitter" />
-                  <SkillItem icon="in" name="LinkedIn" />
-                  <SkillItem icon="📸" name="Instagram" />
-                  <SkillItem icon="▶️" name="YouTube" />
-                  <SkillItem icon="🧵" name="Threads" />
-                  <SkillItem icon="📊" name="Analytics" />
+                  <SkillItem icon={<FaXTwitter size={18} />} name="X / Twitter" />
+                  <SkillItem icon={<FaLinkedinIn size={18} />} name="LinkedIn" />
+                  <SkillItem icon={<FaInstagram size={18} />} name="Instagram" />
+                  <SkillItem icon={<FaYoutube size={18} />} name="YouTube" />
+                  <SkillItem icon={<FaThreads size={18} />} name="Threads" />
+                  <SkillItem icon={<BarChart3 size={20} />} name="Analytics" />
                 </div>
               </StampCard>
             </div>
@@ -281,7 +295,7 @@ function App() {
             <div className="education-grid">
               <StampCard stampNumber="006" className="education-stamp">
                 <div className="education-content">
-                  <span className="edu-icon">🎓</span>
+                  <span className="edu-icon"><GraduationCap size={32} /></span>
                   <div>
                     <div className="edu-year">2019 - 2023</div>
                     <div className="edu-degree">B.TECH, COMPUTER SCIENCE</div>
@@ -292,7 +306,7 @@ function App() {
               </StampCard>
               <StampCard stampNumber="007" className="education-stamp cert-stamp">
                 <div className="cert-content">
-                  <span>🏆</span>
+                  <span><Trophy size={24} /></span>
                   <span>GOOGLE DIGITAL MARKETING</span>
                 </div>
               </StampCard>
@@ -316,15 +330,15 @@ function App() {
                 </div>
                 <div className="contact-links">
                   <a href="mailto:laksh.rohilla@outlook.com" className="contact-link">
-                    <span>📧</span>
+                    <span><Mail size={18} /></span>
                     <span>laksh.rohilla@outlook.com</span>
                   </a>
                   <a href="https://linkedin.com/in/lakshayrohilla" target="_blank" rel="noreferrer" className="contact-link">
-                    <span>🔗</span>
+                    <span><Link size={18} /></span>
                     <span>linkedin.com/in/lakshayrohilla</span>
                   </a>
                   <div className="contact-link">
-                    <span>📍</span>
+                    <span><MapPin size={18} /></span>
                     <span>Indore, India</span>
                   </div>
                 </div>
