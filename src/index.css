@@ -1758,6 +1758,11 @@ body {
 
 .social-handle {
   letter-spacing: 1px;
+  color: inherit;
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  -webkit-text-fill-color: unset;
 }
 
 @media (max-width: 600px) {
