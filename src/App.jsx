@@ -330,6 +330,25 @@ function App() {
                 <a href="mailto:laksh.rohilla@outlook.com" className="btn btn-primary">
                   GET IN TOUCH →
                 </a>
+
+                {/* Find Me On - Social Links */}
+                <div className="social-section">
+                  <div className="social-title">FIND ME ON</div>
+                  <div className="social-links">
+                    <a href="https://x.com/LakshLogic" target="_blank" rel="noreferrer" className="social-link">
+                      <span className="social-icon">𝕏</span>
+                      <span className="social-handle">@LakshLogic</span>
+                    </a>
+                    <a href="https://discord.com/users/khawabizada" target="_blank" rel="noreferrer" className="social-link">
+                      <span className="social-icon">💬</span>
+                      <span className="social-handle">khawabizada</span>
+                    </a>
+                    <a href="https://github.com/vrsn001" target="_blank" rel="noreferrer" className="social-link">
+                      <span className="social-icon">⌨</span>
+                      <span className="social-handle">vrsn001</span>
+                    </a>
+                  </div>
+                </div>
               </StampCard>
             </div>
           </div>
