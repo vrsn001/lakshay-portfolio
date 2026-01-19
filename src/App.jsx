@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { StampCard, PostalBadge } from '@/components/ui/StampCard'
 import { Analytics } from '@vercel/analytics/react'
+import { FaXTwitter, FaDiscord, FaGithub } from 'react-icons/fa6'
 import CampaignLogoLoop from './components/CampaignLogoLoop'
 import LoadingScreen from './components/LoadingScreen'
 import WorldClock from './components/WorldClock'
@@ -336,15 +337,15 @@ function App() {
                   <div className="social-title">FIND ME ON</div>
                   <div className="social-links">
                     <a href="https://x.com/LakshLogic" target="_blank" rel="noreferrer" className="social-link">
-                      <span className="social-icon">X</span>
+                      <FaXTwitter className="social-icon" />
                       <span className="social-handle">@LakshLogic</span>
                     </a>
                     <a href="https://discord.com/users/khawabizada" target="_blank" rel="noreferrer" className="social-link">
-                      <span className="social-icon">D</span>
+                      <FaDiscord className="social-icon" />
                       <span className="social-handle">khawabizada</span>
                     </a>
                     <a href="https://github.com/vrsn001" target="_blank" rel="noreferrer" className="social-link">
-                      <span className="social-icon">G</span>
+                      <FaGithub className="social-icon" />
                       <span className="social-handle">vrsn001</span>
                     </a>
                   </div>

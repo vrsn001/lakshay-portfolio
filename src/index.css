@@ -1747,10 +1747,9 @@ body {
 }
 
 .social-icon {
-  font-family: 'Bebas Neue', sans-serif;
   font-size: 18px;
-  font-weight: 700;
   color: var(--stamp-red);
+  flex-shrink: 0;
 }
 
 .social-link:hover .social-icon {
