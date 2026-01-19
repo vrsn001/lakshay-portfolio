@@ -1729,9 +1729,9 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 16px;
-  background: var(--stamp-black);
-  color: var(--stamp-cream);
+  padding: 12px 20px;
+  background: transparent;
+  color: var(--stamp-black);
   text-decoration: none;
   font-family: 'Space Mono', monospace;
   font-size: 12px;
@@ -1741,13 +1741,20 @@ body {
 }
 
 .social-link:hover {
-  background: var(--stamp-red);
-  border-color: var(--stamp-red);
+  background: var(--stamp-black);
+  color: var(--stamp-cream);
   transform: translateY(-2px);
 }
 
 .social-icon {
-  font-size: 16px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--stamp-red);
+}
+
+.social-link:hover .social-icon {
+  color: var(--stamp-cream);
 }
 
 .social-handle {
