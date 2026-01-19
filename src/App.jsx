@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import NumberFlow, { continuous } from '@number-flow/react'
-import { StampCard, PostalBadge } from '@/components/ui/StampCard'
+import { StampCard } from '@/components/ui/StampCard'
 import { Analytics } from '@vercel/analytics/react'
 import { FaXTwitter, FaDiscord, FaGithub, FaThreads, FaLinkedinIn, FaInstagram, FaYoutube } from 'react-icons/fa6'
 import {
