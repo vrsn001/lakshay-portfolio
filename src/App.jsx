@@ -15,7 +15,8 @@ import {
   Trophy,
   Mail,
   Link,
-  Download
+  Download,
+  ChevronUp
 } from 'lucide-react'
 import CampaignLogoLoop from './components/CampaignLogoLoop'
 import LoadingScreen from './components/LoadingScreen'
@@ -30,6 +31,7 @@ import wlddBrands from './assets/wldd_brands.png'
 
 function App() {
   const [countersStarted, setCountersStarted] = useState(false)
+  const [showScrollTop, setShowScrollTop] = useState(false)
   const statsRef = useRef(null)
 
   // Counter animation observer
@@ -47,6 +49,19 @@ function App() {
     }
     return () => observer.disconnect()
   }, [countersStarted])
+
+  // Scroll-to-top visibility
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 400)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
 
 
 
@@ -378,6 +393,15 @@ function App() {
           <WorldClock />
           <p className="footer-text">Stamped & Sealed by Lakshay Rohilla © 2026</p>
         </footer>
+
+        {/* Scroll to Top Button */}
+        <button
+          className={`scroll-top-btn ${showScrollTop ? 'visible' : ''}`}
+          onClick={scrollToTop}
+          aria-label="Scroll to top"
+        >
+          <ChevronUp size={24} />
+        </button>
       </div>
       <Analytics />
     </div>

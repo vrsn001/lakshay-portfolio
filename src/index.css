@@ -18,7 +18,7 @@
   /* Text colors */
   --text-primary: #1a1a1a;
   --text-secondary: #4a4a4a;
-  --text-muted: #7a7a7a;
+  --text-muted: #5a5a5a;
 
   /* Backgrounds */
   --bg-primary: #f5f0e1;
@@ -1417,6 +1417,45 @@ body {
   color: var(--text-muted);
   letter-spacing: 2px;
   text-transform: uppercase;
+}
+
+/* ===================================
+   Scroll to Top Button
+   =================================== */
+
+.scroll-top-btn {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 48px;
+  height: 48px;
+  background: var(--stamp-black);
+  color: var(--stamp-cream);
+  border: 3px solid var(--stamp-cream);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  z-index: 999;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-top-btn:hover {
+  background: var(--stamp-red);
+  border-color: var(--stamp-red);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(199, 62, 58, 0.4);
 }
 
 /* ===================================
