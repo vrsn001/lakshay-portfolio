@@ -841,6 +841,14 @@ body {
   color: var(--text-primary);
   letter-spacing: 6px;
   text-align: center;
+  /* Prevent SplitText from breaking mid-word */
+  white-space: nowrap;
+}
+
+/* SplitText wrapper - prevent line breaks */
+.title-text .split-text {
+  white-space: nowrap;
+  display: inline-block;
 }
 
 .title-hindi {
@@ -1722,6 +1730,16 @@ body {
 
   .logo-loop-container {
     margin-bottom: 12px;
+  }
+
+  /* Section header mobile fix - smaller font to prevent overflow */
+  .title-text {
+    font-size: 24px;
+    letter-spacing: 3px;
+  }
+
+  .title-hindi {
+    font-size: 20px;
   }
 }
 
