@@ -753,21 +753,68 @@ body {
   animation: fadeInUp 0.8s ease forwards, pulse 0.6s ease 0.8s;
 }
 
+/* NumberFlow wrapper for horizontal alignment */
+.stat-number-wrapper {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 2px;
+  font-size: 64px;
+  /* Traveling golden glow sweep animation */
+  animation: goldenGlowSweep 3s ease-in-out infinite;
+}
+
+@keyframes goldenGlowSweep {
+
+  0%,
+  100% {
+    filter: drop-shadow(-30px 0 20px rgba(196, 154, 60, 0)) drop-shadow(0 0 5px rgba(196, 154, 60, 0.2));
+  }
+
+  25% {
+    filter: drop-shadow(-15px 0 25px rgba(196, 154, 60, 0.5)) drop-shadow(0 0 10px rgba(196, 154, 60, 0.4));
+  }
+
+  50% {
+    filter: drop-shadow(0 0 30px rgba(196, 154, 60, 0.7)) drop-shadow(0 0 15px rgba(196, 154, 60, 0.5));
+  }
+
+  75% {
+    filter: drop-shadow(15px 0 25px rgba(196, 154, 60, 0.5)) drop-shadow(0 0 10px rgba(196, 154, 60, 0.4));
+  }
+}
+
 .stat-number {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 64px;
-  color: var(--stamp-cream);
   line-height: 1;
   position: relative;
-  background: linear-gradient(90deg,
-      var(--stamp-cream) 0%,
-      var(--stamp-gold) 50%,
-      var(--stamp-cream) 100%);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shimmer 3s linear infinite;
+}
+
+/* NumberFlow custom element styling - animated color shimmer */
+.stat-number,
+.stat-number number-flow,
+.stat-number number-flow * {
+  font-size: 64px !important;
+  font-family: 'Bebas Neue', sans-serif !important;
+  --number-flow-char-height: 1em;
+  /* Animated color shimmer - changes text color directly */
+  animation: textShimmer 3s ease-in-out infinite !important;
+}
+
+/* Text color shimmer animation - cream to gold and back */
+@keyframes textShimmer {
+
+  0%,
+  100% {
+    color: var(--stamp-cream) !important;
+    text-shadow: 0 0 10px rgba(196, 154, 60, 0.3);
+  }
+
+  50% {
+    color: var(--stamp-gold) !important;
+    text-shadow: 0 0 20px rgba(196, 154, 60, 0.6);
+  }
 }
 
 .stat-suffix {

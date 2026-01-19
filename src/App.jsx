@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import NumberFlow, { continuous } from '@number-flow/react'
 import { StampCard, PostalBadge } from '@/components/ui/StampCard'
 import { Analytics } from '@vercel/analytics/react'
 import { FaXTwitter, FaDiscord, FaGithub, FaThreads, FaLinkedinIn, FaInstagram, FaYoutube } from 'react-icons/fa6'
@@ -427,37 +428,31 @@ function App() {
   )
 }
 
-// Counter Component
+// Number Flow Stat Component with continuous rolling animation
 function StatItem({ target, suffix, label, started }) {
-  const [count, setCount] = useState(0)
-  const [completed, setCompleted] = useState(false)
+  const [displayValue, setDisplayValue] = useState(0)
 
   useEffect(() => {
-    if (!started) return
-
-    let start = 0
-    const duration = 2000
-    const startTime = performance.now()
-
-    const animate = (currentTime) => {
-      const elapsed = currentTime - startTime
-      const progress = Math.min(elapsed / duration, 1)
-      const easeOut = 1 - Math.pow(1 - progress, 4)
-      setCount(Math.floor(easeOut * target))
-
-      if (progress < 1) {
-        requestAnimationFrame(animate)
-      } else {
-        setCompleted(true)
-      }
+    if (started) {
+      // Small delay so the animation is visible when section comes into view
+      const timer = setTimeout(() => {
+        setDisplayValue(target)
+      }, 100)
+      return () => clearTimeout(timer)
     }
-    requestAnimationFrame(animate)
   }, [started, target])
 
   return (
-    <div className={`stat-item ${completed ? 'completed' : ''}`}>
-      <span className="stat-number">{count}</span>
-      <span className="stat-suffix">{suffix}</span>
+    <div className="stat-item">
+      <div className="stat-number-wrapper">
+        <NumberFlow
+          value={displayValue}
+          plugins={[continuous]}
+          willChange
+          className="stat-number"
+        />
+        <span className="stat-suffix">{suffix}</span>
+      </div>
       <div className="stat-label">{label}</div>
     </div>
   )
