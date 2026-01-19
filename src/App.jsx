@@ -59,6 +59,25 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Scroll reveal animation observer
+  useEffect(() => {
+    const revealElements = document.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right')
+
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed')
+          }
+        })
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    )
+
+    revealElements.forEach((el) => revealObserver.observe(el))
+    return () => revealObserver.disconnect()
+  }, [])
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
@@ -136,14 +155,14 @@ function App() {
         {/* About Section */}
         <section className="section" id="about">
           <div className="container">
-            <h2 className="section-title">
+            <h2 className="section-title scroll-reveal">
               <span className="title-text">
                 <span className="title-hindi">परिचय</span>
                 ABOUT ME
               </span>
             </h2>
             <div className="about-content">
-              <StampCard stampNumber="002" className="about-stamp">
+              <StampCard stampNumber="002" className="about-stamp scroll-reveal-left delay-1">
                 <div className="about-note">
                   "I help companies go viral on social media. If this portfolio doesn't convince you, let's chat!"
                 </div>
@@ -159,7 +178,7 @@ function App() {
                   </p>
                 </div>
               </StampCard>
-              <StampCard stampNumber="003" className="about-stamp">
+              <StampCard stampNumber="003" className="about-stamp scroll-reveal-right delay-2">
                 <h3 style={{ fontFamily: 'Bebas Neue', fontSize: '24px', letterSpacing: '3px', marginBottom: '20px' }}>
                   AREA OF EXPERTISE
                 </h3>
@@ -197,7 +216,7 @@ function App() {
         {/* Experience Section */}
         <section className="section" id="experience">
           <div className="container">
-            <h2 className="section-title">
+            <h2 className="section-title scroll-reveal">
               <span className="title-text">
                 <span className="title-hindi">अनुभव</span>
                 WORK EXPERIENCE
@@ -269,14 +288,14 @@ function App() {
         {/* Skills Section */}
         <section className="section" id="skills">
           <div className="container">
-            <h2 className="section-title">
+            <h2 className="section-title scroll-reveal">
               <span className="title-text">
                 <span className="title-hindi">कौशल</span>
                 SKILLS & PLATFORMS
               </span>
             </h2>
             <div className="skills-grid">
-              <StampCard stampNumber="004" className="skills-category">
+              <StampCard stampNumber="004" className="skills-category scroll-reveal-left delay-1">
                 <h3>CORE SKILLS</h3>
                 <div className="skill-items">
                   <SkillItem icon={<BarChart3 size={20} />} name="Performance Metrics" />
@@ -287,7 +306,7 @@ function App() {
                   <SkillItem icon={<Search size={20} />} name="Trend Analysis" />
                 </div>
               </StampCard>
-              <StampCard stampNumber="005" className="skills-category">
+              <StampCard stampNumber="005" className="skills-category scroll-reveal-right delay-2">
                 <h3>PLATFORMS</h3>
                 <div className="skill-items">
                   <SkillItem icon={<FaXTwitter size={18} />} name="X / Twitter" />
@@ -305,7 +324,7 @@ function App() {
         {/* Education Section */}
         <section className="section" id="education">
           <div className="container">
-            <h2 className="section-title">
+            <h2 className="section-title scroll-reveal">
               <span className="title-text">
                 <span className="title-hindi">शिक्षा</span>
                 EDUCATION
@@ -336,14 +355,14 @@ function App() {
         {/* Contact Section */}
         <section className="section contact-section" id="contact">
           <div className="container">
-            <h2 className="section-title">
+            <h2 className="section-title scroll-reveal">
               <span className="title-text">
                 <span className="title-hindi">संपर्क</span>
                 LET'S CONNECT
               </span>
             </h2>
             <div className="contact-content">
-              <StampCard stampNumber="008" showBarcode className="contact-stamp">
+              <StampCard stampNumber="008" showBarcode className="contact-stamp scroll-reveal delay-1">
                 <div className="contact-note">
                   "Let's create your next viral campaign. Drop me a line!"
                 </div>
