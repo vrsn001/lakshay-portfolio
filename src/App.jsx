@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import GradientText from './components/GradientText'
+import CountUp from './components/CountUp'
 import { StampCard } from '@/components/ui/StampCard'
 import { Analytics } from '@vercel/analytics/react'
 import { FaXTwitter, FaDiscord, FaGithub, FaThreads, FaLinkedinIn, FaInstagram, FaYoutube } from 'react-icons/fa6'
@@ -428,29 +429,8 @@ function App() {
   )
 }
 
-// Stat Component with animated gradient shimmer
+// Stat Component with spring-based counting + gradient shimmer
 function StatItem({ target, suffix, label, started }) {
-  const [count, setCount] = useState(0)
-
-  useEffect(() => {
-    if (!started) return
-
-    const duration = 2000
-    const startTime = performance.now()
-
-    const animate = (currentTime) => {
-      const elapsed = currentTime - startTime
-      const progress = Math.min(elapsed / duration, 1)
-      const easeOut = 1 - Math.pow(1 - progress, 4)
-      setCount(Math.floor(easeOut * target))
-
-      if (progress < 1) {
-        requestAnimationFrame(animate)
-      }
-    }
-    requestAnimationFrame(animate)
-  }, [started, target])
-
   return (
     <div className="stat-item">
       <div className="stat-number-wrapper">
@@ -459,7 +439,12 @@ function StatItem({ target, suffix, label, started }) {
           animationSpeed={3}
           className="stat-number"
         >
-          {count}
+          <CountUp
+            to={target}
+            from={0}
+            duration={2}
+            startWhen={started}
+          />
         </GradientText>
         <span className="stat-suffix">{suffix}</span>
       </div>
