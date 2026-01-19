@@ -14,7 +14,8 @@ import {
   GraduationCap,
   Trophy,
   Mail,
-  Link
+  Link,
+  Download
 } from 'lucide-react'
 import CampaignLogoLoop from './components/CampaignLogoLoop'
 import LoadingScreen from './components/LoadingScreen'
@@ -76,7 +77,7 @@ function App() {
               {/* Photo Stamp */}
               <div className="hero-stamp-wrapper">
                 <div className="hero-photo-styled">
-                  <img src={profilePhotoCandid} alt="Lakshay Rohilla - Campaign Manager" />
+                  <img src={profilePhotoCandid} alt="Lakshay Rohilla - Campaign Manager" loading="lazy" />
                 </div>
               </div>
 
@@ -96,6 +97,9 @@ function App() {
                 <div className="hero-cta">
                   <a href="#contact" className="btn btn-primary">Let's Chat →</a>
                   <a href="#experience" className="btn btn-secondary">View My Work</a>
+                  <a href="/Lakshay_Rohilla_Resume.pdf" download className="btn btn-secondary btn-resume">
+                    <Download size={16} /> Resume
+                  </a>
                 </div>
               </div>
             </div>
