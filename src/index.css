@@ -1780,3 +1780,14 @@ body {
     justify-content: center;
   }
 }
+
+/* Contact stamp barcode positioning - prevent overlap with social links */
+.contact-stamp .stamp-barcode {
+  position: relative;
+  margin-top: 24px;
+  text-align: right;
+}
+
+.contact-stamp .stamp-content {
+  padding-bottom: 0;
+}
