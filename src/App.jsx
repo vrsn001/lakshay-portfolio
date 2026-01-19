@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react'
 import GradientText from './components/GradientText'
 import CountUp from './components/CountUp'
+import ShinyText from './components/ShinyText'
+import SplitText from './components/SplitText'
 import { StampCard } from '@/components/ui/StampCard'
 import { Analytics } from '@vercel/analytics/react'
 import { FaXTwitter, FaDiscord, FaGithub, FaThreads, FaLinkedinIn, FaInstagram, FaYoutube } from 'react-icons/fa6'
@@ -122,7 +124,14 @@ function App() {
                 <p className="hero-greeting">→ Hello, I'm</p>
                 <div className="hero-name-wrapper">
                   <span className="hero-name-hindi">लक्षय रोहिल्ला</span>
-                  <span className="hero-name">LAKSHAY ROHILLA</span>
+                  <ShinyText
+                    textColor="#F5F0E1"
+                    shineColor="#C49A3C"
+                    speed={4}
+                    className="hero-name"
+                  >
+                    LAKSHAY ROHILLA
+                  </ShinyText>
                 </div>
                 <p className="hero-tagline">I make brands go viral ✦</p>
                 <p className="hero-description">
@@ -160,7 +169,7 @@ function App() {
             <h2 className="section-title scroll-reveal">
               <span className="title-text">
                 <span className="title-hindi">परिचय</span>
-                ABOUT ME
+                <SplitText text="ABOUT ME" animation="fadeUp" />
               </span>
             </h2>
             <div className="about-content">
@@ -221,7 +230,7 @@ function App() {
             <h2 className="section-title scroll-reveal">
               <span className="title-text">
                 <span className="title-hindi">अनुभव</span>
-                WORK EXPERIENCE
+                <SplitText text="WORK EXPERIENCE" animation="fadeUp" />
               </span>
             </h2>
             <div className="timeline">
@@ -293,7 +302,7 @@ function App() {
             <h2 className="section-title scroll-reveal">
               <span className="title-text">
                 <span className="title-hindi">कौशल</span>
-                SKILLS & PLATFORMS
+                <SplitText text="SKILLS & PLATFORMS" animation="fadeUp" />
               </span>
             </h2>
             <div className="skills-grid">
@@ -329,7 +338,7 @@ function App() {
             <h2 className="section-title scroll-reveal">
               <span className="title-text">
                 <span className="title-hindi">शिक्षा</span>
-                EDUCATION
+                <SplitText text="EDUCATION" animation="fadeUp" />
               </span>
             </h2>
             <div className="education-grid">
@@ -360,7 +369,7 @@ function App() {
             <h2 className="section-title scroll-reveal">
               <span className="title-text">
                 <span className="title-hindi">संपर्क</span>
-                LET'S CONNECT
+                <SplitText text="LET'S CONNECT" animation="fadeUp" />
               </span>
             </h2>
             <div className="contact-content">
