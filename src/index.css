@@ -1705,7 +1705,10 @@ body {
 .social-section {
   margin-top: 32px;
   padding-top: 24px;
+  padding-bottom: 40px;
   border-top: 2px dashed var(--stamp-black);
+  position: relative;
+  z-index: 1;
 }
 
 .social-title {
