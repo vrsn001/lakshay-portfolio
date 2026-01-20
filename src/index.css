@@ -1734,12 +1734,19 @@ body {
 
   /* Section header mobile fix - smaller font to prevent overflow */
   .title-text {
-    font-size: 24px;
-    letter-spacing: 3px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    white-space: normal;
+    word-break: keep-all;
+    overflow-wrap: normal;
+  }
+
+  .title-text .split-text {
+    white-space: normal;
   }
 
   .title-hindi {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 

@@ -411,6 +411,10 @@ function App() {
                       <FaGithub className="social-icon" />
                       <span className="social-handle">vrsn001</span>
                     </a>
+                    <a href="https://www.instagram.com/lakshiraa/" target="_blank" rel="noreferrer" className="social-link">
+                      <FaInstagram className="social-icon" />
+                      <span className="social-handle">lakshiraa</span>
+                    </a>
                   </div>
                 </div>
               </StampCard>
