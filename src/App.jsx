@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { getCalApi } from "@calcom/embed-react";
 import GradientText from './components/GradientText'
 import CountUp from './components/CountUp'
 import ShinyText from './components/ShinyText'
@@ -37,6 +38,20 @@ function App() {
   const [countersStarted, setCountersStarted] = useState(false)
   const [showScrollTop, setShowScrollTop] = useState(false)
   const statsRef = useRef(null)
+
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ "namespace": "15min" });
+      cal("ui", { "theme": "dark", "styles": { "branding": { "brandColor": "#000000" } }, "hideEventTypeDetails": false, "layout": "month_view" });
+    })();
+  }, []);
+
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ "namespace": "30min" });
+      cal("ui", { "theme": "dark", "styles": { "branding": { "brandColor": "#000000" } }, "hideEventTypeDetails": false, "layout": "month_view" });
+    })();
+  }, []);
 
   // Counter animation observer
   useEffect(() => {
@@ -140,7 +155,14 @@ function App() {
                   <span className="highlight"> 2M+ ENGAGEMENTS</span>.
                 </p>
                 <div className="hero-cta">
-                  <a href="#contact" className="btn btn-primary">Let's Chat →</a>
+                  <button
+                    data-cal-namespace="15min"
+                    data-cal-link="lakshayy/15min"
+                    data-cal-config='{"layout":"month_view"}'
+                    className="btn btn-primary"
+                  >
+                    Let's Chat →
+                  </button>
                   <a href="#experience" className="btn btn-secondary">View My Work</a>
                   <a href="/Lakshay_Rohilla_Resume.pdf" download className="btn btn-secondary btn-resume">
                     <Download size={16} /> Resume
@@ -391,9 +413,26 @@ function App() {
                     <span>Indore, India</span>
                   </div>
                 </div>
-                <a href="mailto:laksh.rohilla@outlook.com" className="btn btn-primary">
-                  GET IN TOUCH →
-                </a>
+                <div className="contact-booking-buttons">
+                  <button
+                    data-cal-namespace="15min"
+                    data-cal-link="lakshayy/15min"
+                    data-cal-config='{"layout":"month_view"}'
+                    className="btn btn-primary"
+                    style={{ width: '100%', marginBottom: '12px' }}
+                  >
+                    QUICK CHAT (15 MIN) →
+                  </button>
+                  <button
+                    data-cal-namespace="30min"
+                    data-cal-link="lakshayy/30min"
+                    data-cal-config='{"layout":"month_view"}'
+                    className="btn btn-secondary"
+                    style={{ width: '100%' }}
+                  >
+                    DEEP DIVE (30 MIN) →
+                  </button>
+                </div>
 
                 {/* Find Me On - Social Links */}
                 <div className="social-section">
