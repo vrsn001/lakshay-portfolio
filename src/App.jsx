@@ -152,8 +152,8 @@ function App() {
                 <p className="hero-tagline">I make brands go viral ✦</p>
                 <p className="hero-description">
                   <span className="highlight">2+ YEARS</span> turning films, OTT releases, products & marketing campaigns
-                  into internet sensations with <span className="highlight">100M+ REACH</span> &
-                  <span className="highlight"> 2M+ ENGAGEMENTS</span>.
+                  into internet sensations with <span className="highlight">1000M+ REACH</span> &
+                  <span className="highlight"> 80M+ ENGAGEMENTS</span>.
                 </p>
                 <div className="hero-cta">
                   <button
@@ -178,9 +178,9 @@ function App() {
         <section className="stats" ref={statsRef}>
           <div className="stats-border-top"></div>
           <div className="stats-container">
-            <StatItem target={100} suffix="M+" label="Reach" started={countersStarted} />
-            <StatItem target={2} suffix="M+" label="Engagements" started={countersStarted} />
-            <StatItem target={500} suffix="+" label="Creators Managed" started={countersStarted} />
+            <StatItem target={1000} suffix="M+" label="Reach" started={countersStarted} />
+            <StatItem target={80} suffix="M+" label="Engagements" started={countersStarted} />
+            <StatItem target={1000} suffix="+" label="Creators Managed" started={countersStarted} />
             <StatItem target={2} suffix="+" label="Years Experience" started={countersStarted} />
           </div>
           <div className="stats-border-bottom"></div>
@@ -282,7 +282,7 @@ function App() {
                 type="Full-time"
                 location={<><MapPin size={14} /> Bengaluru, India</>}
                 bullets={[
-                  "Launched viral campaigns achieving 100M+ reach & 2M+ engagements, spotting trends before they peaked.",
+                  "Launched viral campaigns achieving 1000M+ reach & 80M+ engagements, spotting trends before they peaked.",
                   "Developed creative concepts & strategies aligned with brand goals, contributing innovative ideas during collaborative discussions.",
                   "Coordinated with external vendors to design, produce content (copies, creatives) & distribute promotional materials.",
                   "Managed budgeting for all marketing campaigns, ensuring cost-effectiveness of each initiative."
