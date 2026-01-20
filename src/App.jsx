@@ -282,7 +282,7 @@ function App() {
                 type="Full-time"
                 location={<><MapPin size={14} /> Bengaluru, India</>}
                 bullets={[
-                  "Launched viral campaigns achieving 1000M+ reach & 80M+ engagements, spotting trends before they peaked.",
+                  "Launched viral campaigns achieving 100M+ reach & 2M+ engagements, spotting trends before they peaked.",
                   "Developed creative concepts & strategies aligned with brand goals, contributing innovative ideas during collaborative discussions.",
                   "Coordinated with external vendors to design, produce content (copies, creatives) & distribute promotional materials.",
                   "Managed budgeting for all marketing campaigns, ensuring cost-effectiveness of each initiative."
