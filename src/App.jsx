@@ -6,6 +6,7 @@ import ShinyText from './components/ShinyText'
 import SplitText from './components/SplitText'
 import { StampCard } from '@/components/ui/StampCard'
 import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 import { FaXTwitter, FaDiscord, FaGithub, FaThreads, FaLinkedinIn, FaInstagram, FaYoutube } from 'react-icons/fa6'
 import {
   TrendingUp,
@@ -477,6 +478,7 @@ function App() {
         </button>
       </div>
       <Analytics />
+      <SpeedInsights />
     </div>
   )
 }
