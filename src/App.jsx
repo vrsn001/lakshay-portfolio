@@ -180,7 +180,7 @@ function App() {
           <div className="stats-container">
             <StatItem target={1000} suffix="M+" label="Reach" started={countersStarted} />
             <StatItem target={80} suffix="M+" label="Engagements" started={countersStarted} />
-            <StatItem target={1000} suffix="+" label="Creators Managed" started={countersStarted} />
+            <StatItem target={1500} suffix="+" label="Creators Managed" started={countersStarted} />
             <StatItem target={2} suffix="+" label="Years Experience" started={countersStarted} />
           </div>
           <div className="stats-border-bottom"></div>
