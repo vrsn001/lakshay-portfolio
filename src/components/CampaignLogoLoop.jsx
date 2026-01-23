@@ -47,7 +47,11 @@ const brandItems = [
     { name: "Sunfeast YiPPee!" },
     { name: "Tira" },
     { name: "Vijay Subramanium" },
-    { name: "Welcome to Derry" }
+    { name: "Welcome to Derry" },
+    { name: "Beco" },
+    { name: "How to Train Your Dragon" },
+    { name: "Stree 2 (Maddock Films)" },
+    { name: "Thamma (Maddock Films)" }
 ];
 
 const brandLogos = brandItems.map((item) => ({
