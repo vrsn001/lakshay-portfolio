@@ -156,14 +156,12 @@ function App() {
                   <span className="highlight"> 80M+ ENGAGEMENTS</span>.
                 </p>
                 <div className="hero-cta">
-                  <button
-                    data-cal-namespace="15min"
-                    data-cal-link="lakshayy/15min"
-                    data-cal-config='{"layout":"month_view"}'
+                  <a
+                    href="#contact"
                     className="btn btn-primary"
                   >
                     Let's Chat →
-                  </button>
+                  </a>
                   <a href="#experience" className="btn btn-secondary">View My Work</a>
                   <a href="/Lakshay_Rohilla_Resume.pdf" download className="btn btn-secondary btn-resume">
                     <Download size={16} /> Resume
