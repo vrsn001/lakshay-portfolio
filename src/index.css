@@ -512,6 +512,16 @@ body {
   gap: 16px;
 }
 
+.hero-cta .btn-primary {
+  background: var(--stamp-red);
+  border-color: var(--stamp-red);
+}
+
+.hero-cta .btn-primary:hover {
+  background: var(--stamp-black);
+  border-color: var(--stamp-black);
+}
+
 /* Buttons - Stamp style */
 .btn {
   display: inline-flex;
