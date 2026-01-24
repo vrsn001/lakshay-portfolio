@@ -654,9 +654,10 @@ h3:hover,
   z-index: 0;
   border: 2px solid var(--stamp-black);
   border-radius: 50%;
-  width: 150px;
-  height: 150px;
+  width: 160px;
+  height: 160px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-family: 'Space Mono', monospace;
@@ -665,16 +666,34 @@ h3:hover,
 }
 
 .postmark-city {
-  font-size: 18px;
+  font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 2px;
   color: var(--stamp-black);
+  margin-top: 10px;
+}
+
+.postmark-date {
+  font-size: 10px;
+  margin: 5px 0;
+  color: var(--stamp-black);
+  border-top: 1px solid var(--stamp-black);
+  border-bottom: 1px solid var(--stamp-black);
+  padding: 2px 5px;
+}
+
+.postmark-note {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--stamp-black);
+  margin-bottom: 10px;
 }
 
 .postmark-inner {
   position: absolute;
-  width: 110px;
-  height: 110px;
+  width: 120px;
+  height: 120px;
   border: 1px solid var(--stamp-black);
   border-radius: 50%;
 }
@@ -682,12 +701,18 @@ h3:hover,
 .postmark-lines {
   position: absolute;
   top: 50%;
-  left: -20px;
-  right: -20px;
-  height: 40px;
+  left: 0px;
+  right: -60px;
+  height: 50px;
   border-top: 2px solid var(--stamp-black);
   border-bottom: 2px solid var(--stamp-black);
   transform: translateY(-50%) skewX(-20deg);
+  background: repeating-linear-gradient(180deg,
+      transparent,
+      transparent 8px,
+      var(--stamp-black) 8px,
+      var(--stamp-black) 10px);
+  mask-image: linear-gradient(to right, transparent, black 40%);
 }
 
 /* Buttons - Stamp style */

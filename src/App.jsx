@@ -274,6 +274,8 @@ function App() {
                 location={<><MapPin size={14} /> Indore, India</>}
                 isCurrentJob={true}
                 postmarkCity="INDORE"
+                postmarkDate="12 JUL 2024"
+                postmarkNote="EXPRESS"
                 bullets={[
                   "Create buzz for diverse launches: movies, OTT shows, tech products, and brand campaigns",
                   "Manage end-to-end campaign execution from pre-release hype to viral post-launch moments",
@@ -290,6 +292,8 @@ function App() {
                 type="Full-time"
                 location={<><MapPin size={14} /> Bengaluru, India</>}
                 postmarkCity="BENGALURU"
+                postmarkDate="24 OCT 2023"
+                postmarkNote="REGISTERED"
                 bullets={[
                   "Launched viral campaigns achieving 1000M+ reach & 80M+ engagements, spotting trends before they peaked.",
                   "Developed creative concepts & strategies aligned with brand goals, contributing innovative ideas during collaborative discussions.",
@@ -306,6 +310,8 @@ function App() {
                 type="Full-time"
                 location={<><MapPin size={14} /> Jaipur, India</>}
                 postmarkCity="JAIPUR"
+                postmarkDate="15 NOV 2022"
+                postmarkNote="PARCEL"
                 bullets={[
                   "Drove organic traffic through SEO strategies",
                   "Conducted keyword research and link-building"
@@ -318,6 +324,9 @@ function App() {
                 company="Avalon Labs"
                 type="Contract"
                 location={<><MapPin size={14} /> Bengaluru, India</>}
+                postmarkCity="BENGALURU"
+                postmarkDate="15 JAN 2020"
+                postmarkNote="MAIL"
                 bullets={[
                   "Identified 200+ product issues pre-launch"
                 ]}
@@ -524,7 +533,7 @@ function StatItem({ target, suffix, label, started }) {
 }
 
 // Timeline Item Component
-function TimelineItem({ number, date, title, company, companyUrl, type, location, bullets, isCurrentJob, showBrands, brandsImage, postmarkCity }) {
+function TimelineItem({ number, date, title, company, companyUrl, type, location, bullets, isCurrentJob, showBrands, brandsImage, postmarkCity, postmarkDate, postmarkNote }) {
   return (
     <div className="timeline-item">
       <div className="timeline-marker">{number}</div>
@@ -533,6 +542,8 @@ function TimelineItem({ number, date, title, company, companyUrl, type, location
           <div className="postmark" style={{ top: '10px', right: '10px', transform: 'rotate(-15deg) scale(0.8)', opacity: 0.4 }}>
             <div className="postmark-inner"></div>
             <div className="postmark-city">{postmarkCity}</div>
+            <div className="postmark-date">{postmarkDate}</div>
+            <div className="postmark-note">{postmarkNote}</div>
             <div className="postmark-lines"></div>
           </div>
         )}
