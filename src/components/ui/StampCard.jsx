@@ -36,6 +36,7 @@ export function StampCard({
     return (
         <div
             className={cn('stamp-card', `stamp-card--${variant}`, className)}
+            data-stamp-number={stampNumber}
             style={{
                 position: 'relative',
                 background: v.bg,
