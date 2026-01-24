@@ -51,7 +51,8 @@ const brandItems = [
     { name: "Beco" },
     { name: "How to Train Your Dragon" },
     { name: "Stree 2 (Maddock Films)" },
-    { name: "Thamma (Maddock Films)" }
+    { name: "Thamma (Maddock Films)" },
+    { name: "Dil Lagana Mana Tha" }
 ];
 
 const brandLogos = brandItems.map((item) => ({
