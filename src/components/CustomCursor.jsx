@@ -4,22 +4,8 @@ export default function CustomCursor() {
     // Use refs for direct DOM manipulation to avoid re-renders on every mouse move
     const cursorRef = useRef(null);
     const [isHovering, setIsHovering] = useState(false);
-    const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
-        // Check if device is likely touch-based or small screen
-        const isTouchDevice = () => {
-            return (('ontouchstart' in window) ||
-                (navigator.maxTouchPoints > 0) ||
-                (navigator.msMaxTouchPoints > 0));
-        };
-
-        // Don't initialize custom cursor on touch devices
-        if (isTouchDevice() || window.matchMedia("(max-width: 768px)").matches) {
-            return;
-        }
-
-        setIsVisible(true);
         const cursor = cursorRef.current;
         let animationFrameId;
 
@@ -58,15 +44,11 @@ export default function CustomCursor() {
         };
     }, []);
 
-    if (!isVisible) return null;
-
     return (
         <>
             <style>{`
-        @media (min-width: 769px) {
-            body { cursor: none; }
-            a, button, input, textarea, select { cursor: none; }
-        }
+        body { cursor: none; }
+        a, button, input, textarea, select { cursor: none; }
       `}</style>
             <div
                 ref={cursorRef}
