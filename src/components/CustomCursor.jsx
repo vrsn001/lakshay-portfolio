@@ -22,6 +22,10 @@ export default function CustomCursor() {
             if (
                 e.target.tagName === 'A' ||
                 e.target.tagName === 'BUTTON' ||
+                e.target.tagName === 'INPUT' ||
+                e.target.tagName === 'TEXTAREA' ||
+                e.target.tagName === 'SELECT' ||
+                e.target.tagName === 'LABEL' ||
                 e.target.closest('a') ||
                 e.target.closest('button') ||
                 e.target.classList.contains('interactive')
