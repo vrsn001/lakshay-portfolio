@@ -1,16 +1,34 @@
 import { useEffect, useState, useRef } from 'react';
 
 export default function CustomCursor() {
-    const [position, setPosition] = useState({ x: 0, y: 0 });
-    const [isHovering, setIsHovering] = useState(false);
+    // Use refs for direct DOM manipulation to avoid re-renders on every mouse move
     const cursorRef = useRef(null);
+    const [isHovering, setIsHovering] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
+        // Check if device is likely touch-based or small screen
+        const isTouchDevice = () => {
+            return (('ontouchstart' in window) ||
+                (navigator.maxTouchPoints > 0) ||
+                (navigator.msMaxTouchPoints > 0));
+        };
+
+        // Don't initialize custom cursor on touch devices
+        if (isTouchDevice() || window.matchMedia("(max-width: 768px)").matches) {
+            return;
+        }
+
+        setIsVisible(true);
+        const cursor = cursorRef.current;
+        let animationFrameId;
+
         const updatePosition = (e) => {
-            // Use requestAnimationFrame for smoother performance
-            requestAnimationFrame(() => {
-                setPosition({ x: e.clientX, y: e.clientY });
-            });
+            // Direct DOM update - bypassing React render cycle for performance
+            if (cursor) {
+                // Use transform3d for hardware acceleration
+                cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+            }
         };
 
         const handleMouseOver = (e) => {
@@ -34,32 +52,40 @@ export default function CustomCursor() {
         return () => {
             window.removeEventListener('mousemove', updatePosition);
             document.removeEventListener('mouseover', handleMouseOver);
+            if (animationFrameId) {
+                cancelAnimationFrame(animationFrameId);
+            }
         };
     }, []);
+
+    if (!isVisible) return null;
 
     return (
         <>
             <style>{`
-        body { cursor: none; }
-        a, button, input, textarea, select { cursor: none; }
+        @media (min-width: 769px) {
+            body { cursor: none; }
+            a, button, input, textarea, select { cursor: none; }
+        }
       `}</style>
             <div
+                ref={cursorRef}
                 className="custom-cursor"
                 style={{
-                    transform: `translate(${position.x}px, ${position.y}px)`,
                     position: 'fixed',
                     top: 0,
                     left: 0,
                     pointerEvents: 'none',
                     zIndex: 9999,
-                    mixBlendMode: 'difference'
+                    mixBlendMode: 'difference',
+                    willChange: 'transform' // Hint to browser for optimization
                 }}
             >
                 {/* Base Cursor - Pen Nib */}
                 <div style={{
                     width: '20px',
                     height: '20px',
-                    transition: 'all 0.2s ease',
+                    transition: 'transform 0.2s ease, opacity 0.2s ease', // Only animate transform/opacity
                     transform: isHovering ? 'scale(1.5) rotate(-45deg)' : 'scale(1) rotate(0deg)',
                     opacity: 1,
                 }}>
