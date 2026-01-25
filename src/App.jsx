@@ -30,6 +30,7 @@ import WorldClock from './components/WorldClock'
 import './index.css'
 import WavyDivider from './components/WavyDivider'
 import CustomCursor from './components/CustomCursor'
+import MovieQuotes from './components/MovieQuotes'
 
 // Import photos
 import profilePhoto from './assets/lakshay_photo.png'
@@ -188,6 +189,11 @@ function App() {
           <div className="stats-border-bottom"></div>
           <div className="stats-border-bottom"></div>
         </section>
+
+        <WavyDivider color="#c73e3a" />
+
+        {/* Movie Quotes Section */}
+        <MovieQuotes />
 
         <WavyDivider color="#c73e3a" />
 

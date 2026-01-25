@@ -1,0 +1,144 @@
+/* Movie Quotes - Vintage Cinema/Ticket Style */
+.movie-quotes-section {
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.movie-quotes-container {
+    max-width: 800px;
+    width: 100%;
+    padding: 0 24px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Vintage Ticket/Screen Container */
+.quote-card {
+    background: var(--stamp-black);
+    color: var(--stamp-cream);
+    border: 4px double var(--stamp-gold);
+    padding: 40px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    transform: rotate(-1deg);
+    transition: transform 0.3s ease;
+}
+
+.quote-card:hover {
+    transform: rotate(0deg) scale(1.01);
+}
+
+/* Decorative "Cut" Corners for Ticket Look */
+.quote-card::before,
+.quote-card::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: var(--bg-primary);
+    /* Matches page bg */
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.quote-card::before {
+    top: 50%;
+    left: -15px;
+    transform: translateY(-50%);
+    box-shadow: inset -2px 0 0 var(--stamp-gold);
+}
+
+.quote-card::after {
+    top: 50%;
+    right: -15px;
+    transform: translateY(-50%);
+    box-shadow: inset 2px 0 0 var(--stamp-gold);
+}
+
+/* Vintage Cinema Header */
+.cinema-header {
+    font-family: 'Bebas Neue', display;
+    font-size: 24px;
+    letter-spacing: 4px;
+    color: var(--stamp-red);
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--stamp-gray, #333);
+    padding-bottom: 12px;
+    display: inline-block;
+}
+
+/* Quote Text */
+.quote-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    line-height: 1.4;
+    font-style: italic;
+    margin-bottom: 24px;
+    min-height: 120px;
+    /* Prevent layout shift */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.quote-text.fade-out {
+    opacity: 0;
+}
+
+/* Movie & Character Info */
+.quote-source {
+    font-family: 'Space Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: var(--stamp-gold);
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+}
+
+.movie-title {
+    font-weight: 700;
+    border: 1px solid var(--stamp-gold);
+    padding: 4px 12px;
+    border-radius: 2px;
+}
+
+.character-name {
+    font-size: 12px;
+    color: var(--text-muted);
+    /* Fallback or existing var */
+    opacity: 0.8;
+}
+
+/* Progress Bar for Timer */
+.quote-timer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background: var(--stamp-red);
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .quote-text {
+        font-size: 20px;
+        min-height: 150px;
+    }
+
+    .quote-card {
+        padding: 30px 20px;
+    }
+}
