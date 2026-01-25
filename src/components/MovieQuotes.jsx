@@ -86,6 +86,36 @@ const QUOTES = [
         text: "The World is Yours.",
         movie: "Scarface",
         character: "Tony Montana"
+    },
+    {
+        text: "I do whatever I want.",
+        movie: "The Boys",
+        character: "Homelander"
+    },
+    {
+        text: "Scorched earth.",
+        movie: "The Boys",
+        character: "Billy Butcher"
+    },
+    {
+        text: "Above all: don't lose hope.",
+        movie: "Life of Pi",
+        character: "Pi Patel"
+    },
+    {
+        text: "Winning has a price. And leadership has a price.",
+        movie: "The Last Dance",
+        character: "Michael Jordan"
+    },
+    {
+        text: "The only way to do it is to do it perfectly.",
+        movie: "Free Solo",
+        character: "Alex Honnold"
+    },
+    {
+        text: "We are made of starstuff.",
+        movie: "Cosmos",
+        character: "Carl Sagan"
     }
 ];
 
