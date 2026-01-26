@@ -52,7 +52,12 @@ const brandItems = [
     { name: "How to Train Your Dragon" },
     { name: "Stree 2 (Maddock Films)" },
     { name: "Thamma (Maddock Films)" },
-    { name: "Dil Lagana Mana Tha" }
+    { name: "Dil Lagana Mana Tha" },
+    { name: "MX Player" },
+    { name: "Amazon Prime" },
+    { name: "Mirzapur S2" },
+    { name: "Meesho" },
+    { name: "Netflix" }
 ];
 
 const brandLogos = brandItems.map((item) => ({
