@@ -168,7 +168,7 @@ function App() {
                     Let's Chat →
                   </a>
                   <a href="#experience" className="btn btn-secondary">View My Work</a>
-                  <a href="/Lakshay_Rohilla_Resume.pdf" download className="btn btn-secondary btn-resume">
+                  <a href="/Lakshay Rohilla Resume.pdf" download="Lakshay Rohilla Resume.pdf" className="btn btn-secondary btn-resume">
                     <Download size={16} /> Resume
                   </a>
                 </div>
