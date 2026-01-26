@@ -41,7 +41,17 @@ import wlddBrands from './assets/wldd_brands.png'
 function App() {
   const [countersStarted, setCountersStarted] = useState(false)
   const [showScrollTop, setShowScrollTop] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
   const statsRef = useRef(null)
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
   useEffect(() => {
     (async function () {
@@ -168,7 +178,11 @@ function App() {
                     Let's Chat →
                   </a>
                   <a href="#experience" className="btn btn-secondary">View My Work</a>
-                  <a href="/Lakshay Rohilla Resume.pdf" download="Lakshay Rohilla Resume.pdf" className="btn btn-secondary btn-resume">
+                  <a
+                    href={showScrollTop ? "/Lakshay Rohilla Resume Mobile.pdf" : "/Lakshay Rohilla Resume.pdf"}
+                    download={showScrollTop ? "Lakshay Rohilla Resume Mobile.pdf" : "Lakshay Rohilla Resume.pdf"}
+                    className="btn btn-secondary btn-resume"
+                  >
                     <Download size={16} /> Resume
                   </a>
                 </div>
