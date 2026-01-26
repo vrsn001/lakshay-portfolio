@@ -179,8 +179,8 @@ function App() {
                   </a>
                   <a href="#experience" className="btn btn-secondary">View My Work</a>
                   <a
-                    href={showScrollTop ? "/Lakshay Rohilla Resume Mobile.pdf" : "/Lakshay Rohilla Resume.pdf"}
-                    download={showScrollTop ? "Lakshay Rohilla Resume Mobile.pdf" : "Lakshay Rohilla Resume.pdf"}
+                    href={isMobile ? "/Lakshay Rohilla Resume Mobile.pdf" : "/Lakshay Rohilla Resume.pdf"}
+                    download={isMobile ? "Lakshay Rohilla Resume Mobile.pdf" : "Lakshay Rohilla Resume.pdf"}
                     className="btn btn-secondary btn-resume"
                   >
                     <Download size={16} /> Resume
