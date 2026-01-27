@@ -1,10 +1,16 @@
 import { useState, useEffect, useRef } from 'react'
+import Lenis from 'lenis'
+import './components/Grain.css'
 import { getCalApi } from "@calcom/embed-react";
 import GradientText from './components/GradientText'
 import CountUp from './components/CountUp'
 import ShinyText from './components/ShinyText'
 import SplitText from './components/SplitText'
+import Magnetic from './components/Magnetic'
+import ParallaxElement from './components/ParallaxElement'
+import TiltCard from './components/TiltCard'
 import { StampCard } from '@/components/ui/StampCard'
+import { motion } from 'motion/react'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/react'
 import { FaXTwitter, FaDiscord, FaGithub, FaThreads, FaLinkedinIn, FaInstagram, FaYoutube } from 'react-icons/fa6'
@@ -51,6 +57,31 @@ function App() {
     checkMobile()
     window.addEventListener('resize', checkMobile)
     return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
+  // Lenis Smooth Scroll
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      direction: 'vertical',
+      gestureDirection: 'vertical',
+      smooth: true,
+      mouseMultiplier: 1,
+      smoothTouch: false,
+      touchMultiplier: 2,
+    })
+
+    function raf(time) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
+
+    return () => {
+      lenis.destroy()
+    }
   }, [])
 
   useEffect(() => {
@@ -119,6 +150,7 @@ function App() {
 
   return (
     <div className="app">
+      <div className="grain-overlay"></div>
       <div className="content">
         <CustomCursor />
 
@@ -166,20 +198,26 @@ function App() {
                   <span className="highlight"> 80M+ ENGAGEMENTS</span>.
                 </p>
                 <div className="hero-cta">
-                  <a
-                    href="#contact"
-                    className="btn btn-primary"
-                  >
-                    Let's Chat →
-                  </a>
-                  <a href="#experience" className="btn btn-secondary">View My Work</a>
-                  <a
-                    href={isMobile ? "/Lakshay Rohilla Resume Mobile.pdf" : "/Lakshay_Rohilla_Resume.pdf"}
-                    download={isMobile ? "Lakshay Rohilla Resume Mobile.pdf" : "Lakshay_Rohilla_Resume.pdf"}
-                    className="btn btn-secondary btn-resume"
-                  >
-                    <Download size={16} /> Resume
-                  </a>
+                  <Magnetic>
+                    <a
+                      href="#contact"
+                      className="btn btn-primary"
+                    >
+                      Let's Chat →
+                    </a>
+                  </Magnetic>
+                  <Magnetic>
+                    <a href="#experience" className="btn btn-secondary">View My Work</a>
+                  </Magnetic>
+                  <Magnetic>
+                    <a
+                      href={isMobile ? "/Lakshay Rohilla Resume Mobile.pdf" : "/Lakshay_Rohilla_Resume.pdf"}
+                      download={isMobile ? "Lakshay Rohilla Resume Mobile.pdf" : "Lakshay_Rohilla_Resume.pdf"}
+                      className="btn btn-secondary btn-resume"
+                    >
+                      <Download size={16} /> Resume
+                    </a>
+                  </Magnetic>
                 </div>
               </div>
             </div>
@@ -216,53 +254,57 @@ function App() {
               </span>
             </h2>
             <div className="about-content">
-              <StampCard stampNumber="002" className="about-stamp scroll-reveal-left delay-1">
-                <div className="about-note">
-                  "I help companies go viral on social media. If this portfolio doesn't convince you, let's chat!"
-                </div>
-                <div className="about-text">
-                  <p>
-                    I'm a <strong>Campaign Manager</strong> and <strong>Influencer Relations Manager</strong> who
-                    specializes in crafting buzz-worthy campaigns that capture attention, spark engagement, and deliver measurable results.
-                  </p>
-                  <p>
-                    My expertise spans across <span className="highlight">X (Twitter)</span>,
-                    <span className="highlight"> LinkedIn</span>, <span className="highlight"> Instagram</span>, and
-                    <span className="highlight"> YouTube</span>.
-                  </p>
-                </div>
-              </StampCard>
-              <StampCard stampNumber="003" className="about-stamp scroll-reveal-right delay-2">
-                <h3 style={{ fontFamily: 'Bebas Neue', fontSize: '24px', letterSpacing: '3px', marginBottom: '20px' }}>
-                  AREA OF EXPERTISE
-                </h3>
-                <div className="expertise-grid">
-                  <div className="expertise-item">
-                    <span className="expertise-icon"><TrendingUp size={20} /></span>
-                    Viral Campaigns
+              <TiltCard>
+                <StampCard stampNumber="002" className="about-stamp scroll-reveal-left delay-1">
+                  <div className="about-note">
+                    "I help companies go viral on social media. If this portfolio doesn't convince you, let's chat!"
                   </div>
-                  <div className="expertise-item">
-                    <span className="expertise-icon"><Handshake size={20} /></span>
-                    Creator Outreach
+                  <div className="about-text">
+                    <p>
+                      I'm a <strong>Campaign Manager</strong> and <strong>Influencer Relations Manager</strong> who
+                      specializes in crafting buzz-worthy campaigns that capture attention, spark engagement, and deliver measurable results.
+                    </p>
+                    <p>
+                      My expertise spans across <span className="highlight">X (Twitter)</span>,
+                      <span className="highlight"> LinkedIn</span>, <span className="highlight"> Instagram</span>, and
+                      <span className="highlight"> YouTube</span>.
+                    </p>
                   </div>
-                  <div className="expertise-item">
-                    <span className="expertise-icon"><FaXTwitter size={18} /></span>
-                    X (Twitter)
+                </StampCard>
+              </TiltCard>
+              <TiltCard>
+                <StampCard stampNumber="003" className="about-stamp scroll-reveal-right delay-2">
+                  <h3 style={{ fontFamily: 'Bebas Neue', fontSize: '24px', letterSpacing: '3px', marginBottom: '20px' }}>
+                    AREA OF EXPERTISE
+                  </h3>
+                  <div className="expertise-grid">
+                    <div className="expertise-item">
+                      <span className="expertise-icon"><TrendingUp size={20} /></span>
+                      Viral Campaigns
+                    </div>
+                    <div className="expertise-item">
+                      <span className="expertise-icon"><Handshake size={20} /></span>
+                      Creator Outreach
+                    </div>
+                    <div className="expertise-item">
+                      <span className="expertise-icon"><FaXTwitter size={18} /></span>
+                      X (Twitter)
+                    </div>
+                    <div className="expertise-item">
+                      <span className="expertise-icon"><FaLinkedinIn size={18} /></span>
+                      LinkedIn
+                    </div>
+                    <div className="expertise-item">
+                      <span className="expertise-icon"><Target size={20} /></span>
+                      Influencer Marketing
+                    </div>
+                    <div className="expertise-item">
+                      <span className="expertise-icon"><Rocket size={20} /></span>
+                      Launch Strategy
+                    </div>
                   </div>
-                  <div className="expertise-item">
-                    <span className="expertise-icon"><FaLinkedinIn size={18} /></span>
-                    LinkedIn
-                  </div>
-                  <div className="expertise-item">
-                    <span className="expertise-icon"><Target size={20} /></span>
-                    Influencer Marketing
-                  </div>
-                  <div className="expertise-item">
-                    <span className="expertise-icon"><Rocket size={20} /></span>
-                    Launch Strategy
-                  </div>
-                </div>
-              </StampCard>
+                </StampCard>
+              </TiltCard>
             </div>
           </div>
         </section>
@@ -455,46 +497,58 @@ function App() {
                   </div>
                 </div>
                 <div className="contact-booking-buttons">
-                  <button
-                    data-cal-namespace="15min"
-                    data-cal-link="lakshayy/15min"
-                    data-cal-config='{"layout":"month_view"}'
-                    className="btn btn-primary"
-                    style={{ width: '100%', marginBottom: '12px' }}
-                  >
-                    QUICK CHAT (15 MIN) →
-                  </button>
-                  <button
-                    data-cal-namespace="30min"
-                    data-cal-link="lakshayy/30min"
-                    data-cal-config='{"layout":"month_view"}'
-                    className="btn btn-secondary"
-                    style={{ width: '100%' }}
-                  >
-                    DEEP DIVE (30 MIN) →
-                  </button>
+                  <Magnetic>
+                    <button
+                      data-cal-namespace="15min"
+                      data-cal-link="lakshayy/15min"
+                      data-cal-config='{"layout":"month_view"}'
+                      className="btn btn-primary"
+                      style={{ width: '100%', marginBottom: '12px' }}
+                    >
+                      QUICK CHAT (15 MIN) →
+                    </button>
+                  </Magnetic>
+                  <Magnetic>
+                    <button
+                      data-cal-namespace="30min"
+                      data-cal-link="lakshayy/30min"
+                      data-cal-config='{"layout":"month_view"}'
+                      className="btn btn-secondary"
+                      style={{ width: '100%' }}
+                    >
+                      DEEP DIVE (30 MIN) →
+                    </button>
+                  </Magnetic>
                 </div>
 
                 {/* Find Me On - Social Links */}
                 <div className="social-section">
                   <div className="social-title">FIND ME ON</div>
                   <div className="social-links">
-                    <a href="https://x.com/LakshLogic" target="_blank" rel="noreferrer" className="social-link">
-                      <FaXTwitter className="social-icon" />
-                      <span className="social-handle">@LakshLogic</span>
-                    </a>
-                    <a href="https://discord.com/users/khawabizada" target="_blank" rel="noreferrer" className="social-link">
-                      <FaDiscord className="social-icon" />
-                      <span className="social-handle">khawabizada</span>
-                    </a>
-                    <a href="https://github.com/vrsn001" target="_blank" rel="noreferrer" className="social-link">
-                      <FaGithub className="social-icon" />
-                      <span className="social-handle">vrsn001</span>
-                    </a>
-                    <a href="https://www.instagram.com/lakshiraa/" target="_blank" rel="noreferrer" className="social-link">
-                      <FaInstagram className="social-icon" />
-                      <span className="social-handle">lakshiraa</span>
-                    </a>
+                    <Magnetic>
+                      <a href="https://x.com/LakshLogic" target="_blank" rel="noreferrer" className="social-link">
+                        <FaXTwitter className="social-icon" />
+                        <span className="social-handle">@LakshLogic</span>
+                      </a>
+                    </Magnetic>
+                    <Magnetic>
+                      <a href="https://discord.com/users/khawabizada" target="_blank" rel="noreferrer" className="social-link">
+                        <FaDiscord className="social-icon" />
+                        <span className="social-handle">khawabizada</span>
+                      </a>
+                    </Magnetic>
+                    <Magnetic>
+                      <a href="https://github.com/vrsn001" target="_blank" rel="noreferrer" className="social-link">
+                        <FaGithub className="social-icon" />
+                        <span className="social-handle">vrsn001</span>
+                      </a>
+                    </Magnetic>
+                    <Magnetic>
+                      <a href="https://www.instagram.com/lakshiraa/" target="_blank" rel="noreferrer" className="social-link">
+                        <FaInstagram className="social-icon" />
+                        <span className="social-handle">lakshiraa</span>
+                      </a>
+                    </Magnetic>
                   </div>
                 </div>
               </StampCard>
@@ -552,16 +606,22 @@ function TimelineItem({ number, date, title, company, companyUrl, type, location
   return (
     <div className="timeline-item">
       <div className="timeline-marker">{number}</div>
-      <StampCard className="timeline-stamp" stampNumber={number}>
-        {postmarkCity && (
-          <div className="postmark" style={{ top: '10px', right: '10px', transform: 'rotate(-15deg) scale(0.8)', opacity: 0.4 }}>
-            <div className="postmark-inner"></div>
-            <div className="postmark-city">{postmarkCity}</div>
-            <div className="postmark-date">{postmarkDate}</div>
-            <div className="postmark-note">{postmarkNote}</div>
-            <div className="postmark-lines"></div>
-          </div>
+
+      <StampCard
+        className="timeline-stamp"
+        stampNumber={number}
+        postmark={postmarkCity && (
+          <ParallaxElement offset={30} style={{ position: 'absolute', top: '10px', right: '10px', zIndex: 1 }}>
+            <div className="postmark" style={{ transform: 'rotate(-15deg) scale(0.8)', opacity: 0.4 }}>
+              <div className="postmark-inner"></div>
+              <div className="postmark-city">{postmarkCity}</div>
+              <div className="postmark-date">{postmarkDate}</div>
+              <div className="postmark-note">{postmarkNote}</div>
+              <div className="postmark-lines"></div>
+            </div>
+          </ParallaxElement>
         )}
+      >
         <div className="timeline-date">
           {isCurrentJob && <span className="status-indicator"></span>}
           {date}

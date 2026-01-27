@@ -11,6 +11,7 @@ export function StampCard({
     variant = 'default',
     showBarcode = false,
     stampNumber,
+    postmark,
     ...props
 }) {
     const variants = {
@@ -79,6 +80,13 @@ export function StampCard({
                         ))}
                     </div>
                     <span className="barcode-text">LR-2026-{Math.floor(Math.random() * 9999).toString().padStart(4, '0')}</span>
+                </div>
+            )}
+
+            {/* Postmark Container (Clipped) */}
+            {postmark && (
+                <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', borderRadius: 'inherit', pointerEvents: 'none' }}>
+                    {postmark}
                 </div>
             )}
 

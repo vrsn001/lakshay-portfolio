@@ -1,20 +1,32 @@
 import { useEffect, useState, useRef } from 'react';
 
 export default function CustomCursor() {
-    // Use refs for direct DOM manipulation to avoid re-renders on every mouse move
     const cursorRef = useRef(null);
     const [isHovering, setIsHovering] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
+
+    // Use refs for values that change constantly to avoid re-renders
+    const mousePosition = useRef({ x: 0, y: 0 });
+    const cursorPosition = useRef({ x: 0, y: 0 });
 
     useEffect(() => {
         const cursor = cursorRef.current;
         let animationFrameId;
 
-        const updatePosition = (e) => {
-            // Direct DOM update - bypassing React render cycle for performance
-            if (cursor) {
-                // Use transform3d for hardware acceleration
-                cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
-            }
+        // Initialize cursor position to off-screen or center
+        cursorPosition.current = { x: -100, y: -100 };
+
+        const onMouseMove = (e) => {
+            mousePosition.current = { x: e.clientX, y: e.clientY };
+            if (!isVisible) setIsVisible(true);
+        };
+
+        const onMouseLeave = () => {
+            setIsVisible(false);
+        };
+
+        const onMouseEnter = () => {
+            setIsVisible(true);
         };
 
         const handleMouseOver = (e) => {
@@ -36,17 +48,39 @@ export default function CustomCursor() {
             }
         };
 
-        window.addEventListener('mousemove', updatePosition);
+        // Animation loop for smooth inertia
+        const loop = () => {
+            // Lerp factor (0.1 = slow/smooth, 0.5 = fast)
+            const ease = 0.15;
+
+            const dx = mousePosition.current.x - cursorPosition.current.x;
+            const dy = mousePosition.current.y - cursorPosition.current.y;
+
+            cursorPosition.current.x += dx * ease;
+            cursorPosition.current.y += dy * ease;
+
+            if (cursor) {
+                cursor.style.transform = `translate3d(${cursorPosition.current.x}px, ${cursorPosition.current.y}px, 0)`;
+            }
+
+            animationFrameId = requestAnimationFrame(loop);
+        };
+
+        window.addEventListener('mousemove', onMouseMove);
+        document.addEventListener('mouseleave', onMouseLeave);
+        document.addEventListener('mouseenter', onMouseEnter);
         document.addEventListener('mouseover', handleMouseOver);
 
+        loop();
+
         return () => {
-            window.removeEventListener('mousemove', updatePosition);
+            window.removeEventListener('mousemove', onMouseMove);
+            document.removeEventListener('mouseleave', onMouseLeave);
+            document.removeEventListener('mouseenter', onMouseEnter);
             document.removeEventListener('mouseover', handleMouseOver);
-            if (animationFrameId) {
-                cancelAnimationFrame(animationFrameId);
-            }
+            cancelAnimationFrame(animationFrameId);
         };
-    }, []);
+    }, [isVisible]);
 
     return (
         <>
@@ -64,16 +98,17 @@ export default function CustomCursor() {
                     pointerEvents: 'none',
                     zIndex: 9999,
                     mixBlendMode: 'difference',
-                    willChange: 'transform' // Hint to browser for optimization
+                    opacity: isVisible ? 1 : 0,
+                    transition: 'opacity 0.3s ease',
+                    willChange: 'transform'
                 }}
             >
                 {/* Base Cursor - Pen Nib */}
                 <div style={{
                     width: '20px',
                     height: '20px',
-                    transition: 'transform 0.2s ease, opacity 0.2s ease', // Only animate transform/opacity
+                    transition: 'transform 0.2s ease',
                     transform: isHovering ? 'scale(1.5) rotate(-45deg)' : 'scale(1) rotate(0deg)',
-                    opacity: 1,
                 }}>
                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%' }}>
                         <path d="M12 2L2 22L12 18L22 22L12 2Z" fill="#F5F0E1" stroke="#F5F0E1" strokeWidth="1" />
