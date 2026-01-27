@@ -4,6 +4,7 @@ export default function CustomCursor() {
     const cursorRef = useRef(null);
     const [isHovering, setIsHovering] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
+    const [isTouch, setIsTouch] = useState(false);
 
     // Use refs for values that change constantly to avoid re-renders
     const mousePosition = useRef({ x: 0, y: 0 });
@@ -12,6 +13,13 @@ export default function CustomCursor() {
     useEffect(() => {
         const cursor = cursorRef.current;
         let animationFrameId;
+
+        // Check for touch device
+        const checkTouch = () => {
+            setIsTouch(window.matchMedia("(pointer: coarse)").matches);
+        };
+        checkTouch();
+        window.addEventListener('resize', checkTouch);
 
         // Initialize cursor position to off-screen or center
         cursorPosition.current = { x: -100, y: -100 };
@@ -66,6 +74,8 @@ export default function CustomCursor() {
             animationFrameId = requestAnimationFrame(loop);
         };
 
+        if (isTouch) return;
+
         window.addEventListener('mousemove', onMouseMove);
         document.addEventListener('mouseleave', onMouseLeave);
         document.addEventListener('mouseenter', onMouseEnter);
@@ -79,14 +89,21 @@ export default function CustomCursor() {
             document.removeEventListener('mouseenter', onMouseEnter);
             document.removeEventListener('mouseover', handleMouseOver);
             cancelAnimationFrame(animationFrameId);
+            window.removeEventListener('resize', checkTouch);
         };
-    }, [isVisible]);
+    }, [isVisible, isTouch]);
+
+    if (isTouch) return null;
 
     return (
         <>
             <style>{`
         body { cursor: none; }
         a, button, input, textarea, select { cursor: none; }
+        @media (hover: none) and (pointer: coarse) {
+            body { cursor: auto; }
+            a, button, input, textarea, select { cursor: auto; }
+        }
       `}</style>
             <div
                 ref={cursorRef}

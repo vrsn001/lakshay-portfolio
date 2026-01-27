@@ -3,6 +3,7 @@ import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 
 export default function TiltCard({ children, className = "" }) {
     const ref = useRef(null);
+    const isTouch = typeof window !== 'undefined' && window.matchMedia("(hover: none) and (pointer: coarse)").matches;
 
     const x = useMotionValue(0);
     const y = useMotionValue(0);
@@ -14,6 +15,7 @@ export default function TiltCard({ children, className = "" }) {
     const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-10deg", "10deg"]);
 
     const handleMouseMove = (e) => {
+        if (isTouch) return;
         const rect = ref.current.getBoundingClientRect();
 
         const width = rect.width;

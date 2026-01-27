@@ -9,6 +9,7 @@ import SplitText from './components/SplitText'
 import Magnetic from './components/Magnetic'
 import ParallaxElement from './components/ParallaxElement'
 import TiltCard from './components/TiltCard'
+import TypewriterText from './components/TypewriterText'
 import { StampCard } from '@/components/ui/StampCard'
 import { motion } from 'motion/react'
 import { Analytics } from '@vercel/analytics/react'
@@ -480,7 +481,7 @@ function App() {
             <div className="contact-content">
               <StampCard stampNumber="008" showBarcode className="contact-stamp scroll-reveal delay-1">
                 <div className="contact-note">
-                  "Let's create your next viral campaign. Drop me a line!"
+                  <TypewriterText text="Let's create your next viral campaign. Drop me a line!" />
                 </div>
                 <div className="contact-links">
                   <a href="mailto:laksh.rohilla@outlook.com" className="contact-link">

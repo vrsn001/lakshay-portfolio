@@ -1501,6 +1501,12 @@ h3:hover,
   padding: 32px;
 }
 
+@media (max-width: 768px) {
+  .skills-category {
+    padding: 24px;
+  }
+}
+
 .skills-category h3 {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 28px;
@@ -1514,6 +1520,18 @@ h3:hover,
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .skill-items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .skill-items {
+    grid-template-columns: 1fr;
+  }
 }
 
 .skill-item {
@@ -1562,14 +1580,36 @@ h3:hover,
   gap: 32px;
 }
 
+@media (max-width: 768px) {
+  .education-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
 .education-stamp {
   padding: 32px;
+}
+
+@media (max-width: 768px) {
+  .education-stamp {
+    padding: 24px;
+  }
 }
 
 .education-content {
   display: flex;
   gap: 20px;
   align-items: flex-start;
+}
+
+@media (max-width: 480px) {
+  .education-content {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    text-align: center;
+  }
 }
 
 .edu-icon {
