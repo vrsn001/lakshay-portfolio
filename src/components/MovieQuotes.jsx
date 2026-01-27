@@ -116,6 +116,190 @@ const QUOTES = [
         text: "We are made of starstuff.",
         movie: "Cosmos",
         character: "Carl Sagan"
+    },
+    // Marvel Universe
+    {
+        text: "I am Iron Man.",
+        movie: "Avengers: Endgame",
+        character: "Tony Stark"
+    },
+    {
+        text: "Part of the journey is the end.",
+        movie: "Avengers: Endgame",
+        character: "Tony Stark"
+    },
+    {
+        text: "I can do this all day.",
+        movie: "Captain America: The First Avenger",
+        character: "Steve Rogers"
+    },
+    {
+        text: "Wakanda Forever!",
+        movie: "Black Panther",
+        character: "T'Challa"
+    },
+    {
+        text: "Dread it. Run from it. Destiny arrives all the same.",
+        movie: "Avengers: Infinity War",
+        character: "Thanos"
+    },
+    {
+        text: "I love you 3000.",
+        movie: "Avengers: Endgame",
+        character: "Morgan Stark"
+    },
+    {
+        text: "With great power comes great responsibility.",
+        movie: "Spider-Man",
+        character: "Uncle Ben"
+    },
+    {
+        text: "That's my secret, Captain. I'm always angry.",
+        movie: "The Avengers",
+        character: "Bruce Banner"
+    },
+
+    // DC Universe
+    {
+        text: "Why so serious?",
+        movie: "The Dark Knight",
+        character: "The Joker"
+    },
+    {
+        text: "Introduce a little anarchy. Upset the established order, and everything becomes chaos.",
+        movie: "The Dark Knight",
+        character: "The Joker"
+    },
+    {
+        text: "You either die a hero, or you live long enough to see yourself become the villain.",
+        movie: "The Dark Knight",
+        character: "Harvey Dent"
+    },
+    {
+        text: "Oh, you think darkness is your ally? But you merely adopted the dark; I was born in it, moulded by it.",
+        movie: "The Dark Knight Rises",
+        character: "Bane"
+    },
+    {
+        text: "The night is darkest just before the dawn. And I promise you, the dawn is coming.",
+        movie: "The Dark Knight",
+        character: "Harvey Dent"
+    },
+    {
+        text: "Do you bleed? You will.",
+        movie: "Batman v Superman",
+        character: "Batman"
+    },
+
+    // Pablo Escobar / Narcos
+    {
+        text: "Plata o Plomo. (Silver or Lead)",
+        movie: "Narcos",
+        character: "Pablo Escobar"
+    },
+    {
+        text: "There is a time to fight and there is a time to be clever.",
+        movie: "Narcos",
+        character: "Pablo Escobar"
+    },
+    {
+        text: "Lies are necessary when the truth is too difficult to believe.",
+        movie: "Narcos",
+        character: "Pablo Escobar"
+    },
+    {
+        text: "I am not a rich person. I am a poor person with money.",
+        movie: "Narcos",
+        character: "Pablo Escobar"
+    },
+
+    // Osho Quotes
+    {
+        text: "Life begins where fear ends.",
+        movie: "Philosophy",
+        character: "Osho"
+    },
+    {
+        text: "Be \u2014 don't try to become.",
+        movie: "Philosophy",
+        character: "Osho"
+    },
+    {
+        text: "Sadness gives depth. Happiness gives height. Sadness gives roots. Happiness gives branches.",
+        movie: "Philosophy",
+        character: "Osho"
+    },
+    {
+        text: "To be creative means to be in love with life.",
+        movie: "Philosophy",
+        character: "Osho"
+    },
+    {
+        text: "Drop the idea of becoming someone, because you are already a masterpiece.",
+        movie: "Philosophy",
+        character: "Osho"
+    },
+
+    // More Iconic & Miscellaneous
+    {
+        text: "I'm gonna make him an offer he can't refuse.",
+        movie: "The Godfather",
+        character: "Vito Corleone"
+    },
+    {
+        text: "Say hello to my little friend!",
+        movie: "Scarface",
+        character: "Tony Montana"
+    },
+    {
+        text: "Keep your friends close, but your enemies closer.",
+        movie: "The Godfather Part II",
+        character: "Michael Corleone"
+    },
+    {
+        text: "Stay hungry, stay foolish.",
+        movie: "Stanford Speech",
+        character: "Steve Jobs"
+    },
+    {
+        text: "Your time is limited, so don't waste it living someone else's life.",
+        movie: "Stanford Speech",
+        character: "Steve Jobs"
+    },
+    {
+        text: "May the Force be with you.",
+        movie: "Star Wars",
+        character: "Han Solo"
+    },
+    {
+        text: "Do, or do not. There is no try.",
+        movie: "The Empire Strikes Back",
+        character: "Yoda"
+    },
+    {
+        text: "Frankly, my dear, I don't give a damn.",
+        movie: "Gone with the Wind",
+        character: "Rhett Butler"
+    },
+    {
+        text: "Here's looking at you, kid.",
+        movie: "Casablanca",
+        character: "Rick Blaine"
+    },
+    {
+        text: "You're gonna need a bigger boat.",
+        movie: "Jaws",
+        character: "Martin Brody"
+    },
+    {
+        text: "Houston, we have a problem.",
+        movie: "Apollo 13",
+        character: "Jim Lovell"
+    },
+    {
+        text: "Carpe Diem. Seize the day, boys. Make your lives extraordinary.",
+        movie: "Dead Poets Society",
+        character: "John Keating"
     }
 ];
 
