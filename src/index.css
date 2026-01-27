@@ -1215,7 +1215,7 @@ h3:hover,
   display: inline-block;
   width: 8px;
   height: 8px;
-  background: #22c55e;
+  background: var(--stamp-gold);
   border-radius: 50%;
   position: relative;
   animation: statusPulse 2s ease-in-out infinite;
@@ -1229,7 +1229,7 @@ h3:hover,
   transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
-  background: #22c55e;
+  background: var(--stamp-gold);
   border-radius: 50%;
   animation: statusRipple 2s ease-out infinite;
 }

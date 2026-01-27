@@ -155,14 +155,9 @@ function App() {
                 <p className="hero-greeting">→ Hello, I'm</p>
                 <div className="hero-name-wrapper">
                   <span className="hero-name-hindi">लक्षय रोहिल्ला</span>
-                  <ShinyText
-                    textColor="#F5F0E1"
-                    shineColor="#C49A3C"
-                    speed={4}
-                    className="hero-name"
-                  >
+                  <span className="hero-name">
                     LAKSHAY ROHILLA
-                  </ShinyText>
+                  </span>
                 </div>
                 <p className="hero-tagline">I make brands go viral ✦</p>
                 <p className="hero-description">
@@ -179,8 +174,8 @@ function App() {
                   </a>
                   <a href="#experience" className="btn btn-secondary">View My Work</a>
                   <a
-                    href={isMobile ? "/Lakshay Rohilla Resume Mobile.pdf" : "/Lakshay Rohilla Resume.pdf"}
-                    download={isMobile ? "Lakshay Rohilla Resume Mobile.pdf" : "Lakshay Rohilla Resume.pdf"}
+                    href={isMobile ? "/Lakshay Rohilla Resume Mobile.pdf" : "/Lakshay_Rohilla_Resume.pdf"}
+                    download={isMobile ? "Lakshay Rohilla Resume Mobile.pdf" : "Lakshay_Rohilla_Resume.pdf"}
                     className="btn btn-secondary btn-resume"
                   >
                     <Download size={16} /> Resume
