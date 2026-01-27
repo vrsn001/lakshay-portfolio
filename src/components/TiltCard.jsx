@@ -36,6 +36,10 @@ export default function TiltCard({ children, className = "" }) {
         y.set(0);
     };
 
+    if (isTouch) {
+        return <div className={className}>{children}</div>;
+    }
+
     return (
         <motion.div
             ref={ref}

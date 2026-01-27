@@ -32,7 +32,14 @@ const LogoLoop = ({
             scrollPosition = -resetPoint();
         }
 
+        let isVisible = false;
+
         const animate = () => {
+            if (!isVisible) {
+                animationRef.current = null;
+                return;
+            }
+
             scrollPosition += (isLeft ? -1 : 1) * (currentSpeed / 60);
             const currentResetPoint = resetPoint();
 
@@ -57,13 +64,23 @@ const LogoLoop = ({
             currentSpeed = speed;
         };
 
+        const observer = new IntersectionObserver((entries) => {
+            const entry = entries[0];
+            isVisible = entry.isIntersecting;
+
+            if (isVisible && !animationRef.current) {
+                animationRef.current = requestAnimationFrame(animate);
+            }
+        }, { threshold: 0.1 });
+
+        observer.observe(container);
         container.addEventListener('mouseenter', handleMouseEnter);
         container.addEventListener('mouseleave', handleMouseLeave);
-        animationRef.current = requestAnimationFrame(animate);
 
         return () => {
             container.removeEventListener('mouseenter', handleMouseEnter);
             container.removeEventListener('mouseleave', handleMouseLeave);
+            observer.disconnect();
             if (animationRef.current) {
                 cancelAnimationFrame(animationRef.current);
             }

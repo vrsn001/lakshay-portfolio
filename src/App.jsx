@@ -151,7 +151,7 @@ function App() {
 
   return (
     <div className="app">
-      <div className="grain-overlay"></div>
+      {!isMobile && <div className="grain-overlay"></div>}
       <div className="content">
         <CustomCursor />
 
