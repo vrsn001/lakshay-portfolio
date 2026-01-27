@@ -475,7 +475,7 @@ body {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 64px;
   font-weight: 400;
-  color: var(--stamp-black);
+  color: var(--stamp-red);
   line-height: 1;
   letter-spacing: 4px;
   display: block;
