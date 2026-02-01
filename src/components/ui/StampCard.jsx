@@ -1,5 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
+
+// Generate barcode data - called only during useState initialization
+let barcodeCounter = 0;
+const generateBarcodeData = () => {
+    barcodeCounter++;
+    const seed = barcodeCounter;
+    const widths = [...Array(20)].map((_, i) => ((seed * 17 + i * 13) % 20) / 10 + 1);
+    const number = String(seed * 1234 % 9999).padStart(4, '0');
+    return { widths, number };
+};
 
 /**
  * StampCard Component
@@ -34,6 +44,10 @@ export function StampCard({
 
     const v = variants[variant];
 
+    // Use lazy state initialization for barcode data
+    const [barcodeData] = useState(generateBarcodeData);
+    const { widths: barcodeWidths, number: barcodeNumber } = barcodeData;
+
     return (
         <div
             className={cn('stamp-card', `stamp-card--${variant}`, className)}
@@ -67,19 +81,19 @@ export function StampCard({
             {showBarcode && (
                 <div className="stamp-barcode">
                     <div className="barcode-lines">
-                        {[...Array(20)].map((_, i) => (
+                        {barcodeWidths.map((width, i) => (
                             <div
                                 key={i}
                                 className="barcode-line"
                                 style={{
-                                    width: `${Math.random() * 2 + 1}px`,
+                                    width: `${width}px`,
                                     height: '100%',
                                     background: 'var(--stamp-black)',
                                 }}
                             />
                         ))}
                     </div>
-                    <span className="barcode-text">LR-2026-{Math.floor(Math.random() * 9999).toString().padStart(4, '0')}</span>
+                    <span className="barcode-text">LR-2026-{barcodeNumber}</span>
                 </div>
             )}
 

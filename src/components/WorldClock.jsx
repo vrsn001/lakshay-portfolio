@@ -1,22 +1,24 @@
 import { useState, useEffect } from 'react';
 
+// Compute timezone once at module load
+const getVisitorTimezone = () => {
+    try {
+        return Intl.DateTimeFormat().resolvedOptions().timeZone.replace(/_/g, ' ');
+    } catch {
+        return 'Local Time';
+    }
+};
+const VISITOR_TIMEZONE = getVisitorTimezone();
+
 export default function WorldClock() {
     const [time, setTime] = useState(new Date());
-    const [visitorTimezone, setVisitorTimezone] = useState('');
+    const visitorTimezone = VISITOR_TIMEZONE;
 
     useEffect(() => {
         // Update time every second
         const timer = setInterval(() => {
             setTime(new Date());
         }, 1000);
-
-        // Get visitor's timezone
-        try {
-            const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
-            setVisitorTimezone(tz.replace(/_/g, ' '));
-        } catch {
-            setVisitorTimezone('Local Time');
-        }
 
         return () => clearInterval(timer);
     }, []);

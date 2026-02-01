@@ -11,7 +11,6 @@ import ParallaxElement from './components/ParallaxElement'
 import TiltCard from './components/TiltCard'
 import TypewriterText from './components/TypewriterText'
 import { StampCard } from '@/components/ui/StampCard'
-import { motion } from 'motion/react'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/react'
 import { FaXTwitter, FaDiscord, FaGithub, FaThreads, FaLinkedinIn, FaInstagram, FaYoutube } from 'react-icons/fa6'
@@ -40,10 +39,7 @@ import CustomCursor from './components/CustomCursor'
 import MovieQuotes from './components/MovieQuotes'
 
 // Import photos
-import profilePhoto from './assets/lakshay_photo.png'
-import profilePhotoStamp from './assets/lakshay_photo_stamp.png'
 import profilePhotoCandid from './assets/lakshay_photo_candid.png'
-import wlddBrands from './assets/wldd_brands.png'
 
 function App() {
   const [countersStarted, setCountersStarted] = useState(false)

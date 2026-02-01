@@ -63,7 +63,6 @@ function initNavigation() {
     });
 
     // Navbar scroll effect
-    let lastScroll = 0;
     window.addEventListener('scroll', () => {
         const currentScroll = window.pageYOffset;
 
@@ -72,8 +71,6 @@ function initNavigation() {
         } else {
             nav.style.boxShadow = 'none';
         }
-
-        lastScroll = currentScroll;
     });
 
     // Smooth scroll for anchor links
@@ -250,7 +247,7 @@ function initParticles() {
 // ===================================
 
 document.querySelectorAll('.contact-link[href^="mailto:"]').forEach(link => {
-    link.addEventListener('click', (e) => {
+    link.addEventListener('click', () => {
         const email = link.getAttribute('href').replace('mailto:', '');
 
         // Try to copy to clipboard
