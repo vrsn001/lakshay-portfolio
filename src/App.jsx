@@ -122,7 +122,7 @@ function App() {
 
   // Scroll reveal animation observer
   useEffect(() => {
-    const revealElements = document.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right')
+    const revealElements = document.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .timeline-item')
 
     const revealObserver = new IntersectionObserver(
       (entries) => {
@@ -609,7 +609,7 @@ function TimelineItem({ number, date, title, company, companyUrl, type, location
         stampNumber={number}
         postmark={postmarkCity && (
           <ParallaxElement offset={30} style={{ position: 'absolute', top: '10px', right: '10px', zIndex: 1 }}>
-            <div className="postmark" style={{ transform: 'rotate(-15deg) scale(0.8)', opacity: 0.4 }}>
+            <div className="postmark">
               <div className="postmark-inner"></div>
               <div className="postmark-city">{postmarkCity}</div>
               <div className="postmark-date">{postmarkDate}</div>
