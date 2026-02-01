@@ -59,7 +59,7 @@ export default function CustomCursor() {
         // Animation loop for smooth inertia
         const loop = () => {
             // Lerp factor (0.1 = slow/smooth, 0.5 = fast)
-            const ease = 0.15;
+            const ease = 0.28;
 
             const dx = mousePosition.current.x - cursorPosition.current.x;
             const dy = mousePosition.current.y - cursorPosition.current.y;
