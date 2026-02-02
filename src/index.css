@@ -2,7 +2,7 @@
    CSS Variables - STAMP/POSTAL TYPOGRAPHY THEME
    =================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:wght@400&family=Playfair+Display:wght@400;700;900&family=Space+Mono:wght@400;700&family=Bebas+Neue&display=swap');
+/* Fonts loaded via index.html <link> tags with preconnect for better performance */
 
 :root {
   /* Stamp/Postal Color Palette */
@@ -305,8 +305,21 @@ body {
   overflow: visible;
 }
 
-/* Envelope flap effect */
+/* Envelope flap effect - DISABLED by default */
 .stamp-card::after {
+  content: none;
+  /* Disabled globally */
+}
+
+.stamp-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.15),
+    0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Envelope flap effect - ENABLED only on Work Experience cards */
+.timeline-item .stamp-card::after {
   content: '';
   position: absolute;
   top: -2px;
@@ -323,14 +336,7 @@ body {
   pointer-events: none;
 }
 
-.stamp-card:hover {
-  transform: translateY(-6px);
-  box-shadow:
-    0 8px 20px rgba(0, 0, 0, 0.15),
-    0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.stamp-card:hover::after {
+.timeline-item .stamp-card:hover::after {
   opacity: 1;
   transform: translateX(-50%) rotateX(180deg) translateY(8px);
 }

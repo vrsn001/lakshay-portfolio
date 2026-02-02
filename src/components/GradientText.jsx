@@ -14,14 +14,37 @@ export default function GradientText({
     yoyo = true
 }) {
     const [isPaused, setIsPaused] = useState(false);
+    const [isInView, setIsInView] = useState(false);
+    const containerRef = useRef(null);
     const progress = useMotionValue(0);
     const elapsedRef = useRef(0);
     const lastTimeRef = useRef(null);
 
     const animationDuration = animationSpeed * 1000;
 
+    // Viewport awareness - only animate when visible
+    useEffect(() => {
+        const element = containerRef.current;
+        if (!element) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsInView(entry.isIntersecting);
+                // Reset timing when coming back into view
+                if (entry.isIntersecting) {
+                    lastTimeRef.current = null;
+                }
+            },
+            { threshold: 0.1 }
+        );
+
+        observer.observe(element);
+        return () => observer.disconnect();
+    }, []);
+
     useAnimationFrame(time => {
-        if (isPaused) {
+        // Skip animation if not in viewport or paused
+        if (isPaused || !isInView) {
             lastTimeRef.current = null;
             return;
         }
@@ -84,6 +107,7 @@ export default function GradientText({
 
     return (
         <motion.div
+            ref={containerRef}
             className={`animated-gradient-text ${showBorder ? 'with-border' : ''} ${className}`}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}

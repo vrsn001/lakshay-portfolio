@@ -247,7 +247,7 @@ function App() {
             <h2 className="section-title scroll-reveal">
               <span className="title-text">
                 <span className="title-hindi">परिचय</span>
-                <SplitText text="ABOUT ME" animation="fadeUp" />
+                <SplitText text="ABOUT ME" animation="fadeUp" splitBy="word" />
               </span>
             </h2>
             <div className="about-content">
@@ -314,7 +314,7 @@ function App() {
             <h2 className="section-title scroll-reveal">
               <span className="title-text">
                 <span className="title-hindi">अनुभव</span>
-                <SplitText text="WORK EXPERIENCE" animation="fadeUp" />
+                <SplitText text="WORK EXPERIENCE" animation="fadeUp" splitBy="word" />
               </span>
             </h2>
             <div className="timeline">
@@ -400,7 +400,7 @@ function App() {
             <h2 className="section-title scroll-reveal">
               <span className="title-text">
                 <span className="title-hindi">कौशल</span>
-                <SplitText text="SKILLS & PLATFORMS" animation="fadeUp" />
+                <SplitText text="SKILLS & PLATFORMS" animation="fadeUp" splitBy="word" />
               </span>
             </h2>
             <div className="skills-grid">
@@ -438,7 +438,7 @@ function App() {
             <h2 className="section-title scroll-reveal">
               <span className="title-text">
                 <span className="title-hindi">शिक्षा</span>
-                <SplitText text="EDUCATION" animation="fadeUp" />
+                <SplitText text="EDUCATION" animation="fadeUp" splitBy="word" />
               </span>
             </h2>
             <div className="education-grid">
@@ -471,7 +471,7 @@ function App() {
             <h2 className="section-title scroll-reveal">
               <span className="title-text">
                 <span className="title-hindi">संपर्क</span>
-                <SplitText text="LET'S CONNECT" animation="fadeUp" />
+                <SplitText text="LET'S CONNECT" animation="fadeUp" splitBy="word" />
               </span>
             </h2>
             <div className="contact-content">

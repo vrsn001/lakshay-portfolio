@@ -12,17 +12,21 @@ export default function SplitText({
     duration = 0.5,
     staggerChildren = 0.05,
     once = true,
-    animation = 'fadeUp' // 'fadeUp', 'fadeIn', 'slideIn'
+    animation = 'fadeUp', // 'fadeUp', 'fadeIn', 'slideIn'
+    splitBy = 'letter' // 'letter' or 'word' - words = fewer DOM elements = better perf
 }) {
     const ref = useRef(null);
     const isInView = useInView(ref, { once, margin: '-50px' });
 
     const content = text || children;
 
-    const letters = useMemo(() => {
+    const segments = useMemo(() => {
         if (typeof content !== 'string') return [];
+        if (splitBy === 'word') {
+            return content.split(' ');
+        }
         return content.split('');
-    }, [content]);
+    }, [content, splitBy]);
 
     const getAnimation = () => {
         switch (animation) {
@@ -55,13 +59,13 @@ export default function SplitText({
         hidden: {},
         visible: {
             transition: {
-                staggerChildren,
+                staggerChildren: splitBy === 'word' ? staggerChildren * 2 : staggerChildren,
                 delayChildren: delay
             }
         }
     };
 
-    const letterVariants = {
+    const segmentVariants = {
         hidden: variants.hidden,
         visible: {
             ...variants.visible,
@@ -82,16 +86,20 @@ export default function SplitText({
             aria-label={content}
             style={{ display: 'inline-block' }}
         >
-            {letters.map((letter, index) => (
+            {segments.map((segment, index) => (
                 <motion.span
                     key={index}
-                    variants={letterVariants}
+                    variants={segmentVariants}
                     style={{
                         display: 'inline-block',
-                        whiteSpace: letter === ' ' ? 'pre' : 'normal'
+                        whiteSpace: segment === ' ' ? 'pre' : 'normal',
+                        willChange: 'transform, opacity' // GPU acceleration hint
                     }}
                 >
-                    {letter === ' ' ? '\u00A0' : letter}
+                    {splitBy === 'word'
+                        ? (index < segments.length - 1 ? segment + '\u00A0' : segment)
+                        : (segment === ' ' ? '\u00A0' : segment)
+                    }
                 </motion.span>
             ))}
         </motion.span>
