@@ -2060,10 +2060,63 @@ h3:hover,
   }
 }
 
+/* ===================================
+   COMPREHENSIVE MOBILE OPTIMIZATION
+   Covers all Android (Xiaomi, Samsung, Motorola, Vivo, Oppo, iQOO, OnePlus, Realme, Nothing)
+   and iOS (iPhone SE to iPhone 16 Pro Max) devices
+   =================================== */
+
+/* Touch Device Optimizations - Disable hover effects */
+@media (hover: none) and (pointer: coarse) {
+
+  /* Disable hover transforms on touch devices */
+  .stamp-card:hover,
+  .btn:hover,
+  .skill-item:hover,
+  .expertise-item:hover,
+  .stat-item:hover,
+  .timeline-item:hover .timeline-stamp,
+  .campaign-pill:hover {
+    transform: none;
+  }
+
+  /* Disable ink bleed effect on touch */
+  h1:hover,
+  h2:hover,
+  h3:hover,
+  .stat-number:hover,
+  .hero-name:hover,
+  .nav-logo:hover {
+    filter: none;
+    text-shadow: none;
+    transform: none;
+  }
+
+  /* Ensure smooth scrolling works on touch */
+  html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* ===================================
+   TABLETS & LARGE PHONES (max-width: 900px)
+   Samsung Galaxy S Ultra, iPhone Plus/Max models
+   =================================== */
 @media (max-width: 900px) {
   .hero-content {
     grid-template-columns: 1fr;
     text-align: center;
+    gap: 40px;
+  }
+
+  /* Photo first on mobile (flex order) */
+  .hero-stamp-wrapper {
+    order: -1;
+  }
+
+  .hero-photo-styled {
+    max-width: 280px;
   }
 
   .hero-text {
@@ -2072,20 +2125,33 @@ h3:hover,
 
   .hero-cta {
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
   }
 
   .about-content,
   .skills-grid,
   .education-grid {
     grid-template-columns: 1fr;
+    gap: 24px;
   }
 
   .stats-container {
     grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 0 16px;
   }
 
   .nav-menu {
     display: none;
+  }
+
+  .nav-logo {
+    font-size: 28px;
+  }
+
+  .nav-logo-hindi {
+    font-size: 22px;
   }
 
   .hero-name-hindi {
@@ -2094,27 +2160,799 @@ h3:hover,
 
   .hero-name {
     font-size: 42px;
+    letter-spacing: 2px;
+  }
+
+  .hero-tagline {
+    font-size: 22px;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .section-title {
+    margin-bottom: 40px;
+    gap: 16px;
+  }
+
+  .title-text {
+    font-size: 36px;
+    letter-spacing: 4px;
+  }
+
+  .title-hindi {
+    font-size: 28px;
+  }
+
+  /* Postmarks smaller on tablets */
+  .postmark {
+    width: 120px;
+    height: 120px;
+    opacity: 0.3;
+  }
+
+  .postmark-city {
+    font-size: 12px;
+  }
+
+  .postmark-date {
+    font-size: 8px;
+  }
+
+  .postmark-note {
+    font-size: 9px;
   }
 }
 
-@media (max-width: 600px) {
-  .stats-container {
-    grid-template-columns: 1fr 1fr;
+/* ===================================
+   MEDIUM PHONES (max-width: 768px)
+   iPhone 14/15/16, Samsung Galaxy S, Xiaomi 13/14, Pixel 8
+   =================================== */
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding: 100px 0 60px;
   }
 
-  .skill-items {
-    grid-template-columns: repeat(2, 1fr);
+  .hero-photo-styled {
+    max-width: 220px;
   }
 
+  .hero-greeting {
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+
+  .hero-name-hindi {
+    font-size: 40px;
+  }
+
+  .hero-name {
+    font-size: 36px;
+    letter-spacing: 2px;
+  }
+
+  .hero-tagline {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+
+  .hero-description {
+    font-size: 13px;
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  /* Buttons - full width and taller for touch */
+  .hero-cta {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .hero-cta .btn {
+    width: 100%;
+    justify-content: center;
+    min-height: 48px;
+    /* Touch-friendly 48px height */
+    font-size: 11px;
+  }
+
+  .btn {
+    padding: 14px 24px;
+    min-height: 44px;
+    /* iOS HIG minimum touch target */
+  }
+
+  .nav-container {
+    height: 60px;
+    padding: 0 16px;
+  }
+
+  .nav-logo {
+    font-size: 24px;
+  }
+
+  .nav-logo-hindi {
+    font-size: 18px;
+  }
+
+  /* Stats */
+  .stats {
+    padding: 40px 0;
+  }
+
+  .stat-number-wrapper {
+    font-size: 48px;
+  }
+
+  .stat-number,
+  .stat-number .text-content {
+    font-size: 48px !important;
+  }
+
+  .stat-suffix {
+    font-size: 24px;
+  }
+
+  .stat-item {
+    padding: 16px 8px;
+  }
+
+  /* Timeline */
   .timeline {
     padding-left: 40px;
   }
 
   .timeline-marker {
     left: -32px;
+    width: 24px;
+    height: 24px;
+    font-size: 9px;
+  }
+
+  .timeline-stamp {
+    padding: 20px;
+  }
+
+  .timeline-title {
+    font-size: 22px;
+    letter-spacing: 1px;
+  }
+
+  /* Hide postmarks on mobile */
+  .postmark {
+    display: none;
+  }
+
+  /* Skills */
+  .skill-items {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .skill-item {
+    padding: 12px 8px;
+  }
+
+  .skill-icon {
+    font-size: 24px;
+  }
+
+  .skill-name {
+    font-size: 8px;
+  }
+
+  /* Contact */
+  .contact-stamp {
+    padding: 32px 20px;
+  }
+
+  .contact-note {
+    font-size: 20px;
+  }
+
+  .contact-link {
+    padding: 14px 16px;
+    font-size: 12px;
+    min-height: 48px;
+  }
+
+  /* Folder tabs smaller */
+  .timeline-item .stamp-card::before {
+    font-size: 9px;
+    padding: 4px 16px 0 12px;
+    height: 26px;
+    width: 110px;
+  }
+
+  .timeline-item .stamp-card {
+    padding-top: 35px;
+  }
+}
+
+/* ===================================
+   SMALL-MEDIUM PHONES (max-width: 600px)
+   iPhone 12 Mini, Samsung Galaxy A series, Xiaomi Redmi, Motorola G
+   =================================== */
+@media (max-width: 600px) {
+  .hero-photo-styled {
+    max-width: 180px;
+  }
+
+  .hero-name-hindi {
+    font-size: 36px;
+  }
+
+  .hero-name {
+    font-size: 32px;
+  }
+
+  .hero-tagline {
+    font-size: 16px;
+  }
+
+  .hero-description {
+    font-size: 12px;
+  }
+
+  .section-title::before,
+  .section-title::after {
+    max-width: 50px;
+  }
+
+  .title-text {
+    font-size: 28px;
+    letter-spacing: 3px;
+  }
+
+  .title-hindi {
+    font-size: 22px;
+  }
+
+  /* Stats 2-column compact */
+  .stats-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .stat-number-wrapper {
+    font-size: 40px;
+  }
+
+  .stat-number,
+  .stat-number .text-content {
+    font-size: 40px !important;
+  }
+
+  .stat-suffix {
+    font-size: 20px;
+  }
+
+  .stat-label {
+    font-size: 8px;
+    letter-spacing: 2px;
+  }
+
+  /* About section */
+  .about-stamp {
+    padding: 20px 16px;
+  }
+
+  .about-note {
+    font-size: 16px;
+    padding: 16px 20px;
+  }
+
+  .about-text p {
+    font-size: 13px;
+  }
+
+  .expertise-grid {
+    gap: 8px;
+  }
+
+  .expertise-item {
+    padding: 10px 12px;
+    font-size: 10px;
+  }
+
+  /* Timeline more compact */
+  .timeline {
+    padding-left: 32px;
+  }
+
+  .timeline::before {
+    left: 12px;
+    width: 3px;
+  }
+
+  .timeline-marker {
+    left: -26px;
     width: 20px;
     height: 20px;
     font-size: 8px;
+    border-width: 3px;
+  }
+
+  .timeline-stamp {
+    padding: 16px;
+  }
+
+  .timeline-title {
+    font-size: 20px;
+  }
+
+  .timeline-bullets li {
+    font-size: 12px;
+    padding-left: 16px;
+  }
+
+  /* Education */
+  .education-stamp {
+    padding: 20px 16px;
+  }
+
+  .edu-degree {
+    font-size: 20px;
+  }
+
+  .cert-content {
+    font-size: 18px;
+    gap: 12px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* Social links */
+  .social-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .social-link {
+    width: 100%;
+    max-width: 220px;
+    justify-content: center;
+    min-height: 48px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 24px 16px;
+  }
+
+  .footer-text {
+    font-size: 10px;
+  }
+
+  /* Scroll top button */
+  .scroll-top-btn {
+    right: 16px;
+    bottom: 24px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* ===================================
+   SMALL PHONES (max-width: 480px)
+   iPhone SE, Samsung Galaxy A03, Xiaomi Redmi 9A, older devices
+   =================================== */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .hero {
+    padding: 90px 0 40px;
+  }
+
+  .hero-photo-styled {
+    max-width: 160px;
+  }
+
+  .hero-greeting {
+    font-size: 10px;
+    margin-bottom: 12px;
+  }
+
+  .hero-name-hindi {
+    font-size: 32px;
+  }
+
+  .hero-name {
+    font-size: 28px;
+    letter-spacing: 1px;
+  }
+
+  .hero-tagline {
+    font-size: 14px;
+  }
+
+  .hero-description {
+    font-size: 11px;
+    line-height: 1.6;
+  }
+
+  .highlight {
+    padding: 1px 4px;
+    font-size: 10px;
+  }
+
+  .nav-container {
+    height: 56px;
+    padding: 0 12px;
+  }
+
+  .nav-logo {
+    font-size: 22px;
+    gap: 4px;
+  }
+
+  .nav-logo-hindi {
+    font-size: 16px;
+  }
+
+  .theme-toggle {
+    padding: 8px 10px;
+    font-size: 16px;
+  }
+
+  .section {
+    padding: 40px 0;
+  }
+
+  .section-title {
+    margin-bottom: 30px;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .section-title::before,
+  .section-title::after {
+    width: 60px;
+    max-width: 60px;
+    flex: none;
+  }
+
+  .title-text {
+    font-size: 24px;
+    letter-spacing: 2px;
+    white-space: normal;
+    line-height: 1.2;
+  }
+
+  .title-hindi {
+    font-size: 18px;
+  }
+
+  /* Stats */
+  .stats {
+    padding: 30px 0;
+  }
+
+  .stats-container {
+    gap: 10px;
+    padding: 0 12px;
+  }
+
+  .stat-item {
+    padding: 12px 6px;
+    border-width: 1px;
+  }
+
+  .stat-number-wrapper {
+    font-size: 32px;
+  }
+
+  .stat-number,
+  .stat-number .text-content {
+    font-size: 32px !important;
+  }
+
+  .stat-suffix {
+    font-size: 16px;
+  }
+
+  .stat-label {
+    font-size: 7px;
+    letter-spacing: 1px;
+    margin-top: 4px;
+  }
+
+  /* Timeline */
+  .timeline-item {
+    margin-bottom: 32px;
+  }
+
+  .timeline-stamp {
+    padding: 14px 12px;
+  }
+
+  .timeline-date {
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+
+  .timeline-title {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+
+  .timeline-company {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .company-name {
+    font-size: 11px;
+  }
+
+  .job-type {
+    font-size: 8px;
+    padding: 3px 8px;
+  }
+
+  .timeline-location {
+    font-size: 10px;
+    margin-bottom: 12px;
+  }
+
+  .timeline-bullets li {
+    font-size: 11px;
+    line-height: 1.6;
+    margin-bottom: 6px;
+    padding-left: 14px;
+  }
+
+  /* Folder tab smaller */
+  .timeline-item .stamp-card::before {
+    font-size: 8px;
+    padding: 3px 12px 0 8px;
+    height: 22px;
+    width: 90px;
+  }
+
+  .timeline-item .stamp-card {
+    padding-top: 28px;
+  }
+
+  /* Skills */
+  .skills-category {
+    padding: 16px;
+  }
+
+  .skills-category h3 {
+    font-size: 22px;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+
+  .skill-items {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+
+  .skill-item {
+    padding: 10px 6px;
+    border-width: 1px;
+  }
+
+  .skill-icon {
+    font-size: 20px;
+    margin-bottom: 4px;
+  }
+
+  .skill-name {
+    font-size: 7px;
+    letter-spacing: 0.5px;
+  }
+
+  /* About */
+  .about-stamp {
+    padding: 16px 12px;
+  }
+
+  .about-note {
+    font-size: 14px;
+    padding: 12px 16px;
+    border-left-width: 3px;
+  }
+
+  .about-text p {
+    font-size: 12px;
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .expertise-item {
+    padding: 8px 10px;
+    font-size: 9px;
+    gap: 8px;
+  }
+
+  .expertise-icon {
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+  }
+
+  /* Education */
+  .education-stamp {
+    padding: 16px 12px;
+  }
+
+  .edu-icon svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .edu-year {
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+
+  .edu-degree {
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+
+  .edu-school {
+    font-size: 11px;
+  }
+
+  .edu-location {
+    font-size: 10px;
+  }
+
+  .cert-stamp {
+    padding: 20px 12px;
+  }
+
+  .cert-content {
+    font-size: 16px;
+    letter-spacing: 2px;
+    gap: 8px;
+  }
+
+  /* Contact */
+  .contact-section {
+    padding: 50px 0;
+  }
+
+  .contact-stamp {
+    padding: 24px 16px;
+  }
+
+  .contact-note {
+    font-size: 18px;
+    margin-bottom: 24px;
+  }
+
+  .contact-links {
+    margin-bottom: 24px;
+  }
+
+  .contact-link {
+    padding: 12px 14px;
+    font-size: 11px;
+    gap: 10px;
+    min-height: 44px;
+  }
+
+  .contact-booking-buttons .btn {
+    font-size: 10px;
+    padding: 12px 16px;
+  }
+
+  /* Social */
+  .social-section {
+    margin-top: 24px;
+    padding-top: 20px;
+  }
+
+  .social-title {
+    font-size: 9px;
+    letter-spacing: 3px;
+  }
+
+  .social-link {
+    padding: 10px 16px;
+    font-size: 11px;
+    max-width: 200px;
+    min-height: 44px;
+  }
+
+  .social-icon {
+    font-size: 16px;
+  }
+
+  /* World Clock */
+  .world-clock {
+    gap: 16px;
+    padding: 16px 0;
+    flex-wrap: wrap;
+  }
+
+  .clock-time {
+    font-size: 20px;
+  }
+
+  .clock-city {
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+
+  .clock-divider {
+    font-size: 12px;
+  }
+}
+
+/* ===================================
+   EXTRA SMALL PHONES (max-width: 360px)
+   Very small or older budget phones
+   =================================== */
+@media (max-width: 360px) {
+  .container {
+    padding: 0 12px;
+  }
+
+  .hero-photo-styled {
+    max-width: 140px;
+  }
+
+  .hero-name-hindi {
+    font-size: 28px;
+  }
+
+  .hero-name {
+    font-size: 24px;
+  }
+
+  .hero-tagline {
+    font-size: 13px;
+  }
+
+  .hero-description {
+    font-size: 10px;
+  }
+
+  .title-text {
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+
+  .title-hindi {
+    font-size: 16px;
+  }
+
+  .stat-number-wrapper {
+    font-size: 28px;
+  }
+
+  .stat-number,
+  .stat-number .text-content {
+    font-size: 28px !important;
+  }
+
+  .stat-suffix {
+    font-size: 14px;
+  }
+
+  .timeline-title {
+    font-size: 16px;
+  }
+
+  .btn {
+    padding: 12px 16px;
+    font-size: 10px;
+    letter-spacing: 1px;
   }
 }
 

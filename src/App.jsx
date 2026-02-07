@@ -36,6 +36,8 @@ import WorldClock from './components/WorldClock'
 import './index.css'
 import WavyDivider from './components/WavyDivider'
 import CustomCursor from './components/CustomCursor'
+import MouseSpotlight from './components/MouseSpotlight'
+import InkSplatter from './components/InkSplatter'
 import MovieQuotes from './components/MovieQuotes'
 
 // Import photos
@@ -150,6 +152,8 @@ function App() {
       {!isMobile && <div className="grain-overlay"></div>}
       <div className="content">
         <CustomCursor />
+        <MouseSpotlight />
+        <InkSplatter />
 
         {/* Navigation */}
         <nav className="nav">

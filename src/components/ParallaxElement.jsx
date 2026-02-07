@@ -12,7 +12,7 @@ export default function ParallaxElement({ children, offset = 50, className = "",
     const y = useTransform(scrollYProgress, [0, 1], [-offset, offset]);
 
     return (
-        <motion.div ref={ref} style={{ y, ...style }} className={className}>
+        <motion.div ref={ref} style={{ position: 'relative', y, ...style }} className={className}>
             {children}
         </motion.div>
     );
