@@ -73,10 +73,10 @@ export default function CampaignLogoLoop() {
             {/* Row 1 */}
             <LogoLoop
                 logos={brandLogos}
-                speed={80}
+                speed={120}
                 direction="left"
                 gap={32}
-                hoverSpeed={20}
+                hoverSpeed={30}
                 scaleOnHover
                 ariaLabel="Brands worked with"
             />
@@ -84,10 +84,10 @@ export default function CampaignLogoLoop() {
             {/* Row 2 (reverse for premium feel) */}
             <LogoLoop
                 logos={brandLogos}
-                speed={60}
+                speed={100}
                 direction="right"
                 gap={32}
-                hoverSpeed={15}
+                hoverSpeed={25}
                 scaleOnHover
                 ariaLabel="Brands worked with"
             />

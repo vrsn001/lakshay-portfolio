@@ -39,12 +39,8 @@ export default function MouseSpotlight() {
             spotlightPosition.current.x += dx * ease;
             spotlightPosition.current.y += dy * ease;
 
-            spotlight.style.background = `radial-gradient(
-                600px circle at ${spotlightPosition.current.x}px ${spotlightPosition.current.y}px,
-                rgba(196, 154, 60, 0.25),
-                rgba(196, 154, 60, 0.12) 40%,
-                transparent 70%
-            )`;
+            // Use GPU-composited transform instead of background
+            spotlight.style.transform = `translate3d(${spotlightPosition.current.x - 300}px, ${spotlightPosition.current.y - 300}px, 0)`;
 
             animationFrameId = requestAnimationFrame(loop);
         };
@@ -66,10 +62,15 @@ export default function MouseSpotlight() {
             ref={spotlightRef}
             style={{
                 position: 'fixed',
-                inset: 0,
+                top: 0,
+                left: 0,
+                width: '600px',
+                height: '600px',
                 pointerEvents: 'none',
                 zIndex: 2,
-                willChange: 'background',
+                willChange: 'transform',
+                background: 'radial-gradient(300px circle at center, rgba(196, 154, 60, 0.25), rgba(196, 154, 60, 0.12) 40%, transparent 70%)',
+                borderRadius: '50%',
             }}
             aria-hidden="true"
         />

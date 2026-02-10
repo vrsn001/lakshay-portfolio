@@ -54,12 +54,12 @@ export default function CustomCursor() {
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
-                    if (entry.isIntersecting && entry.intersectionRatio >= 0.3) {
+                    if (entry.isIntersecting && entry.intersectionRatio >= 0.15) {
                         setCurrentSection(entry.target.id);
                     }
                 });
             },
-            { threshold: [0.3, 0.5, 0.7], rootMargin: '-100px 0px -100px 0px' }
+            { threshold: [0.15, 0.3, 0.5], rootMargin: '-40px 0px -40px 0px' }
         );
 
         sectionElements.forEach((el) => observer.observe(el));
@@ -103,7 +103,7 @@ export default function CustomCursor() {
         };
 
         const loop = () => {
-            const ease = 0.28;
+            const ease = 0.45;
             cursorPosition.current.x += (mousePosition.current.x - cursorPosition.current.x) * ease;
             cursorPosition.current.y += (mousePosition.current.y - cursorPosition.current.y) * ease;
             cursor.style.transform = `translate3d(${cursorPosition.current.x}px, ${cursorPosition.current.y}px, 0)`;
