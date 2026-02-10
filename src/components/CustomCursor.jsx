@@ -12,23 +12,23 @@ const isTouchDevice = () => {
 const CURSOR_ICONS = {
     default: {
         viewBox: "0 0 24 24",
-        path: <><path d="M12 2L2 22L12 18L22 22L12 2Z" fill="#F5F0E1" stroke="#F5F0E1" strokeWidth="1" /><path d="M12 2V18" stroke="#000" strokeWidth="1" /></>
+        path: <><path d="M12 2L2 22L12 18L22 22L12 2Z" fill="currentColor" stroke="currentColor" strokeWidth="1" /><path d="M12 2V18" stroke="rgba(0,0,0,0.4)" strokeWidth="1" /></>
     },
     experience: {
         viewBox: "0 0 24 24",
-        path: <><path d="M3 6C3 4.89543 3.89543 4 5 4H9L11 6H19C20.1046 6 21 6.89543 21 8V18C21 19.1046 20.1046 20 19 20H5C3.89543 20 3 19.1046 3 18V6Z" fill="#F5F0E1" stroke="#F5F0E1" strokeWidth="1" /><path d="M3 8H21" stroke="#000" strokeWidth="1" /></>
+        path: <><path d="M3 6C3 4.89543 3.89543 4 5 4H9L11 6H19C20.1046 6 21 6.89543 21 8V18C21 19.1046 20.1046 20 19 20H5C3.89543 20 3 19.1046 3 18V6Z" fill="currentColor" stroke="currentColor" strokeWidth="1" /><path d="M3 8H21" stroke="rgba(0,0,0,0.4)" strokeWidth="1" /></>
     },
     contact: {
         viewBox: "0 0 24 24",
-        path: <><path d="M3 7C3 5.89543 3.89543 5 5 5H19C20.1046 5 21 5.89543 21 7V17C21 18.1046 20.1046 19 19 19H5C3.89543 19 3 18.1046 3 17V7Z" fill="#F5F0E1" stroke="#F5F0E1" strokeWidth="1" /><path d="M3 7L12 13L21 7" stroke="#000" strokeWidth="1" /></>
+        path: <><path d="M3 7C3 5.89543 3.89543 5 5 5H19C20.1046 5 21 5.89543 21 7V17C21 18.1046 20.1046 19 19 19H5C3.89543 19 3 18.1046 3 17V7Z" fill="currentColor" stroke="currentColor" strokeWidth="1" /><path d="M3 7L12 13L21 7" stroke="rgba(0,0,0,0.4)" strokeWidth="1" /></>
     },
     skills: {
         viewBox: "0 0 24 24",
-        path: <><path d="M4 4H12L20 12L12 20L4 12V4Z" fill="#F5F0E1" stroke="#F5F0E1" strokeWidth="1" /><circle cx="8" cy="8" r="1.5" fill="#000" /></>
+        path: <><path d="M4 4H12L20 12L12 20L4 12V4Z" fill="currentColor" stroke="currentColor" strokeWidth="1" /><circle cx="8" cy="8" r="1.5" fill="rgba(0,0,0,0.4)" /></>
     },
     education: {
         viewBox: "0 0 24 24",
-        path: <><path d="M12 3L2 8L12 13L22 8L12 3Z" fill="#F5F0E1" stroke="#F5F0E1" strokeWidth="1" /><path d="M6 10V16L12 19L18 16V10" stroke="#F5F0E1" strokeWidth="1.5" fill="none" /><path d="M20 8V14" stroke="#F5F0E1" strokeWidth="1.5" /></>
+        path: <><path d="M12 3L2 8L12 13L22 8L12 3Z" fill="currentColor" stroke="currentColor" strokeWidth="1" /><path d="M6 10V16L12 19L18 16V10" stroke="currentColor" strokeWidth="1.5" fill="none" /><path d="M20 8V14" stroke="currentColor" strokeWidth="1.5" /></>
     }
 };
 

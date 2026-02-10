@@ -34,11 +34,194 @@
 
 /* Dark Mode */
 [data-theme="dark"] {
-  --bg-primary: #1a1a1a;
-  --bg-secondary: #252525;
+  /* Core backgrounds */
+  --bg-primary: #141210;
+  --bg-secondary: #1e1c18;
+
+  /* Text */
   --text-primary: #f5f0e1;
   --text-secondary: #c9c4b5;
   --text-muted: #8a8578;
+
+  /* Stamp palette inversion: cream ↔ black swap */
+  --stamp-cream: #1e1c18;
+  --stamp-paper: #252220;
+  --stamp-black: #f5f0e1;
+
+  /* Accent colors — tuned for dark backgrounds */
+  --stamp-red: #e05550;
+  --stamp-gold: #d4aa4c;
+  --stamp-brown: #a08a6f;
+  --stamp-olive: #7a8f6a;
+  --stamp-teal: #5a9a9a;
+}
+
+/* Smooth theme transition */
+body,
+.nav,
+.stamp-card,
+.footer,
+.skill-item,
+.expertise-item,
+.contact-link,
+.btn {
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+/* ---- Dark mode: sections that should STAY dark ---- */
+
+/* Stats section — always dark background */
+[data-theme="dark"] .stats {
+  background: #141210;
+}
+
+[data-theme="dark"] .stats-border-top,
+[data-theme="dark"] .stats-border-bottom {
+  background: repeating-linear-gradient(90deg,
+      transparent,
+      transparent 8px,
+      rgba(245, 240, 225, 0.3) 8px,
+      rgba(245, 240, 225, 0.3) 12px);
+}
+
+/* Contact section — always dark background */
+[data-theme="dark"] .contact-section {
+  background: #141210;
+}
+
+[data-theme="dark"] .contact-section .section-title::before,
+[data-theme="dark"] .contact-section .section-title::after {
+  background: rgba(245, 240, 225, 0.4);
+}
+
+[data-theme="dark"] .contact-section .title-text {
+  color: #f5f0e1;
+}
+
+[data-theme="dark"] .contact-stamp {
+  background: #1e1c18 !important;
+  border-color: rgba(245, 240, 225, 0.2) !important;
+}
+
+/* Logo loop section — always dark background */
+[data-theme="dark"] .logo-loop-wrapper {
+  background: #141210;
+  border-color: rgba(245, 240, 225, 0.2);
+}
+
+[data-theme="dark"] .logo-loop-wrapper::before,
+[data-theme="dark"] .logo-loop-wrapper::after {
+  background: repeating-linear-gradient(90deg,
+      transparent,
+      transparent 8px,
+      rgba(245, 240, 225, 0.3) 8px,
+      rgba(245, 240, 225, 0.3) 12px);
+}
+
+[data-theme="dark"] .logo-loop-title {
+  color: #f5f0e1;
+}
+
+/* Campaign pills in dark mode */
+[data-theme="dark"] .campaign-pill {
+  background: #252220;
+  color: #f5f0e1;
+  border-color: rgba(245, 240, 225, 0.3);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] .campaign-pill::before {
+  background: repeating-linear-gradient(90deg,
+      #252220 0px,
+      #252220 6px,
+      transparent 6px,
+      transparent 10px);
+}
+
+[data-theme="dark"] .campaign-pill:hover {
+  background: var(--stamp-red);
+  color: #f5f0e1;
+  border-color: var(--stamp-red);
+}
+
+/* Cert stamp — always dark */
+[data-theme="dark"] .cert-stamp {
+  background: #141210 !important;
+  color: #f5f0e1;
+}
+
+/* Scroll top button */
+[data-theme="dark"] .scroll-top-btn {
+  background: #252220;
+  color: #f5f0e1;
+  border-color: rgba(245, 240, 225, 0.3);
+}
+
+/* Dark mode stamp card borders */
+[data-theme="dark"] .stamp-card {
+  border-color: rgba(245, 240, 225, 0.15);
+}
+
+/* Expertise items hover in dark mode */
+[data-theme="dark"] .expertise-item:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .skill-item:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Dark mode box shadows */
+[data-theme="dark"] .btn-primary:hover {
+  box-shadow: 0 8px 25px rgba(224, 85, 80, 0.3);
+}
+
+[data-theme="dark"] .btn-secondary:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* About note in dark mode */
+[data-theme="dark"] .about-note {
+  background: rgba(224, 85, 80, 0.08);
+}
+
+/* Body SVG background for dark mode */
+[data-theme="dark"] body {
+  background-color: #141210;
+}
+
+/* Dark mode nav */
+[data-theme="dark"] .nav {
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  background: none;
+  border: 2px solid var(--stamp-black);
+  color: var(--stamp-black);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  background: var(--stamp-black);
+  color: var(--stamp-cream);
+  transform: rotate(30deg);
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+  background: rgba(245, 240, 225, 0.15);
+  color: #f5f0e1;
 }
 
 * {

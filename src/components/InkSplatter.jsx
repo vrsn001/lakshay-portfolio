@@ -35,7 +35,7 @@ export default function InkSplatter() {
                 top: `${y}px`,
                 width: `${size}px`,
                 height: `${size}px`,
-                backgroundColor: '#1a1a1a',
+                backgroundColor: document.documentElement.getAttribute('data-theme') === 'dark' ? '#f5f0e1' : '#1a1a1a',
                 borderRadius: '50%',
                 pointerEvents: 'none',
                 zIndex: '9998',

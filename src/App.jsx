@@ -28,7 +28,9 @@ import {
   Mail,
   Link,
   Download,
-  ChevronUp
+  ChevronUp,
+  Sun,
+  Moon
 } from 'lucide-react'
 import CampaignLogoLoop from './components/CampaignLogoLoop'
 import LoadingScreen from './components/LoadingScreen'
@@ -47,6 +49,25 @@ function App() {
   const [countersStarted, setCountersStarted] = useState(false)
   const [showScrollTop, setShowScrollTop] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
+
+  // Dark mode state with localStorage persistence
+  const [theme, setTheme] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('theme')
+      if (saved) return saved
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+    }
+    return 'light'
+  })
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme)
+    localStorage.setItem('theme', theme)
+  }, [theme])
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'light' ? 'dark' : 'light')
+  }
   const statsRef = useRef(null)
 
   useEffect(() => {
@@ -168,6 +189,14 @@ function App() {
               <a href="#skills" className="nav-link">Skills</a>
               <a href="#education" className="nav-link">Education</a>
               <a href="#contact" className="nav-link">Contact</a>
+              <button
+                className="theme-toggle"
+                onClick={toggleTheme}
+                aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
+                title={theme === 'light' ? 'Dark mode' : 'Light mode'}
+              >
+                {theme === 'light' ? <Moon size={16} /> : <Sun size={16} />}
+              </button>
             </div>
           </div>
         </nav>
