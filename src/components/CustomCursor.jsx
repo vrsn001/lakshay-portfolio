@@ -43,36 +43,14 @@ export default function CustomCursor() {
     const mousePosition = useRef({ x: 0, y: 0 });
     const cursorPosition = useRef({ x: -100, y: -100 });
 
-    // Section detection via IntersectionObserver
+    // Cache section elements once on mount
+    const sectionElementsRef = useRef([]);
     useEffect(() => {
         if (isTouch) return;
-
-        const sections = ['experience', 'contact', 'skills', 'education'];
-        const sectionElements = sections.map((id) => document.getElementById(id)).filter(Boolean);
-        if (sectionElements.length === 0) return;
-
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting && entry.intersectionRatio >= 0.15) {
-                        setCurrentSection(entry.target.id);
-                    }
-                });
-            },
-            { threshold: [0.15, 0.3, 0.5], rootMargin: '-40px 0px -40px 0px' }
-        );
-
-        sectionElements.forEach((el) => observer.observe(el));
-
-        const handleScroll = () => {
-            if (window.scrollY < 300) setCurrentSection('default');
-        };
-        window.addEventListener('scroll', handleScroll, { passive: true });
-
-        return () => {
-            observer.disconnect();
-            window.removeEventListener('scroll', handleScroll);
-        };
+        const sectionIds = ['experience', 'contact', 'skills', 'education'];
+        sectionElementsRef.current = sectionIds
+            .map((id) => ({ id, el: document.getElementById(id) }))
+            .filter((s) => s.el);
     }, [isTouch]);
 
     useEffect(() => {
@@ -82,6 +60,7 @@ export default function CustomCursor() {
         if (!cursor) return;
 
         let animationFrameId;
+        let lastDetectedSection = 'default';
 
         const onMouseMove = (e) => {
             mousePosition.current = { x: e.clientX, y: e.clientY };
@@ -102,11 +81,33 @@ export default function CustomCursor() {
             setIsHovering(isInteractive);
         };
 
+        // Detect section based on mouse Y position (absolute, accounting for scroll)
+        const detectSection = () => {
+            const mouseAbsY = mousePosition.current.y + window.scrollY;
+            let found = 'default';
+            for (const { id, el } of sectionElementsRef.current) {
+                const top = el.offsetTop;
+                const bottom = top + el.offsetHeight;
+                if (mouseAbsY >= top && mouseAbsY <= bottom) {
+                    found = id;
+                    break;
+                }
+            }
+            if (found !== lastDetectedSection) {
+                lastDetectedSection = found;
+                setCurrentSection(found);
+            }
+        };
+
         const loop = () => {
             const ease = 0.45;
             cursorPosition.current.x += (mousePosition.current.x - cursorPosition.current.x) * ease;
             cursorPosition.current.y += (mousePosition.current.y - cursorPosition.current.y) * ease;
             cursor.style.transform = `translate3d(${cursorPosition.current.x}px, ${cursorPosition.current.y}px, 0)`;
+
+            // Detect section in same rAF — no extra overhead
+            detectSection();
+
             animationFrameId = requestAnimationFrame(loop);
         };
 
