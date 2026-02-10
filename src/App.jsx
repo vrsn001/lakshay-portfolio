@@ -50,12 +50,10 @@ function App() {
   const [showScrollTop, setShowScrollTop] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
 
-  // Dark mode state with localStorage persistence
+  // Dark mode state — defaults to light, only dark if user explicitly set it
   const [theme, setTheme] = useState(() => {
     if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('theme')
-      if (saved) return saved
-      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+      return localStorage.getItem('theme') || 'light'
     }
     return 'light'
   })
