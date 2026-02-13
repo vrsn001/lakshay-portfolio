@@ -40,7 +40,7 @@ import InkSplatter from './components/InkSplatter'
 import MovieQuotes from './components/MovieQuotes'
 
 // Import photos
-import profilePhotoCandid from './assets/lakshay_photo_candid.png'
+import profilePhotoCandid from './assets/lakshay_photo_candid.webp'
 
 function App() {
   const [countersStarted, setCountersStarted] = useState(false)
