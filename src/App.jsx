@@ -289,12 +289,10 @@ function App() {
                   <div className="about-text">
                     <p>
                       I'm a <strong>Campaign Manager</strong> who plans and executes influencer campaigns
-                      for film, OTT, and product launches. From finding the right creators to making sure the numbers actually move.
-                    </p>
-                    <p>
-                      I work across <span className="highlight">X (Twitter)</span>,
+                      for film, OTT, and product launches across <span className="highlight">X (Twitter)</span>,
                       <span className="highlight"> Instagram</span>, <span className="highlight"> YouTube</span>,
-                      <span className="highlight"> LinkedIn</span>.
+                      and <span className="highlight"> LinkedIn</span>.
+                      From finding the right creators to making sure the numbers actually move.
                     </p>
                   </div>
                 </StampCard>
