@@ -205,7 +205,7 @@ function App() {
               {/* Photo Stamp */}
               <div className="hero-stamp-wrapper">
                 <div className="hero-photo-styled">
-                  <img src={profilePhotoCandid} alt="Lakshay Rohilla - Campaign Manager" loading="eager" />
+                  <img src={profilePhotoCandid} alt="Lakshay Rohilla - Campaign Manager" loading="eager" width="400" height="400" fetchPriority="high" />
                 </div>
               </div>
 
