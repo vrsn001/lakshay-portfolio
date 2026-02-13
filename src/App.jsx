@@ -293,7 +293,7 @@ function App() {
                     </p>
                     <p>
                       I work across <span className="highlight">X (Twitter)</span>,
-                      <span className="highlight"> Instagram</span>, <span className="highlight"> YouTube</span>, and
+                      <span className="highlight"> Instagram</span>, <span className="highlight"> YouTube</span>,
                       <span className="highlight"> LinkedIn</span>.
                     </p>
                   </div>
