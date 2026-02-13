@@ -331,7 +331,7 @@ const MovieQuotes = () => {
         }, UPDATE_INTERVAL);
 
         return () => clearInterval(timer);
-    }, [currentIndex]); // Re-run effect isn't strictly necessary for the timer structure, but simplifying for readability
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     const changeQuote = () => {
         setIsFading(true);

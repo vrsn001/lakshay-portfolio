@@ -1,5 +1,4 @@
 import { useRef, useState, useEffect } from 'react';
-// eslint-disable-next-line no-unused-vars
 import { motion, useMotionValue, useSpring } from 'motion/react';
 
 export default function Magnetic({ children, strength = 0.5 }) {

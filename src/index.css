@@ -416,20 +416,6 @@ body {
   width: 100%;
 }
 
-.theme-toggle {
-  background: var(--stamp-black);
-  color: var(--stamp-cream);
-  border: none;
-  cursor: pointer;
-  font-size: 18px;
-  padding: 10px 14px;
-  transition: all 0.3s ease;
-}
-
-.theme-toggle:hover {
-  background: var(--stamp-red);
-}
-
 /* ===================================
    Hero Section - Stamp Aesthetic
    =================================== */

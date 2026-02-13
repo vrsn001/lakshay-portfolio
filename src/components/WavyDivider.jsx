@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 export default function WavyDivider({ color = "#c73e3a", height = "12px", className = "" }) {
     return (

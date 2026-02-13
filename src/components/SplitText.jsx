@@ -1,5 +1,4 @@
 import { useMemo } from 'react';
-// eslint-disable-next-line no-unused-vars
 import { motion } from 'motion/react';
 import { useInView } from 'motion/react';
 import { useRef } from 'react';

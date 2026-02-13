@@ -1,5 +1,4 @@
 import { useRef } from "react";
-// eslint-disable-next-line no-unused-vars
 import { motion, useScroll, useTransform } from "motion/react";
 
 export default function ParallaxElement({ children, offset = 50, className = "", style = {} }) {

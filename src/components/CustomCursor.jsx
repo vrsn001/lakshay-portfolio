@@ -124,7 +124,7 @@ export default function CustomCursor() {
             document.removeEventListener('mouseover', handleMouseOver);
             cancelAnimationFrame(animationFrameId);
         };
-    }, [isVisible, isTouch]);
+    }, [isTouch]); // eslint-disable-line react-hooks/exhaustive-deps
 
     // Return null immediately on touch - no DOM, no styles, nothing
     if (isTouch) return null;

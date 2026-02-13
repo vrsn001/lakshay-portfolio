@@ -4,7 +4,6 @@ import './components/Grain.css'
 import { getCalApi } from "@calcom/embed-react";
 import GradientText from './components/GradientText'
 import CountUp from './components/CountUp'
-import ShinyText from './components/ShinyText'
 import SplitText from './components/SplitText'
 import Magnetic from './components/Magnetic'
 import ParallaxElement from './components/ParallaxElement'
@@ -33,9 +32,7 @@ import {
   Moon
 } from 'lucide-react'
 import CampaignLogoLoop from './components/CampaignLogoLoop'
-import LoadingScreen from './components/LoadingScreen'
 import WorldClock from './components/WorldClock'
-import './index.css'
 import WavyDivider from './components/WavyDivider'
 import CustomCursor from './components/CustomCursor'
 import MouseSpotlight from './components/MouseSpotlight'
@@ -90,14 +87,16 @@ function App() {
       touchMultiplier: 2,
     })
 
+    let rafId;
     function raf(time) {
       lenis.raf(time)
-      requestAnimationFrame(raf)
+      rafId = requestAnimationFrame(raf)
     }
 
-    requestAnimationFrame(raf)
+    rafId = requestAnimationFrame(raf)
 
     return () => {
+      cancelAnimationFrame(rafId)
       lenis.destroy()
     }
   }, [])
@@ -206,7 +205,7 @@ function App() {
               {/* Photo Stamp */}
               <div className="hero-stamp-wrapper">
                 <div className="hero-photo-styled">
-                  <img src={profilePhotoCandid} alt="Lakshay Rohilla - Campaign Manager" loading="lazy" />
+                  <img src={profilePhotoCandid} alt="Lakshay Rohilla - Campaign Manager" loading="eager" />
                 </div>
               </div>
 
@@ -265,7 +264,7 @@ function App() {
           <div className="stats-border-bottom"></div>
         </section>
 
-        <WavyDivider color="#c73e3a" />
+        <WavyDivider color="var(--stamp-red)" />
 
         {/* Movie Quotes Section */}
         <MovieQuotes />

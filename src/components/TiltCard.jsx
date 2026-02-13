@@ -1,5 +1,4 @@
 import { useRef } from "react";
-// eslint-disable-next-line no-unused-vars
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 
 export default function TiltCard({ children, className = "" }) {
