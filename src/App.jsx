@@ -218,11 +218,11 @@ function App() {
                     LAKSHAY ROHILLA
                   </span>
                 </div>
-                <p className="hero-tagline">I make brands go viral ✦</p>
+                <p className="hero-tagline">Turning launches into conversations ✦</p>
                 <p className="hero-description">
-                  <span className="highlight">2+ YEARS</span> turning films, OTT releases, products & marketing campaigns
-                  into internet sensations with <span className="highlight">1000M+ REACH</span> &
-                  <span className="highlight"> 80M+ ENGAGEMENTS</span>.
+                  <span className="highlight">3+ YEARS</span> planning influencer campaigns for films, OTT launches &
+                  brands — <span className="highlight">1000M+ REACH</span> &
+                  <span className="highlight"> 80M+ ENGAGEMENTS</span> across platforms.
                 </p>
                 <div className="hero-cta">
                   <Magnetic>
@@ -284,17 +284,17 @@ function App() {
               <TiltCard>
                 <StampCard stampNumber="002" className="about-stamp scroll-reveal-left delay-1">
                   <div className="about-note">
-                    "I help companies go viral on social media. If this portfolio doesn't convince you, let's chat!"
+                    "I figure out what makes people share things — then I do it at scale for brands."
                   </div>
                   <div className="about-text">
                     <p>
-                      I'm a <strong>Campaign Manager</strong> and <strong>Influencer Relations Manager</strong> who
-                      specializes in crafting buzz-worthy campaigns that capture attention, spark engagement, and deliver measurable results.
+                      I'm a <strong>Campaign Manager</strong> who plans and executes influencer campaigns
+                      for film, OTT, and product launches — from finding the right creators to making sure the numbers actually move.
                     </p>
                     <p>
-                      My expertise spans across <span className="highlight">X (Twitter)</span>,
-                      <span className="highlight"> LinkedIn</span>, <span className="highlight"> Instagram</span>, and
-                      <span className="highlight"> YouTube</span>.
+                      I work across <span className="highlight">X (Twitter)</span>,
+                      <span className="highlight"> Instagram</span>, <span className="highlight"> YouTube</span>, and
+                      <span className="highlight"> LinkedIn</span>.
                     </p>
                   </div>
                 </StampCard>
@@ -361,10 +361,10 @@ function App() {
                 postmarkDate="12 JUL 2024"
                 postmarkNote="EXPRESS"
                 bullets={[
-                  "Create buzz for diverse launches: movies, OTT shows, tech products, and brand campaigns",
-                  "Manage end-to-end campaign execution from pre-release hype to viral post-launch moments",
-                  "Coordinate influencer PR and content amplification across multiple platforms",
-                  <>Built <a href="https://textstudio.netlify.app/" target="_blank" rel="noopener noreferrer" className="inline-link">TextCraft</a> - a free online text manipulation tool in my free time, featuring case conversion, word counting, and text transformation utilities</>
+                  "Plan and run influencer campaigns for movie premieres, OTT shows, and product launches",
+                  "Own campaigns end-to-end: briefing, creator selection, content review, scheduling, and reporting",
+                  "Coordinate with 50+ creators per campaign across Instagram, X, and YouTube",
+                  <>Built <a href="https://textstudio.netlify.app/" target="_blank" rel="noopener noreferrer" className="inline-link">TextCraft</a> — a free online text tool for case conversion, word counting, and text transformation</>
                 ]}
               />
               <TimelineItem
@@ -379,10 +379,10 @@ function App() {
                 postmarkDate="24 OCT 2023"
                 postmarkNote="REGISTERED"
                 bullets={[
-                  "Launched viral campaigns achieving 1000M+ reach & 80M+ engagements, spotting trends before they peaked.",
-                  "Developed creative concepts & strategies aligned with brand goals, contributing innovative ideas during collaborative discussions.",
-                  "Coordinated with external vendors to design, produce content (copies, creatives) & distribute promotional materials.",
-                  "Managed budgeting for all marketing campaigns, ensuring cost-effectiveness of each initiative."
+                  "Led influencer campaigns generating 1000M+ organic reach and 80M+ engagements across X, Instagram, and YouTube",
+                  "Shaped campaign concepts and creator briefs in collaboration with brand and content teams",
+                  "Managed content production pipeline: briefing designers, reviewing creatives, and coordinating distribution",
+                  "Managed campaign budgets, optimizing spend-per-engagement across 20+ campaigns"
                 ]}
               />
               <TimelineItem
@@ -397,8 +397,8 @@ function App() {
                 postmarkDate="15 NOV 2022"
                 postmarkNote="PARCEL"
                 bullets={[
-                  "Drove organic traffic through SEO strategies",
-                  "Conducted keyword research and link-building"
+                  "Drove organic traffic growth through keyword research and on-page SEO",
+                  "Built quality backlinks and analyzed competitor strategies to improve search rankings"
                 ]}
               />
               <TimelineItem
@@ -507,7 +507,7 @@ function App() {
             <div className="contact-content">
               <StampCard stampNumber="008" showBarcode className="contact-stamp scroll-reveal delay-1">
                 <div className="contact-note">
-                  <TypewriterText text="Let's create your next viral campaign. Drop me a line!" />
+                  <TypewriterText text="Got a launch coming up? Let's talk." />
                 </div>
                 <div className="contact-links">
                   <a href="mailto:laksh.rohilla@outlook.com" className="contact-link">
