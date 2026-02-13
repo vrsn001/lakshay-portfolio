@@ -221,7 +221,7 @@ function App() {
                 <p className="hero-tagline">Turning launches into conversations ✦</p>
                 <p className="hero-description">
                   <span className="highlight">3+ YEARS</span> planning influencer campaigns for films, OTT launches &
-                  brands — <span className="highlight">1000M+ REACH</span> &
+                  brands. <span className="highlight">1000M+ REACH</span> &
                   <span className="highlight"> 80M+ ENGAGEMENTS</span> across platforms.
                 </p>
                 <div className="hero-cta">
@@ -258,7 +258,7 @@ function App() {
             <StatItem target={1000} suffix="M+" label="Reach" started={countersStarted} />
             <StatItem target={80} suffix="M+" label="Engagements" started={countersStarted} />
             <StatItem target={1500} suffix="+" label="Creators Managed" started={countersStarted} />
-            <StatItem target={2} suffix="+" label="Years Experience" started={countersStarted} />
+            <StatItem target={3} suffix="+" label="Years Experience" started={countersStarted} />
           </div>
           <div className="stats-border-bottom"></div>
           <div className="stats-border-bottom"></div>
@@ -284,12 +284,12 @@ function App() {
               <TiltCard>
                 <StampCard stampNumber="002" className="about-stamp scroll-reveal-left delay-1">
                   <div className="about-note">
-                    "I figure out what makes people share things — then I do it at scale for brands."
+                    "I figure out what makes people share things, then I do it at scale for brands."
                   </div>
                   <div className="about-text">
                     <p>
                       I'm a <strong>Campaign Manager</strong> who plans and executes influencer campaigns
-                      for film, OTT, and product launches — from finding the right creators to making sure the numbers actually move.
+                      for film, OTT, and product launches. From finding the right creators to making sure the numbers actually move.
                     </p>
                     <p>
                       I work across <span className="highlight">X (Twitter)</span>,
@@ -364,7 +364,7 @@ function App() {
                   "Plan and run influencer campaigns for movie premieres, OTT shows, and product launches",
                   "Own campaigns end-to-end: briefing, creator selection, content review, scheduling, and reporting",
                   "Coordinate with 50+ creators per campaign across Instagram, X, and YouTube",
-                  <>Built <a href="https://textstudio.netlify.app/" target="_blank" rel="noopener noreferrer" className="inline-link">TextCraft</a> — a free online text tool for case conversion, word counting, and text transformation</>
+                  <>Built <a href="https://textstudio.netlify.app/" target="_blank" rel="noopener noreferrer" className="inline-link">TextCraft</a>, a free online text tool for case conversion, word counting, and text transformation</>
                 ]}
               />
               <TimelineItem
