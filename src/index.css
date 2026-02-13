@@ -1304,6 +1304,13 @@ h3:hover,
   margin-bottom: 20px;
 }
 
+.about-platforms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
 .expertise-grid {
   display: grid;
   gap: 12px;

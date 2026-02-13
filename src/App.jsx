@@ -292,6 +292,12 @@ function App() {
                       for film, OTT, and product launches. From finding the right creators to making
                       sure the numbers actually move.
                     </p>
+                    <p className="about-platforms">
+                      <span className="highlight">X (Twitter)</span>{' '}
+                      <span className="highlight">Instagram</span>{' '}
+                      <span className="highlight">YouTube</span>{' '}
+                      <span className="highlight">LinkedIn</span>
+                    </p>
                   </div>
                 </StampCard>
               </TiltCard>
