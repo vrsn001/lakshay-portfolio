@@ -490,7 +490,6 @@ body {
 /* Perforated edges */
 .stamp-perforation {
   position: absolute;
-  background: var(--bg-primary);
   contain: layout style paint;
 }
 
@@ -499,19 +498,19 @@ body {
   left: 0;
   right: 0;
   height: 12px;
-  background: repeating-linear-gradient(90deg,
-      var(--bg-primary) 0px,
-      var(--bg-primary) 8px,
-      transparent 8px,
-      transparent 16px);
+  /* Scalloped edge: circles of bg-color */
+  background-image: radial-gradient(circle 6px, var(--bg-primary) 6px, transparent 6.5px);
+  background-size: 20px 20px;
+  background-position: center;
+  background-repeat: repeat-x;
 }
 
 .stamp-perforation--top {
-  top: -8px;
+  top: -6px;
 }
 
 .stamp-perforation--bottom {
-  bottom: -8px;
+  bottom: -6px;
 }
 
 .stamp-perforation--left,
@@ -519,19 +518,19 @@ body {
   top: 0;
   bottom: 0;
   width: 12px;
-  background: repeating-linear-gradient(180deg,
-      var(--bg-primary) 0px,
-      var(--bg-primary) 8px,
-      transparent 8px,
-      transparent 16px);
+  /* Scalloped edge: circles of bg-color */
+  background-image: radial-gradient(circle 6px, var(--bg-primary) 6px, transparent 6.5px);
+  background-size: 20px 20px;
+  background-position: center;
+  background-repeat: repeat-y;
 }
 
 .stamp-perforation--left {
-  left: -8px;
+  left: -6px;
 }
 
 .stamp-perforation--right {
-  right: -8px;
+  right: -6px;
 }
 
 /* Stamp number */
@@ -635,47 +634,6 @@ body {
   margin: 0 auto;
   background: var(--stamp-black);
   padding: 10px;
-  /* Scalloped perforated stamp edges — each mask covers only its edge (51% height/width) */
-  -webkit-mask-image:
-    radial-gradient(circle 8px at 11px 0, transparent 7.5px, black 8px),
-    radial-gradient(circle 8px at 11px 100%, transparent 7.5px, black 8px),
-    radial-gradient(circle 8px at 0 11px, transparent 7.5px, black 8px),
-    radial-gradient(circle 8px at 100% 11px, transparent 7.5px, black 8px);
-  -webkit-mask-size:
-    22px 51%,
-    22px 51%,
-    51% 22px,
-    51% 22px;
-  -webkit-mask-position:
-    -11px 0,
-    -11px 100%,
-    0 -11px,
-    100% -11px;
-  -webkit-mask-repeat:
-    repeat-x,
-    repeat-x,
-    repeat-y,
-    repeat-y;
-  mask-image:
-    radial-gradient(circle 8px at 11px 0, transparent 7.5px, black 8px),
-    radial-gradient(circle 8px at 11px 100%, transparent 7.5px, black 8px),
-    radial-gradient(circle 8px at 0 11px, transparent 7.5px, black 8px),
-    radial-gradient(circle 8px at 100% 11px, transparent 7.5px, black 8px);
-  mask-size:
-    22px 51%,
-    22px 51%,
-    51% 22px,
-    51% 22px;
-  mask-position:
-    -11px 0,
-    -11px 100%,
-    0 -11px,
-    100% -11px;
-  mask-repeat:
-    repeat-x,
-    repeat-x,
-    repeat-y,
-    repeat-y;
 }
 
 .stamp-header {

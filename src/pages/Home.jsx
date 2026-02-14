@@ -180,6 +180,12 @@ export default function Home({ isMobile }) {
                     <div className="hero-content">
                         {/* Photo Stamp */}
                         <div className="hero-stamp-wrapper">
+                            {/* Perforated edges - consistent with site style */}
+                            <div className="stamp-perforation stamp-perforation--top" />
+                            <div className="stamp-perforation stamp-perforation--bottom" />
+                            <div className="stamp-perforation stamp-perforation--left" />
+                            <div className="stamp-perforation stamp-perforation--right" />
+
                             <div className="hero-photo-styled">
                                 <div className="stamp-header">
                                     <span className="stamp-number">Nº 001</span>
