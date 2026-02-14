@@ -27,7 +27,7 @@ import {
 import CampaignLogoLoop from '../components/CampaignLogoLoop';
 import WavyDivider from '../components/WavyDivider';
 import MovieQuotes from '../components/MovieQuotes';
-import profilePhotoCandid from '../assets/lakshay_photo_candid.webp';
+import profilePhotoCandid from '../assets/lakshay_photo_stamp_v2.png';
 
 // Stat Component with spring-based counting + gradient shimmer
 function StatItem({ target, suffix, label, started }) {
