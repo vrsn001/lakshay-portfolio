@@ -142,3 +142,27 @@
         padding: 30px 20px;
     }
 }
+
+@media (max-width: 480px) {
+    .movie-quotes-section {
+        padding: 50px 0;
+    }
+
+    .quote-text {
+        font-size: 17px;
+        min-height: 120px;
+    }
+
+    .quote-card {
+        padding: 24px 16px;
+    }
+
+    .cinema-header {
+        font-size: 18px;
+        letter-spacing: 2px;
+    }
+
+    .quote-source {
+        font-size: 11px;
+    }
+}

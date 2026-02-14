@@ -29,6 +29,10 @@ const CURSOR_ICONS = {
     education: {
         viewBox: "0 0 24 24",
         path: <><path d="M12 3L2 8L12 13L22 8L12 3Z" fill="currentColor" stroke="currentColor" strokeWidth="1" /><path d="M6 10V16L12 19L18 16V10" stroke="currentColor" strokeWidth="1.5" fill="none" /><path d="M20 8V14" stroke="currentColor" strokeWidth="1.5" /></>
+    },
+    blog: {
+        viewBox: "0 0 24 24",
+        path: <><path d="M17 3L21 7L8 20H4V16L17 3Z" fill="currentColor" stroke="currentColor" strokeWidth="1" /><path d="M14 6L18 10" stroke="rgba(0,0,0,0.4)" strokeWidth="1" /><path d="M4 20H10" stroke="currentColor" strokeWidth="1.5" /></>
     }
 };
 
@@ -47,7 +51,7 @@ export default function CustomCursor() {
     const sectionElementsRef = useRef([]);
     useEffect(() => {
         if (isTouch) return;
-        const sectionIds = ['experience', 'contact', 'skills', 'education'];
+        const sectionIds = ['experience', 'contact', 'skills', 'education', 'blog'];
         sectionElementsRef.current = sectionIds
             .map((id) => ({ id, el: document.getElementById(id) }))
             .filter((s) => s.el);
@@ -83,6 +87,15 @@ export default function CustomCursor() {
 
         // Detect section based on mouse Y position (absolute, accounting for scroll)
         const detectSection = () => {
+            // Route-based detection for blog pages
+            if (window.location.pathname.startsWith('/blog')) {
+                if (lastDetectedSection !== 'blog') {
+                    lastDetectedSection = 'blog';
+                    setCurrentSection('blog');
+                }
+                return;
+            }
+
             const mouseAbsY = mousePosition.current.y + window.scrollY;
             let found = 'default';
             for (const { id, el } of sectionElementsRef.current) {

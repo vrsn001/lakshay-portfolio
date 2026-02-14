@@ -1,0 +1,253 @@
+/* ===================================
+   BLOG COMING SOON PAGE
+   =================================== */
+.blog-coming-soon {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 0 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Film strip decoration at top */
+.blog-filmstrip {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    height: 28px;
+    background: var(--stamp-black);
+    background-image: repeating-linear-gradient(90deg,
+            transparent,
+            transparent 18px,
+            var(--bg-primary) 18px,
+            var(--bg-primary) 24px);
+    opacity: 0.85;
+    z-index: 1;
+}
+
+.blog-coming-soon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Stamp card wrapper */
+.blog-stamp-wrapper {
+    max-width: 520px;
+    width: 100%;
+}
+
+.blog-stamp-wrapper .stamp-card {
+    padding: 48px 40px;
+    text-align: center;
+}
+
+/* Inner content */
+.blog-stamp-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Wax seal */
+.blog-seal {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: var(--stamp-red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+        0 0 0 4px var(--stamp-black),
+        0 0 0 7px var(--stamp-red),
+        0 8px 20px rgba(0, 0, 0, 0.4),
+        inset 0 -2px 6px rgba(0, 0, 0, 0.3);
+    animation: sealPulse 3s ease-in-out infinite;
+}
+
+.blog-seal-icon {
+    font-size: 28px;
+    color: var(--stamp-cream);
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+@keyframes sealPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 4px var(--stamp-black), 0 0 0 7px var(--stamp-red), 0 8px 20px rgba(0, 0, 0, 0.4), inset 0 -2px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 0 4px var(--stamp-black), 0 0 0 10px rgba(180, 40, 40, 0.4), 0 8px 30px rgba(0, 0, 0, 0.5), inset 0 -2px 6px rgba(0, 0, 0, 0.3);
+    }
+}
+
+/* Hindi text */
+.blog-hindi-text {
+    font-family: 'Tiro Devanagari Hindi', 'Noto Sans Devanagari', serif;
+    font-size: 28px;
+    color: var(--stamp-gold);
+    letter-spacing: 2px;
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* COMING SOON title */
+.blog-coming-title {
+    font-family: 'Bebas Neue', display;
+    font-size: 52px;
+    letter-spacing: 8px;
+    color: var(--stamp-cream);
+    margin: 0;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+/* Decorative divider */
+.blog-divider {
+    width: 180px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--stamp-gold), transparent);
+    transform-origin: center;
+}
+
+/* Dispatch text */
+.blog-dispatch-text {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    color: var(--stamp-cream);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin: 0;
+    min-width: 340px;
+    text-align: center;
+}
+
+/* Icon row */
+.blog-icon-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--stamp-gold);
+    opacity: 0.6;
+}
+
+/* Back button */
+.blog-back-btn {
+    margin-top: 8px;
+}
+
+.blog-back-btn .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ===================================
+   BLOG COMING SOON — RESPONSIVE
+   =================================== */
+@media (max-width: 768px) {
+    .blog-coming-soon {
+        padding: 100px 0 40px;
+    }
+
+    .blog-stamp-wrapper .stamp-card {
+        padding: 36px 24px;
+    }
+
+    .blog-coming-title {
+        font-size: 36px;
+        letter-spacing: 5px;
+    }
+
+    .blog-hindi-text {
+        font-size: 22px;
+    }
+
+    .blog-seal {
+        width: 60px;
+        height: 60px;
+    }
+
+    .blog-seal-icon {
+        font-size: 22px;
+    }
+
+    .blog-dispatch-text {
+        font-size: 10px;
+        min-width: auto;
+    }
+
+    .blog-divider {
+        width: 140px;
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-coming-soon {
+        padding: 90px 0 30px;
+    }
+
+    .blog-coming-soon-container {
+        gap: 28px;
+    }
+
+    .blog-stamp-wrapper .stamp-card {
+        padding: 28px 16px;
+    }
+
+    .blog-coming-title {
+        font-size: 28px;
+        letter-spacing: 4px;
+    }
+
+    .blog-hindi-text {
+        font-size: 18px;
+    }
+
+    .blog-seal {
+        width: 52px;
+        height: 52px;
+    }
+
+    .blog-seal-icon {
+        font-size: 18px;
+    }
+
+    .blog-stamp-inner {
+        gap: 14px;
+    }
+
+    .blog-dispatch-text {
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+    .blog-icon-row {
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+
+    .blog-divider {
+        width: 100px;
+    }
+
+    .blog-filmstrip {
+        height: 22px;
+    }
+}
