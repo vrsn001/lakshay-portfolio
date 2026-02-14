@@ -501,7 +501,7 @@ export default function Home({ isMobile }) {
                         </span>
                     </h2>
                     <div className="contact-content">
-                        <StampCard stampNumber="008" showBarcode className="contact-stamp scroll-reveal delay-1">
+                        <StampCard stampNumber="007" showBarcode className="contact-stamp scroll-reveal delay-1">
                             <div className="contact-note">
                                 <TypewriterText text="Got a launch coming up? Let's talk." />
                             </div>
