@@ -181,7 +181,19 @@ export default function Home({ isMobile }) {
                         {/* Photo Stamp */}
                         <div className="hero-stamp-wrapper">
                             <div className="hero-photo-styled">
-                                <img src={profilePhotoCandid} alt="Lakshay Rohilla - Campaign Manager" loading="eager" width="400" height="400" fetchPriority="high" />
+                                <div className="stamp-header">
+                                    <span className="stamp-number">Nº 001</span>
+                                </div>
+                                <div className="stamp-image-container">
+                                    <img src={profilePhotoCandid} alt="Lakshay Rohilla - Campaign Manager" loading="eager" width="400" height="400" fetchPriority="high" />
+                                </div>
+                                <div className="stamp-footer">
+                                    <div className="stamp-role">CAMPAIGN MANAGER</div>
+                                    <div className="stamp-barcode-group">
+                                        <div className="stamp-barcode"></div>
+                                        <div className="stamp-barcode-text">LR-2020-2026</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -339,7 +351,7 @@ export default function Home({ isMobile }) {
                             postmarkDate="12 JUL 2024"
                             postmarkNote="EXPRESS"
                             bullets={[
-                                "Plan and run influencer campaigns for movie premieres, OTT shows, and product launches",
+                                "Plan and run influencer campaigns for movie premieres, OTT shows, and product launches — 250M+ reach and 20M+ engagements across platforms",
                                 "Own campaigns end-to-end: briefing, creator selection, content review, scheduling, and reporting",
                                 "Coordinate with 50+ creators per campaign across Instagram, X, and YouTube",
                                 <>Built <a href="https://textstudio.netlify.app/" target="_blank" rel="noopener noreferrer" className="inline-link">TextCraft</a>, a free online text tool for case conversion, word counting, and text transformation</>
@@ -357,7 +369,7 @@ export default function Home({ isMobile }) {
                             postmarkDate="24 OCT 2023"
                             postmarkNote="REGISTERED"
                             bullets={[
-                                "Led influencer campaigns generating 1000M+ organic reach and 80M+ engagements across X, Instagram, and YouTube",
+                                "Led influencer campaigns generating 650M+ organic reach and 52M+ engagements across X, Instagram, and YouTube",
                                 "Shaped campaign concepts and creator briefs in collaboration with brand and content teams",
                                 "Managed content production pipeline: briefing designers, reviewing creatives, and coordinating distribution",
                                 "Managed campaign budgets, optimizing spend-per-engagement across 20+ campaigns"

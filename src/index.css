@@ -611,19 +611,167 @@ body {
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
-  aspect-ratio: 1 / 1;
-  /* Reserve space before image loads — prevents CLS */
-}
-
-.hero-photo-styled img {
-  width: 100%;
-  height: auto;
-  display: block;
+  background: var(--stamp-cream);
+  border: none;
+  padding: 24px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   transition: transform 0.3s ease;
 }
 
-.hero-photo-styled:hover img {
+/* No pseudo-element perforations needed — handled by wrapper mask */
+.hero-photo-styled::before,
+.hero-photo-styled::after {
+  content: none;
+}
+
+/* Stamp wrapper with scalloped perforated edges via mask */
+.hero-stamp-wrapper {
+  position: relative;
+  display: inline-block;
+  margin: 0 auto;
+  background: var(--stamp-black);
+  padding: 10px;
+  /* Scalloped perforated stamp edges — each mask covers only its edge (51% height/width) */
+  -webkit-mask-image:
+    radial-gradient(circle 8px at 11px 0, transparent 7.5px, black 8px),
+    radial-gradient(circle 8px at 11px 100%, transparent 7.5px, black 8px),
+    radial-gradient(circle 8px at 0 11px, transparent 7.5px, black 8px),
+    radial-gradient(circle 8px at 100% 11px, transparent 7.5px, black 8px);
+  -webkit-mask-size:
+    22px 51%,
+    22px 51%,
+    51% 22px,
+    51% 22px;
+  -webkit-mask-position:
+    -11px 0,
+    -11px 100%,
+    0 -11px,
+    100% -11px;
+  -webkit-mask-repeat:
+    repeat-x,
+    repeat-x,
+    repeat-y,
+    repeat-y;
+  mask-image:
+    radial-gradient(circle 8px at 11px 0, transparent 7.5px, black 8px),
+    radial-gradient(circle 8px at 11px 100%, transparent 7.5px, black 8px),
+    radial-gradient(circle 8px at 0 11px, transparent 7.5px, black 8px),
+    radial-gradient(circle 8px at 100% 11px, transparent 7.5px, black 8px);
+  mask-size:
+    22px 51%,
+    22px 51%,
+    51% 22px,
+    51% 22px;
+  mask-position:
+    -11px 0,
+    -11px 100%,
+    0 -11px,
+    100% -11px;
+  mask-repeat:
+    repeat-x,
+    repeat-x,
+    repeat-y,
+    repeat-y;
+}
+
+.stamp-header {
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 2px solid var(--stamp-black);
+  padding-bottom: 8px;
+}
+
+.stamp-number {
+  font-family: 'Space Mono', monospace;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--stamp-black);
+  letter-spacing: 1px;
+}
+
+.stamp-image-container {
+  border: 2px solid var(--stamp-black);
+  overflow: hidden;
+  aspect-ratio: 1/1;
+}
+
+.stamp-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(100%) contrast(1.2) brightness(1.1);
+  mix-blend-mode: multiply;
+}
+
+.stamp-footer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  border-top: 2px solid var(--stamp-black);
+  padding-top: 12px;
+  margin-top: auto;
+  min-height: 44px;
+}
+
+.stamp-role {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px;
+  letter-spacing: 2px;
+  color: var(--stamp-black);
+  line-height: 1;
+  text-align: center;
+  width: 100%;
+  z-index: 1;
+}
+
+.stamp-barcode-group {
+  position: absolute;
+  right: -2px;
+  bottom: -2px;
+  text-align: right;
+  z-index: 2;
+  transform: scale(0.9);
+  transform-origin: bottom right;
+  background: var(--stamp-cream);
+  padding-left: 6px;
+  padding-top: 4px;
+}
+
+.stamp-barcode {
+  height: 20px;
+  width: 80px;
+  background: repeating-linear-gradient(90deg,
+      var(--stamp-black) 0px,
+      var(--stamp-black) 2px,
+      transparent 2px,
+      transparent 4px,
+      var(--stamp-black) 4px,
+      var(--stamp-black) 5px,
+      transparent 5px,
+      transparent 7px);
+  margin-bottom: 2px;
+}
+
+.stamp-barcode-text {
+  font-family: 'Space Mono', monospace;
+  font-size: 7px;
+  color: var(--stamp-black);
+  letter-spacing: 1px;
+}
+
+.hero-photo-styled:hover {
   transform: scale(1.02);
+}
+
+.hero-photo-styled:hover img {
+  transform: scale(1.05);
+  /* Zoom effect inside frame */
 }
 
 /* Hero text */
