@@ -1972,6 +1972,11 @@ h3:hover,
   color: var(--stamp-cream);
 }
 
+.cert-stamp .stamp-number {
+  color: var(--stamp-cream);
+  opacity: 0.8;
+}
+
 .cert-content {
   display: flex;
   align-items: center;
