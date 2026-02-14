@@ -160,10 +160,49 @@
 
 /* ===================================
    BLOG COMING SOON — RESPONSIVE
+   Covers: Large tablets, tablets, small tablets,
+   phones, small phones, extra-small phones,
+   touch devices, and landscape orientation
    =================================== */
+
+/* TABLETS & SMALL LAPTOPS (max-width: 900px) */
+@media (max-width: 900px) {
+    .blog-coming-soon {
+        padding: 110px 0 50px;
+    }
+
+    .blog-stamp-wrapper {
+        max-width: 460px;
+    }
+
+    .blog-stamp-wrapper .stamp-card {
+        padding: 40px 32px;
+    }
+
+    .blog-coming-title {
+        font-size: 44px;
+        letter-spacing: 6px;
+    }
+
+    .blog-hindi-text {
+        font-size: 24px;
+    }
+
+    /* Hide side perforations on tablets */
+    .blog-stamp-wrapper .stamp-perforation--left,
+    .blog-stamp-wrapper .stamp-perforation--right {
+        display: none;
+    }
+}
+
+/* TABLETS PORTRAIT & LARGE PHONES (max-width: 768px) */
 @media (max-width: 768px) {
     .blog-coming-soon {
         padding: 100px 0 40px;
+    }
+
+    .blog-coming-soon-container {
+        gap: 32px;
     }
 
     .blog-stamp-wrapper .stamp-card {
@@ -196,15 +235,70 @@
     .blog-divider {
         width: 140px;
     }
+
+    .blog-back-btn .btn {
+        min-height: 48px;
+        width: 100%;
+        justify-content: center;
+    }
 }
 
+/* SMALL TABLETS & PHABLETS (max-width: 600px) */
+@media (max-width: 600px) {
+    .blog-coming-soon {
+        padding: 95px 0 36px;
+    }
+
+    .blog-stamp-wrapper .stamp-card {
+        padding: 32px 20px;
+    }
+
+    .blog-coming-title {
+        font-size: 32px;
+        letter-spacing: 4px;
+    }
+
+    .blog-hindi-text {
+        font-size: 20px;
+    }
+
+    .blog-seal {
+        width: 56px;
+        height: 56px;
+    }
+
+    .blog-seal-icon {
+        font-size: 20px;
+    }
+
+    .blog-stamp-inner {
+        gap: 16px;
+    }
+
+    .blog-dispatch-text {
+        font-size: 9px;
+        letter-spacing: 1.5px;
+    }
+
+    .blog-icon-row {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    .blog-divider {
+        width: 120px;
+    }
+}
+
+/* PHONES — iPhone SE, Galaxy A, Xiaomi Redmi, etc. (max-width: 480px) */
 @media (max-width: 480px) {
     .blog-coming-soon {
-        padding: 90px 0 30px;
+        padding: 85px 0 30px;
     }
 
     .blog-coming-soon-container {
-        gap: 28px;
+        gap: 24px;
+        padding: 0 14px;
     }
 
     .blog-stamp-wrapper .stamp-card {
@@ -213,7 +307,7 @@
 
     .blog-coming-title {
         font-size: 28px;
-        letter-spacing: 4px;
+        letter-spacing: 3px;
     }
 
     .blog-hindi-text {
@@ -221,8 +315,8 @@
     }
 
     .blog-seal {
-        width: 52px;
-        height: 52px;
+        width: 48px;
+        height: 48px;
     }
 
     .blog-seal-icon {
@@ -234,20 +328,124 @@
     }
 
     .blog-dispatch-text {
-        font-size: 9px;
+        font-size: 8px;
         letter-spacing: 1px;
     }
 
     .blog-icon-row {
         font-size: 8px;
-        letter-spacing: 2px;
+        letter-spacing: 1.5px;
+        gap: 8px;
     }
 
     .blog-divider {
-        width: 100px;
+        width: 90px;
     }
 
     .blog-filmstrip {
         height: 22px;
+        top: 64px;
+    }
+}
+
+/* EXTRA SMALL PHONES — budget phones, Galaxy A03, etc. (max-width: 360px) */
+@media (max-width: 360px) {
+    .blog-coming-soon {
+        padding: 80px 0 24px;
+    }
+
+    .blog-coming-soon-container {
+        gap: 20px;
+        padding: 0 10px;
+    }
+
+    .blog-stamp-wrapper .stamp-card {
+        padding: 22px 12px;
+    }
+
+    .blog-coming-title {
+        font-size: 24px;
+        letter-spacing: 2px;
+    }
+
+    .blog-hindi-text {
+        font-size: 16px;
+    }
+
+    .blog-seal {
+        width: 42px;
+        height: 42px;
+    }
+
+    .blog-seal-icon {
+        font-size: 16px;
+    }
+
+    .blog-stamp-inner {
+        gap: 12px;
+    }
+
+    .blog-dispatch-text {
+        font-size: 7px;
+        letter-spacing: 0.5px;
+    }
+
+    .blog-icon-row {
+        font-size: 7px;
+        letter-spacing: 1px;
+        gap: 6px;
+    }
+
+    .blog-divider {
+        width: 70px;
+    }
+
+    .blog-filmstrip {
+        height: 18px;
+        top: 60px;
+    }
+}
+
+/* TOUCH DEVICES — disable hover animations */
+@media (hover: none) and (pointer: coarse) {
+    .blog-seal {
+        animation: none;
+    }
+
+    .blog-back-btn .btn:hover {
+        transform: none;
+    }
+}
+
+/* LANDSCAPE PHONES — prevent overflowing on short viewports */
+@media (max-height: 500px) and (orientation: landscape) {
+    .blog-coming-soon {
+        min-height: auto;
+        padding: 80px 0 20px;
+    }
+
+    .blog-coming-soon-container {
+        gap: 16px;
+    }
+
+    .blog-seal {
+        width: 40px;
+        height: 40px;
+    }
+
+    .blog-seal-icon {
+        font-size: 16px;
+    }
+
+    .blog-stamp-inner {
+        gap: 10px;
+    }
+
+    .blog-coming-title {
+        font-size: 28px;
+    }
+
+    .blog-hindi-text {
+        font-size: 16px;
     }
 }
